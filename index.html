@@ -1,96 +1,488 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Semanal - Semana 30 - PFC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #0059b3;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            display: block;
-        }
-        nav a:hover {
-            background: #004080;
-        }
-        section {
-            padding: 40px 20px;
-            background-color: #ffffff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-        h2 {
-            color: #003366;
-            border-bottom: 2px solid #003366;
-            padding-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Relatório Semanal - Semana 30 - PFC</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css"/>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #003366;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            nav {
+                background: #0059b3;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav a {
+                color: white;
+                padding: 15px 20px;
+                text-decoration: none;
+            }
+            nav a:hover {
+                background: #004080;
+            }
+            section {
+                background: white;
+                margin: 20px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            iframe {
+                width: 100%;
+                height: 600px;
+                border: none;
+            }
+            .cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                margin: 10px;
+                padding: 20px;
+                flex: 1 1 220px;
+                max-width: 250px;
+                text-align: center;
+            }
+            .card h3 { color: #003366; }
+            .card p { font-size: 24px; font-weight: bold; }
+            h2 {
+                color: #003366;
+                border-bottom: 2px solid #003366;
+                padding-bottom: 10px;
+            }
+            table.dataTable thead th {
+                background-color: #003366;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
 
-<header>
-    <h1>Relatório Semanal - Semana 30 (23/07/2025)</h1>
-    <p>Programa Futuro Cientista</p>
-</header>
+    <header>
+        <h1>Relatório Semanal - Semana 30 (2025/07/24)</h1>
+        <p>Programa Futuro Cientista</p>
+    </header>
 
-<nav>
-    <a href="#top_alunos">📊 Top Alunos</a>
-    <a href="#evasao_cidade">🏙️ Evasão por Cidade</a>
-    <a href="#evasao_turma">🏫 Evasão por Turma</a>
-    <a href="#risco_cidade">⚠️ Risco por Cidade</a>
-    <a href="#mapa_cidades">🗺️ Mapa das Cidades</a>
-</nav>
+    <nav>
+        <a href="#geral">📈 Evasão Geral</a>
+        <a href="#top_alunos">📊 Top Alunos</a>
+        <a href="#evasao_cidade">🏙️ Evasão por Cidade</a>
+        <a href="#evasao_turma">🏫 Evasão por Turma</a>
+        <a href="#risco_cidade">⚠️ Risco por Cidade</a>
+        <a href="#mapa_cidades">🗺️ Mapa</a>
+    </nav>
 
-<section id="top_alunos">
-    <h2>📊 Top Alunos</h2>
-    <iframe src="grafico_top_alunos.html"></iframe>
-</section>
+    <section id="geral">
+        <h2>📈 Evasão Geral</h2>
+        <div class="cards">
+            <div class="card"><h3>Total de Turmas</h3><p>35</p></div>
+            <div class="card"><h3>Total de Cidades</h3><p>8</p></div>
+            <div class="card"><h3>Total de Supervisores</h3><p>12</p></div>
+            <div class="card"><h3>Alunos Esperados</h3><p>700</p></div>
+            <div class="card"><h3>Vagas Não Preenchidas</h3><p>126</p></div>
+            <div class="card"><h3>Ativos</h3><p>546</p></div>
+            <div class="card"><h3>Desligados</h3><p>28</p></div>
+            <div class="card"><h3>Total Evasão</h3><p>28</p></div>
+        </div>
+    </section>
 
-<section id="evasao_cidade">
-    <h2>🏙️ Evasão por Cidade</h2>
-    <iframe src="grafico_evasao_cidade.html"></iframe>
-</section>
+    <section id="tabela_evasao_turma">
+        <h2>🏫 Tabela: Evasão por Turma</h2>
+        <table border="1" class="dataframe tabela-interativa" id="evasaoTurma">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>desligados</th>
+      <th>ativos</th>
+      <th>% evasão sobre ativos</th>
+    </tr>
+    <tr>
+      <th>turma</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CEMUS1 - Turma A</th>
+      <td>2</td>
+      <td>14</td>
+      <td>14.3</td>
+    </tr>
+    <tr>
+      <th>CEMUS1 - Turma B</th>
+      <td>0</td>
+      <td>11</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>CEMUS5 - Turma A</th>
+      <td>1</td>
+      <td>19</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>CEMUS5 - Turma B</th>
+      <td>0</td>
+      <td>18</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E. M. Francisco Adolfo de Varnhagen</th>
+      <td>0</td>
+      <td>10</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E. M. Pedrina de Campos Pedrozo Rosa</th>
+      <td>0</td>
+      <td>14</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E. M. Roque Ayres de Oliveiras</th>
+      <td>0</td>
+      <td>15</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E. M. Zilma Thibes Melo</th>
+      <td>0</td>
+      <td>22</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E.M. Dra. Glaucia Aparecida Andrade Nogueira</th>
+      <td>0</td>
+      <td>18</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E.M. Elisa Moreira dos Santos</th>
+      <td>1</td>
+      <td>18</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>E.M. Francisco Munhoz</th>
+      <td>1</td>
+      <td>15</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>E.M. Franciso Mariano</th>
+      <td>0</td>
+      <td>19</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>E.M. Henory de Campos Goes</th>
+      <td>2</td>
+      <td>3</td>
+      <td>66.7</td>
+    </tr>
+    <tr>
+      <th>E.M. Joaquim Salvador</th>
+      <td>2</td>
+      <td>18</td>
+      <td>11.1</td>
+    </tr>
+    <tr>
+      <th>E.M. Marcilio Leite- Turma A</th>
+      <td>2</td>
+      <td>13</td>
+      <td>15.4</td>
+    </tr>
+    <tr>
+      <th>E.M. Marcilio Leite- Turma B</th>
+      <td>1</td>
+      <td>14</td>
+      <td>7.1</td>
+    </tr>
+    <tr>
+      <th>E.M. Ricardo Pucetti</th>
+      <td>0</td>
+      <td>19</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EE Coronel Castanho de Almeida</th>
+      <td>0</td>
+      <td>13</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EE Prof. Antonio Tonon - Turma A</th>
+      <td>0</td>
+      <td>19</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EM Carmen Lucia Blanco Britto</th>
+      <td>1</td>
+      <td>12</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>EM Henory de Campos Goes</th>
+      <td>0</td>
+      <td>5</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Barão de Piratininga - Turma A</th>
+      <td>0</td>
+      <td>20</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Barão de Piratininga - Turma B</th>
+      <td>0</td>
+      <td>23</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Dr. Rabindranath Tagore dos S. Pires</th>
+      <td>0</td>
+      <td>13</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Leonidas Antonio de Moreas Professor</th>
+      <td>1</td>
+      <td>20</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Darcy Amáncio</th>
+      <td>2</td>
+      <td>19</td>
+      <td>10.5</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Euclides de Oliveira</th>
+      <td>0</td>
+      <td>18</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Joao Alcindo Vieira</th>
+      <td>4</td>
+      <td>20</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Joaquim Silveira Santos</th>
+      <td>2</td>
+      <td>12</td>
+      <td>16.7</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Tiberio Justo da Silva</th>
+      <td>0</td>
+      <td>20</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Wilson Paschoal</th>
+      <td>0</td>
+      <td>18</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Profa. Maria de Lourdes Pedroso Perin</th>
+      <td>6</td>
+      <td>14</td>
+      <td>42.9</td>
+    </tr>
+    <tr>
+      <th>EMEF Professor Antonio Cavaglieri</th>
+      <td>0</td>
+      <td>16</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Sonia Maria Abreu Ghilardi</th>
+      <td>0</td>
+      <td>11</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>EMEF Tetsu Chinone</th>
+      <td>0</td>
+      <td>13</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+    </section>
 
-<section id="evasao_turma">
-    <h2>🏫 Evasão por Turma</h2>
-    <iframe src="grafico_evasao_turma.html"></iframe>
-</section>
+    <section id="tabela_evasao_cidade">
+        <h2>🏙️ Tabela: Evasão por Cidade</h2>
+        <table border="1" class="dataframe tabela-interativa" id="evasaoCidade">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>desligados</th>
+    </tr>
+    <tr>
+      <th>cidade</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Capela do Alto-SP</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Corumbataí-SP</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Guareí-SP</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>São Roque-SP</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Iperó-SP</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Salto-SP</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Mirassol-SP</th>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+    </section>
 
-<section id="risco_cidade">
-    <h2>⚠️ Risco por Cidade</h2>
-    <iframe src="grafico_risco_cidade.html"></iframe>
-</section>
+    <section id="tabela_top_alunos"><h2>🚨 Tabela: Top Alunos com Risco</h2><table border="1" class="dataframe tabela-interativa" id="topAlunos">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>aluno</th>
+      <th>turma</th>
+      <th>cidade</th>
+      <th>prob_desligamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>81</th>
+      <td>Leo</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Iperó-SP</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Christyan Araújo de moura</td>
+      <td>E. M. Francisco Adolfo de Varnhagen</td>
+      <td>Iperó-SP</td>
+      <td>0.29</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>Lorena Margoni Zati</td>
+      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>Mirassol-SP</td>
+      <td>0.28</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Felipe</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Iperó-SP</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>JENNIFER VITÓRIA DA SILVA</td>
+      <td>E.M. Joaquim Salvador</td>
+      <td>Capela do Alto-SP</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Miguel Domingos Ferreira</td>
+      <td>EMEF Barão de Piratininga - Turma B</td>
+      <td>São Roque-SP</td>
+      <td>0.21</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>BRYAN CANDIDO RODRIGUÊS</td>
+      <td>E.M. Henory de Campos Goes</td>
+      <td>Iperó-SP</td>
+      <td>0.21</td>
+    </tr>
+    <tr>
+      <th>280</th>
+      <td>YANE CELINA SIMÃO</td>
+      <td>EE Prof. Antonio Tonon - Turma A</td>
+      <td>Coronel Macedo-SP</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Aline da Silva de Lima</td>
+      <td>CEMUS1 - Turma B</td>
+      <td>Salto-SP</td>
+      <td>0.18</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>BEATRIZ MACHADO SOARES</td>
+      <td>E.M. Marcilio Leite- Turma B</td>
+      <td>Capela do Alto-SP</td>
+      <td>0.18</td>
+    </tr>
+  </tbody>
+</table></section>
 
-<section id="mapa_cidades">
-    <h2>🗺️ Mapa das Cidades</h2>
-    <iframe src="grafico_mapa_cidades.html"></iframe>
-</section>
+    <section id="top_alunos"><h2>📊 Top Alunos</h2><iframe src="grafico_top_alunos.html"></iframe></section>
+    <section id="evasao_cidade"><h2>🏙️ Evasão por Cidade</h2><iframe src="grafico_evasao_cidade.html"></iframe></section>
+    <section id="evasao_turma"><h2>🏫 Evasão por Turma</h2><iframe src="grafico_evasao_turma.html"></iframe></section>
+    <section id="risco_cidade"><h2>⚠️ Risco por Cidade</h2><iframe src="grafico_risco_cidade.html"></iframe></section>
+    <section id="mapa_cidades"><h2>🗺️ Mapa</h2><iframe src="grafico_mapa_cidades.html"></iframe></section>
 
-</body>
-</html>
+    <script>
+        $(document).ready(function () {
+            $('.tabela-interativa').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                }
+            });
+        });
+    </script>
+
+    </body>
+    </html>
+    
