@@ -1,0 +1,733 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Relatório Semana 30 - Tabelas de Evasão</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css"/>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.tabela-interativa').DataTable({
+                    language: {
+                        url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>📋 Tabelas de Evasão - Semana 30 (2025/07/25)</h1>
+        <h2>🏫 Evasão por Turma</h2><table border="1" class="dataframe tabela-interativa" id="evasaoTurma">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ativos</th>
+      <th>desligados</th>
+      <th>Vagas disponíveis</th>
+      <th>probabilidade de desligamento</th>
+    </tr>
+    <tr>
+      <th>turma</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CEMUS1 - Turma A</th>
+      <td>14</td>
+      <td>2</td>
+      <td>6</td>
+      <td>0.0850</td>
+    </tr>
+    <tr>
+      <th>CEMUS1 - Turma B</th>
+      <td>11</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0.0300</td>
+    </tr>
+    <tr>
+      <th>CEMUS5 - Turma A</th>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0460</td>
+    </tr>
+    <tr>
+      <th>CEMUS5 - Turma B</th>
+      <td>18</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0283</td>
+    </tr>
+    <tr>
+      <th>E. M. Francisco Adolfo de Varnhagen</th>
+      <td>10</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0.0390</td>
+    </tr>
+    <tr>
+      <th>E. M. Pedrina de Campos Pedrozo Rosa</th>
+      <td>14</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.0607</td>
+    </tr>
+    <tr>
+      <th>E. M. Roque Ayres de Oliveiras</th>
+      <td>15</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.0073</td>
+    </tr>
+    <tr>
+      <th>E. M. Zilma Thibes Melo</th>
+      <td>22</td>
+      <td>0</td>
+      <td>-2</td>
+      <td>0.0141</td>
+    </tr>
+    <tr>
+      <th>E.M. Dra. Glaucia Aparecida Andrade Nogueira</th>
+      <td>18</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0061</td>
+    </tr>
+    <tr>
+      <th>E.M. Elisa Moreira dos Santos</th>
+      <td>18</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.0584</td>
+    </tr>
+    <tr>
+      <th>E.M. Francisco Munhoz</th>
+      <td>15</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0375</td>
+    </tr>
+    <tr>
+      <th>E.M. Franciso Mariano</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0216</td>
+    </tr>
+    <tr>
+      <th>E.M. Henory de Campos Goes</th>
+      <td>3</td>
+      <td>2</td>
+      <td>17</td>
+      <td>0.2140</td>
+    </tr>
+    <tr>
+      <th>E.M. Joaquim Salvador</th>
+      <td>18</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.1025</td>
+    </tr>
+    <tr>
+      <th>E.M. Marcilio Leite- Turma A</th>
+      <td>13</td>
+      <td>2</td>
+      <td>7</td>
+      <td>0.0547</td>
+    </tr>
+    <tr>
+      <th>E.M. Marcilio Leite- Turma B</th>
+      <td>14</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0.0760</td>
+    </tr>
+    <tr>
+      <th>E.M. Ricardo Pucetti</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0021</td>
+    </tr>
+    <tr>
+      <th>EE Coronel Castanho de Almeida</th>
+      <td>13</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0.0300</td>
+    </tr>
+    <tr>
+      <th>EE Prof. Antonio Tonon - Turma A</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0237</td>
+    </tr>
+    <tr>
+      <th>EM Carmen Lucia Blanco Britto</th>
+      <td>12</td>
+      <td>1</td>
+      <td>8</td>
+      <td>0.0554</td>
+    </tr>
+    <tr>
+      <th>EM Henory de Campos Goes</th>
+      <td>5</td>
+      <td>0</td>
+      <td>15</td>
+      <td>0.0160</td>
+    </tr>
+    <tr>
+      <th>EMEF Barão de Piratininga - Turma A</th>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0135</td>
+    </tr>
+    <tr>
+      <th>EMEF Barão de Piratininga - Turma B</th>
+      <td>23</td>
+      <td>0</td>
+      <td>-3</td>
+      <td>0.0204</td>
+    </tr>
+    <tr>
+      <th>EMEF Dr. Rabindranath Tagore dos S. Pires</th>
+      <td>13</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0.0077</td>
+    </tr>
+    <tr>
+      <th>EMEF Leonidas Antonio de Moreas Professor</th>
+      <td>20</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0390</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Darcy Amáncio</th>
+      <td>19</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.0862</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Euclides de Oliveira</th>
+      <td>18</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0061</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Joao Alcindo Vieira</th>
+      <td>20</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.0967</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Joaquim Silveira Santos</th>
+      <td>12</td>
+      <td>2</td>
+      <td>8</td>
+      <td>0.1507</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Tiberio Justo da Silva</th>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0080</td>
+    </tr>
+    <tr>
+      <th>EMEF Prof. Wilson Paschoal</th>
+      <td>18</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0117</td>
+    </tr>
+    <tr>
+      <th>EMEF Profa. Maria de Lourdes Pedroso Perin</th>
+      <td>14</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0.1510</td>
+    </tr>
+    <tr>
+      <th>EMEF Professor Antonio Cavaglieri</th>
+      <td>16</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.0075</td>
+    </tr>
+    <tr>
+      <th>EMEF Sonia Maria Abreu Ghilardi</th>
+      <td>11</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0.0191</td>
+    </tr>
+    <tr>
+      <th>EMEF Tetsu Chinone</th>
+      <td>13</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0.0292</td>
+    </tr>
+  </tbody>
+</table>
+        <h2>🏙️ Evasão por Cidade</h2><table border="1" class="dataframe tabela-interativa" id="evasaoCidade">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ativos</th>
+      <th>desligados</th>
+      <th>Vagas disponíveis</th>
+      <th>probabilidade de desligamento</th>
+    </tr>
+    <tr>
+      <th>cidade</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Capela do Alto-SP</th>
+      <td>98</td>
+      <td>6</td>
+      <td>22</td>
+      <td>0.0487</td>
+    </tr>
+    <tr>
+      <th>Coronel Macedo-SP</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0237</td>
+    </tr>
+    <tr>
+      <th>Corumbataí-SP</th>
+      <td>14</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0.1510</td>
+    </tr>
+    <tr>
+      <th>Guareí-SP</th>
+      <td>33</td>
+      <td>4</td>
+      <td>7</td>
+      <td>0.0732</td>
+    </tr>
+    <tr>
+      <th>Iperó-SP</th>
+      <td>105</td>
+      <td>3</td>
+      <td>55</td>
+      <td>0.0373</td>
+    </tr>
+    <tr>
+      <th>Mirassol-SP</th>
+      <td>37</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.0518</td>
+    </tr>
+    <tr>
+      <th>Salto-SP</th>
+      <td>62</td>
+      <td>3</td>
+      <td>18</td>
+      <td>0.0480</td>
+    </tr>
+    <tr>
+      <th>São Roque-SP</th>
+      <td>178</td>
+      <td>4</td>
+      <td>42</td>
+      <td>0.0301</td>
+    </tr>
+  </tbody>
+</table>
+        <h2>🧑‍🏫 Evasão por Supervisor</h2><table border="1" class="dataframe tabela-interativa" id="evasaoSupervisor">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ativos</th>
+      <th>desligados</th>
+      <th>Vagas disponíveis</th>
+      <th>probabilidade de desligamento</th>
+    </tr>
+    <tr>
+      <th>supervisor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ana Clara Ferrari</th>
+      <td>63</td>
+      <td>1</td>
+      <td>17</td>
+      <td>0.0170</td>
+    </tr>
+    <tr>
+      <th>Emilly Vitoria Alves Ribeiro</th>
+      <td>62</td>
+      <td>3</td>
+      <td>38</td>
+      <td>0.0526</td>
+    </tr>
+    <tr>
+      <th>Gustavo Eduardo Cardoso</th>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0237</td>
+    </tr>
+    <tr>
+      <th>Jamilli Veloso de Souza</th>
+      <td>43</td>
+      <td>0</td>
+      <td>17</td>
+      <td>0.0142</td>
+    </tr>
+    <tr>
+      <th>Jose (Vinicius Lima Cardozo)</th>
+      <td>33</td>
+      <td>4</td>
+      <td>7</td>
+      <td>0.0732</td>
+    </tr>
+    <tr>
+      <th>Julia Fernanda de Camargo Teles Miranda</th>
+      <td>51</td>
+      <td>2</td>
+      <td>9</td>
+      <td>0.0240</td>
+    </tr>
+    <tr>
+      <th>Lívia Kormann</th>
+      <td>62</td>
+      <td>3</td>
+      <td>18</td>
+      <td>0.0480</td>
+    </tr>
+    <tr>
+      <th>Mirela Silva Gondim Garcia</th>
+      <td>74</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0.0236</td>
+    </tr>
+    <tr>
+      <th>Paulo Miranda</th>
+      <td>47</td>
+      <td>4</td>
+      <td>13</td>
+      <td>0.0743</td>
+    </tr>
+    <tr>
+      <th>Pedro Henrique Prado Alves</th>
+      <td>14</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0.1510</td>
+    </tr>
+    <tr>
+      <th>Synara Sajonetti Maistrello</th>
+      <td>37</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.0518</td>
+    </tr>
+    <tr>
+      <th>Vittoria Christina Santos Rocha</th>
+      <td>41</td>
+      <td>2</td>
+      <td>19</td>
+      <td>0.0607</td>
+    </tr>
+  </tbody>
+</table>
+        <table border="1" class="dataframe tabela-interativa">
+  <thead>
+    <tr style="text-align: right;">
+      <th>aluno</th>
+      <th>cidade</th>
+      <th>turma</th>
+      <th>supervisor</th>
+      <th>n_encontros</th>
+      <th>participacao_total</th>
+      <th>melhor_grau</th>
+      <th>melhor_mse</th>
+      <th>melhor_r2</th>
+      <th>f(x) ∈ R²</th>
+      <th>df/dx</th>
+      <th>d²f/dx²</th>
+      <th>n_pontos (futuro PFCoins)</th>
+      <th>presencas</th>
+      <th>faltas</th>
+      <th>faltas_justificadas</th>
+      <th>risco_evasao</th>
+      <th>desligado</th>
+      <th>prob_desligamento</th>
+      <th>vaga</th>
+      <th>tooltip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leo</td>
+      <td>Iperó-SP</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Emilly Vitoria Alves Ribeiro</td>
+      <td>12</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.197636</td>
+      <td>0.517635</td>
+      <td>[0.0066045066045065815, -0.14668664668664633, 0.842379842379841]</td>
+      <td>0.842380</td>
+      <td>-0.293373</td>
+      <td>12</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.711831</td>
+      <td>0</td>
+      <td>0.34</td>
+      <td>20</td>
+      <td>Aluno: Leo&lt;br&gt;Turma: E. M. Pedrina de Campos Pedrozo Rosa&lt;br&gt;Cidade: Iperó-SP&lt;br&gt;Risco: 34.00%</td>
+    </tr>
+    <tr>
+      <td>Christyan Araújo de moura</td>
+      <td>Iperó-SP</td>
+      <td>E. M. Francisco Adolfo de Varnhagen</td>
+      <td>Jamilli Veloso de Souza</td>
+      <td>13</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.183682</td>
+      <td>0.183100</td>
+      <td>[-0.002039627039627044, 0.04370629370629379, -0.2971611721611725]</td>
+      <td>-0.297161</td>
+      <td>0.087413</td>
+      <td>13</td>
+      <td>3</td>
+      <td>3</td>
+      <td>5</td>
+      <td>0.975595</td>
+      <td>0</td>
+      <td>0.29</td>
+      <td>20</td>
+      <td>Aluno: Christyan Araújo de moura&lt;br&gt;Turma: E. M. Francisco Adolfo de Varnhagen&lt;br&gt;Cidade: Iperó-SP&lt;br&gt;Risco: 29.00%</td>
+    </tr>
+    <tr>
+      <td>Lorena Margoni Zati</td>
+      <td>Mirassol-SP</td>
+      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>Synara Sajonetti Maistrello</td>
+      <td>9</td>
+      <td>7.0</td>
+      <td>3</td>
+      <td>0.015713</td>
+      <td>0.997326</td>
+      <td>[-0.011784511784511788, 0.17171717171717193, 0.26430976430976333]</td>
+      <td>0.264310</td>
+      <td>0.343434</td>
+      <td>9</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.28</td>
+      <td>20</td>
+      <td>Aluno: Lorena Margoni Zati&lt;br&gt;Turma: EMEF Prof. Darcy Amáncio&lt;br&gt;Cidade: Mirassol-SP&lt;br&gt;Risco: 28.00%</td>
+    </tr>
+    <tr>
+      <td>Felipe</td>
+      <td>Iperó-SP</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Emilly Vitoria Alves Ribeiro</td>
+      <td>12</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.112684</td>
+      <td>0.399021</td>
+      <td>[0.004791504791504774, -0.09928959928959903, 0.5310615310615304]</td>
+      <td>0.531062</td>
+      <td>-0.198579</td>
+      <td>12</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.646850</td>
+      <td>0</td>
+      <td>0.22</td>
+      <td>20</td>
+      <td>Aluno: Felipe&lt;br&gt;Turma: E. M. Pedrina de Campos Pedrozo Rosa&lt;br&gt;Cidade: Iperó-SP&lt;br&gt;Risco: 22.00%</td>
+    </tr>
+    <tr>
+      <td>JENNIFER VITÓRIA DA SILVA</td>
+      <td>Capela do Alto-SP</td>
+      <td>E.M. Joaquim Salvador</td>
+      <td>Paulo Miranda</td>
+      <td>5</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0.002857</td>
+      <td>0.997899</td>
+      <td>[-0.08333333333333313, 0.35714285714285515, 0.6547619047619083]</td>
+      <td>0.654762</td>
+      <td>0.714286</td>
+      <td>5</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>0.22</td>
+      <td>20</td>
+      <td>Aluno: JENNIFER VITÓRIA DA SILVA&lt;br&gt;Turma: E.M. Joaquim Salvador&lt;br&gt;Cidade: Capela do Alto-SP&lt;br&gt;Risco: 22.00%</td>
+    </tr>
+    <tr>
+      <td>Miguel Domingos Ferreira</td>
+      <td>São Roque-SP</td>
+      <td>EMEF Barão de Piratininga - Turma B</td>
+      <td>Mirela Silva Gondim Garcia</td>
+      <td>8</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.078193</td>
+      <td>0.285096</td>
+      <td>[-0.012626262626262603, 0.1385281385281383, -0.3293650793650787]</td>
+      <td>-0.329365</td>
+      <td>0.277056</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>6</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>20</td>
+      <td>Aluno: Miguel Domingos Ferreira&lt;br&gt;Turma: EMEF Barão de Piratininga - Turma B&lt;br&gt;Cidade: São Roque-SP&lt;br&gt;Risco: 21.00%</td>
+    </tr>
+    <tr>
+      <td>BRYAN CANDIDO RODRIGUÊS</td>
+      <td>Iperó-SP</td>
+      <td>E.M. Henory de Campos Goes</td>
+      <td>Emilly Vitoria Alves Ribeiro</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>0.140000</td>
+      <td>0.416667</td>
+      <td>[0.08333333333333283, -0.4999999999999964, 0.916666666666661]</td>
+      <td>0.916667</td>
+      <td>-1.000000</td>
+      <td>5</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.793701</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>20</td>
+      <td>Aluno: BRYAN CANDIDO RODRIGUÊS&lt;br&gt;Turma: E.M. Henory de Campos Goes&lt;br&gt;Cidade: Iperó-SP&lt;br&gt;Risco: 21.00%</td>
+    </tr>
+    <tr>
+      <td>YANE CELINA SIMÃO</td>
+      <td>Coronel Macedo-SP</td>
+      <td>EE Prof. Antonio Tonon - Turma A</td>
+      <td>Gustavo Eduardo Cardoso</td>
+      <td>9</td>
+      <td>-8.0</td>
+      <td>3</td>
+      <td>0.038961</td>
+      <td>0.992031</td>
+      <td>[-0.005050505050504991, 0.0898268398268393, -1.2665945165945158]</td>
+      <td>-1.266595</td>
+      <td>0.179654</td>
+      <td>9</td>
+      <td>0</td>
+      <td>8</td>
+      <td>1</td>
+      <td>3.611446</td>
+      <td>0</td>
+      <td>0.19</td>
+      <td>20</td>
+      <td>Aluno: YANE CELINA SIMÃO&lt;br&gt;Turma: EE Prof. Antonio Tonon - Turma A&lt;br&gt;Cidade: Coronel Macedo-SP&lt;br&gt;Risco: 19.00%</td>
+    </tr>
+    <tr>
+      <td>Aline da Silva de Lima</td>
+      <td>Salto-SP</td>
+      <td>CEMUS1 - Turma B</td>
+      <td>Lívia Kormann</td>
+      <td>11</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>0.544183</td>
+      <td>0.736615</td>
+      <td>[0.010101010101010107, -0.14219114219114246, 0.8663558663558686]</td>
+      <td>0.866356</td>
+      <td>-0.284382</td>
+      <td>11</td>
+      <td>8</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1.564980</td>
+      <td>0</td>
+      <td>0.18</td>
+      <td>20</td>
+      <td>Aluno: Aline da Silva de Lima&lt;br&gt;Turma: CEMUS1 - Turma B&lt;br&gt;Cidade: Salto-SP&lt;br&gt;Risco: 18.00%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ MACHADO SOARES</td>
+      <td>Capela do Alto-SP</td>
+      <td>E.M. Marcilio Leite- Turma B</td>
+      <td>Paulo Miranda</td>
+      <td>6</td>
+      <td>-5.0</td>
+      <td>3</td>
+      <td>0.034392</td>
+      <td>0.980952</td>
+      <td>[-0.018518518518518504, 0.0674603174603174, -0.6679894179894176]</td>
+      <td>-0.667989</td>
+      <td>0.134921</td>
+      <td>6</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>3.135492</td>
+      <td>0</td>
+      <td>0.18</td>
+      <td>20</td>
+      <td>Aluno: BEATRIZ MACHADO SOARES&lt;br&gt;Turma: E.M. Marcilio Leite- Turma B&lt;br&gt;Cidade: Capela do Alto-SP&lt;br&gt;Risco: 18.00%</td>
+    </tr>
+  </tbody>
+</table>
+        <h2>📈 Gráficos</h2>
+        <iframe src="grafico_top_alunos.html" width="100%" height="500"></iframe>
+        <iframe src="grafico_risco_cidade.html" width="100%" height="500"></iframe>
+        <iframe src="grafico_evasao_cidade.html" width="100%" height="500"></iframe>
+        <iframe src="grafico_evasao_turma.html" width="100%" height="500"></iframe>
+    </body>
+    </html>
+    
