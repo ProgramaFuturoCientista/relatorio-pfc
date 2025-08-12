@@ -4,71 +4,46 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Relatório Semanal - Semana 33 - PFC</title>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css"/>
+        <title>Relatório Semanal - PFC</title>
+        <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-        <style>
-            body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 0; }
-            header { background: #003366; color: white; padding: 20px; text-align: center; }
-            nav { background: #0059b3; display: flex; flex-wrap: wrap; justify-content: center; }
-            nav a { color: white; padding: 15px 20px; text-decoration: none; }
-            nav a:hover { background: #004080; }
-            section { background: white; margin: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-            iframe { width: 100%; height: 600px; border: none; }
-            .cards { display: flex; flex-wrap: wrap; justify-content: space-around; }
-            .card { background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); margin: 10px; padding: 20px; flex: 1 1 220px; max-width: 250px; text-align: center; }
-            .card h3 { color: #003366; }
-            .card p { font-size: 24px; font-weight: bold; }
-            h2 { color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
-            table.dataTable thead th { background-color: #003366; color: white; }
-        </style>
+        <script src="script.js"></script>
     </head>
     <body>
-
-    <header>
-        <h1>Relatório Semanal - Semana 33 (2025/08/12)</h1>
-        <p>Programa Futuro Cientista</p>
-    </header>
-
-    <nav>
-        <a href="#geral">📈 Evasão Geral</a>
-        <a href="#tabela_evasao_turma">🏫 Evasão por Turma</a>
-        <a href="#tabela_evasao_cidade">🏙️ Evasão por Cidade</a>
-        <a href="#tabela_evasao_supervisor">🧑‍🏫 Evasão por Supervisor</a>
-        <a href="#tabela_top_alunos">🚨 Top Alunos com Risco</a>
-        <a href="#grafico_top_alunos">📊 Gráfico: Top Alunos</a>
-        <a href="#grafico_risco_cidade">⚠️ Risco por Cidade</a>
-        <a href="#grafico_evasao_cidade">🏙️ Gráfico: Evasão por Cidade</a>
-        <a href="#grafico_evasao_turma">🏫 Gráfico: Evasão por Turma</a>
-    </nav>
-
-    <section id="geral">
-        <h2>📈 Evasão Geral</h2>
-        <div class="cards">
-            <div class="card"><h3>Total de Turmas</h3><p>38</p></div>
-            <div class="card"><h3>Total de Cidades</h3><p>9</p></div>
-            <div class="card"><h3>Total de Supervisores</h3><p>13</p></div>
-            <div class="card"><h3>Alunos Esperados</h3><p>720</p></div>
-            <div class="card"><h3>Vagas Não Preenchidas</h3><p>133</p></div>
-            <div class="card"><h3>Ativos</h3><p>587</p></div>
-            <div class="card"><h3>Desligados</h3><p>49</p></div>
-            <div class="card"><h3>Total Evasão</h3><p>18.5%</p></div>
-        </div>
-    </section>
-
-    <section id="tabela_evasao_turma"><h2>🏫 Tabela: Evasão por Turma</h2><table border="1" class="dataframe tabela-interativa" id="evasaoTurma">
+        <header>
+            <img src="Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
+            <span style="font-size:1.5em; font-weight:bold;">Relatório Semanal - Semana 33 (2025/08/12)</span>
+        </header>
+        <nav>
+            <a href="index.html">📊 Evasão</a>
+            <a href="assiduidade/assiduidade.html">📅 Assiduidade</a>
+        </nav>
+        <section id="geral">
+            <h2>📈 Evasão Geral</h2>
+            <div class="cards">
+                <div class="card"><h3>Total de Turmas</h3><p>38</p></div>
+                <div class="card"><h3>Total de Cidades</h3><p>9</p></div>
+                <div class="card"><h3>Total de Supervisores</h3><p>13</p></div>
+                <div class="card"><h3>Alunos Esperados</h3><p>720</p></div>
+                <div class="card"><h3>Vagas Não Preenchidas</h3><p>133</p></div>
+                <div class="card"><h3>Ativos</h3><p>587</p></div>
+                <div class="card"><h3>Desligados</h3><p>49</p></div>
+                <div class="card"><h3>Total Evasão</h3><p>18.5%</p></div>
+            </div>
+        </section>
+        <section id="tabela_evasao_turma"><h2>🏫 Evasão por Turma</h2><table border="1" class="dataframe tabela-interativa" id="evasaoTurma">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>cidade</th>
-      <th>supervisor</th>
-      <th>ativos</th>
-      <th>desligados</th>
-      <th>vagas</th>
-      <th>Vagas disponíveis</th>
+      <th>Cidade</th>
+      <th>Supervisor</th>
+      <th>Ativos</th>
+      <th>Desligados</th>
+      <th>Vagas</th>
+      <th>Vagas Disponíveis</th>
       <th>% Evasão</th>
-      <th>probabilidade de desligamento</th>
+      <th>Prob. Desligamento (%)</th>
     </tr>
     <tr>
       <th>turma</th>
@@ -88,7 +63,7 @@
       <td>Salto-SP (hold)</td>
       <td>Lívia Kormann</td>
       <td>14</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>20</td>
       <td>6</td>
       <td>30.0%</td>
@@ -99,7 +74,7 @@
       <td>Salto-SP (hold)</td>
       <td>Lívia Kormann</td>
       <td>11</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>9</td>
       <td>45.0%</td>
@@ -110,7 +85,7 @@
       <td>Salto-SP (hold)</td>
       <td>Lívia Kormann</td>
       <td>15</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>5</td>
       <td>25.0%</td>
@@ -121,7 +96,7 @@
       <td>Salto-SP (hold)</td>
       <td>Lívia Kormann</td>
       <td>17</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>3</td>
       <td>15.0%</td>
@@ -132,7 +107,7 @@
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
       <td>10</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>10</td>
       <td>50.0%</td>
@@ -143,7 +118,7 @@
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
       <td>11</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>9</td>
       <td>45.0%</td>
@@ -154,7 +129,7 @@
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
       <td>15</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>5</td>
       <td>25.0%</td>
@@ -165,7 +140,7 @@
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
       <td>22</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>-2</td>
       <td>-10.0%</td>
@@ -176,7 +151,7 @@
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
       <td>16</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>20</td>
       <td>4</td>
       <td>20.0%</td>
@@ -187,7 +162,7 @@
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
       <td>18</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>2</td>
       <td>10.0%</td>
@@ -198,7 +173,7 @@
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
       <td>6</td>
-      <td>10</td>
+      <td>10.0</td>
       <td>20</td>
       <td>14</td>
       <td>70.0%</td>
@@ -209,7 +184,7 @@
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
       <td>19</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>1</td>
       <td>5.0%</td>
@@ -220,7 +195,7 @@
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
       <td>3</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>10</td>
       <td>7</td>
       <td>70.0%</td>
@@ -231,7 +206,7 @@
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
       <td>18</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>20</td>
       <td>2</td>
       <td>10.0%</td>
@@ -242,7 +217,7 @@
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
       <td>11</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>10</td>
       <td>-1</td>
       <td>-10.0%</td>
@@ -253,7 +228,7 @@
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
       <td>13</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>10</td>
       <td>-3</td>
       <td>-30.0%</td>
@@ -264,7 +239,7 @@
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
       <td>19</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>1</td>
       <td>5.0%</td>
@@ -275,7 +250,7 @@
       <td>Guareí-SP</td>
       <td>Jose (Vinicius Lima Cardozo)</td>
       <td>12</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>8</td>
       <td>40.0%</td>
@@ -286,7 +261,7 @@
       <td>São Roque-SP</td>
       <td>Ana Clara Ferrari</td>
       <td>12</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>8</td>
       <td>40.0%</td>
@@ -297,7 +272,7 @@
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
       <td>5</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>10</td>
       <td>5</td>
       <td>50.0%</td>
@@ -308,7 +283,7 @@
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
       <td>20</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -319,7 +294,7 @@
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
       <td>23</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>-3</td>
       <td>-15.0%</td>
@@ -330,7 +305,7 @@
       <td>São Roque-SP</td>
       <td>Ana Clara Ferrari</td>
       <td>13</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>7</td>
       <td>35.0%</td>
@@ -341,7 +316,7 @@
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
       <td>20</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -352,7 +327,7 @@
       <td>Mirassol-SP</td>
       <td>Synara Sajonetti Maistrello</td>
       <td>18</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>20</td>
       <td>2</td>
       <td>10.0%</td>
@@ -363,7 +338,7 @@
       <td>São Roque-SP</td>
       <td>Ana Clara Ferrari</td>
       <td>18</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>2</td>
       <td>10.0%</td>
@@ -374,7 +349,7 @@
       <td>Guareí-SP</td>
       <td>Jose (Vinicius Lima Cardozo)</td>
       <td>20</td>
-      <td>4</td>
+      <td>4.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -385,7 +360,7 @@
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
       <td>11</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>20</td>
       <td>9</td>
       <td>45.0%</td>
@@ -396,7 +371,7 @@
       <td>São Roque-SP</td>
       <td>Ana Clara Ferrari</td>
       <td>20</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -407,7 +382,7 @@
       <td>Mirassol-SP</td>
       <td>Synara Sajonetti Maistrello</td>
       <td>18</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>2</td>
       <td>10.0%</td>
@@ -418,7 +393,7 @@
       <td>Corumbataí-SP</td>
       <td>Pedro Henrique Prado Alves</td>
       <td>14</td>
-      <td>6</td>
+      <td>6.0</td>
       <td>20</td>
       <td>6</td>
       <td>30.0%</td>
@@ -429,7 +404,7 @@
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
       <td>15</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>5</td>
       <td>25.0%</td>
@@ -440,7 +415,7 @@
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
       <td>10</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>10</td>
       <td>50.0%</td>
@@ -451,7 +426,7 @@
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
       <td>12</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>20</td>
       <td>8</td>
       <td>40.0%</td>
@@ -462,7 +437,7 @@
       <td>Bofete-SP</td>
       <td>Tiago Izidoro</td>
       <td>20</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -473,7 +448,7 @@
       <td>Bofete-SP</td>
       <td>Tiago Izidoro</td>
       <td>29</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>-9</td>
       <td>-45.0%</td>
@@ -484,7 +459,7 @@
       <td>Coronel Macedo-SP</td>
       <td>Gustavo Eduardo Cardoso</td>
       <td>19</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>1</td>
       <td>5.0%</td>
@@ -495,7 +470,7 @@
       <td>Coronel Macedo-SP</td>
       <td>Gustavo Eduardo Cardoso</td>
       <td>20</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>20</td>
       <td>0</td>
       <td>0.0%</td>
@@ -503,16 +478,16 @@
     </tr>
   </tbody>
 </table></section>
-    <section id="tabela_evasao_cidade"><h2>🏙️ Tabela: Evasão por Cidade</h2><table border="1" class="dataframe tabela-interativa" id="evasaoCidade">
+        <section id="tabela_evasao_cidade"><h2>🏙️ Evasão por Cidade</h2><table border="1" class="dataframe tabela-interativa" id="evasaoCidade">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ativos</th>
-      <th>desligados</th>
-      <th>vagas</th>
-      <th>Vagas disponíveis</th>
+      <th>Ativos</th>
+      <th>Desligados</th>
+      <th>Vagas</th>
+      <th>Vagas Disponíveis</th>
       <th>% Evasão</th>
-      <th>probabilidade de desligamento</th>
+      <th>Prob. Desligamento (%)</th>
     </tr>
     <tr>
       <th>cidade</th>
@@ -528,7 +503,7 @@
     <tr>
       <th>Bofete-SP</th>
       <td>49</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>40</td>
       <td>-9</td>
       <td>-22.5%</td>
@@ -537,7 +512,7 @@
     <tr>
       <th>Capela do Alto-SP</th>
       <td>86</td>
-      <td>17</td>
+      <td>17.0</td>
       <td>100</td>
       <td>14</td>
       <td>14.0%</td>
@@ -546,7 +521,7 @@
     <tr>
       <th>Coronel Macedo-SP</th>
       <td>39</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>40</td>
       <td>1</td>
       <td>2.5%</td>
@@ -555,7 +530,7 @@
     <tr>
       <th>Corumbataí-SP</th>
       <td>14</td>
-      <td>6</td>
+      <td>6.0</td>
       <td>20</td>
       <td>6</td>
       <td>30.0%</td>
@@ -564,7 +539,7 @@
     <tr>
       <th>Guareí-SP</th>
       <td>32</td>
-      <td>5</td>
+      <td>5.0</td>
       <td>40</td>
       <td>8</td>
       <td>20.0%</td>
@@ -573,7 +548,7 @@
     <tr>
       <th>Iperó-SP</th>
       <td>100</td>
-      <td>6</td>
+      <td>6.0</td>
       <td>140</td>
       <td>40</td>
       <td>28.6%</td>
@@ -582,7 +557,7 @@
     <tr>
       <th>Mirassol-SP</th>
       <td>36</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>40</td>
       <td>4</td>
       <td>10.0%</td>
@@ -591,7 +566,7 @@
     <tr>
       <th>Salto-SP (hold)</th>
       <td>57</td>
-      <td>4</td>
+      <td>4.0</td>
       <td>80</td>
       <td>23</td>
       <td>28.7%</td>
@@ -600,7 +575,7 @@
     <tr>
       <th>São Roque-SP</th>
       <td>174</td>
-      <td>8</td>
+      <td>8.0</td>
       <td>220</td>
       <td>46</td>
       <td>20.9%</td>
@@ -608,16 +583,16 @@
     </tr>
   </tbody>
 </table></section>
-    <section id="tabela_evasao_supervisor"><h2>🧑‍🏫 Tabela: Evasão por Supervisor</h2><table border="1" class="dataframe tabela-interativa" id="evasaoSupervisor">
+        <section id="tabela_evasao_supervisor"><h2>🧑‍🏫 Evasão por Supervisor</h2><table border="1" class="dataframe tabela-interativa" id="evasaoSupervisor">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ativos</th>
-      <th>desligados</th>
-      <th>vagas</th>
-      <th>Vagas disponíveis</th>
+      <th>Ativos</th>
+      <th>Desligados</th>
+      <th>Vagas</th>
+      <th>Vagas Disponíveis</th>
       <th>% Evasão</th>
-      <th>probabilidade de desligamento</th>
+      <th>Prob. Desligamento (%)</th>
     </tr>
     <tr>
       <th>supervisor</th>
@@ -633,7 +608,7 @@
     <tr>
       <th>Ana Clara Ferrari</th>
       <td>63</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>80</td>
       <td>17</td>
       <td>21.2%</td>
@@ -642,7 +617,7 @@
     <tr>
       <th>Emilly Vitoria Alves Ribeiro</th>
       <td>59</td>
-      <td>4</td>
+      <td>4.0</td>
       <td>80</td>
       <td>21</td>
       <td>26.2%</td>
@@ -651,7 +626,7 @@
     <tr>
       <th>Gustavo Eduardo Cardoso</th>
       <td>39</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>40</td>
       <td>1</td>
       <td>2.5%</td>
@@ -660,7 +635,7 @@
     <tr>
       <th>Jamilli Veloso de Souza</th>
       <td>41</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>60</td>
       <td>19</td>
       <td>31.7%</td>
@@ -669,7 +644,7 @@
     <tr>
       <th>Jose (Vinicius Lima Cardozo)</th>
       <td>32</td>
-      <td>5</td>
+      <td>5.0</td>
       <td>40</td>
       <td>8</td>
       <td>20.0%</td>
@@ -678,7 +653,7 @@
     <tr>
       <th>Julia Fernanda de Camargo Teles Miranda</th>
       <td>49</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>50</td>
       <td>1</td>
       <td>2.0%</td>
@@ -687,7 +662,7 @@
     <tr>
       <th>Lívia Kormann</th>
       <td>57</td>
-      <td>4</td>
+      <td>4.0</td>
       <td>80</td>
       <td>23</td>
       <td>28.7%</td>
@@ -696,7 +671,7 @@
     <tr>
       <th>Mirela Silva Gondim Garcia</th>
       <td>73</td>
-      <td>2</td>
+      <td>2.0</td>
       <td>80</td>
       <td>7</td>
       <td>8.8%</td>
@@ -705,7 +680,7 @@
     <tr>
       <th>Paulo Miranda</th>
       <td>37</td>
-      <td>14</td>
+      <td>14.0</td>
       <td>50</td>
       <td>13</td>
       <td>26.0%</td>
@@ -714,7 +689,7 @@
     <tr>
       <th>Pedro Henrique Prado Alves</th>
       <td>14</td>
-      <td>6</td>
+      <td>6.0</td>
       <td>20</td>
       <td>6</td>
       <td>30.0%</td>
@@ -723,7 +698,7 @@
     <tr>
       <th>Synara Sajonetti Maistrello</th>
       <td>36</td>
-      <td>3</td>
+      <td>3.0</td>
       <td>40</td>
       <td>4</td>
       <td>10.0%</td>
@@ -732,7 +707,7 @@
     <tr>
       <th>Tiago Izidoro</th>
       <td>49</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>40</td>
       <td>-9</td>
       <td>-22.5%</td>
@@ -741,7 +716,7 @@
     <tr>
       <th>Vittoria Christina Santos Rocha</th>
       <td>38</td>
-      <td>5</td>
+      <td>5.0</td>
       <td>60</td>
       <td>22</td>
       <td>36.7%</td>
@@ -749,7 +724,7 @@
     </tr>
   </tbody>
 </table></section>
-    <section id="tabela_top_alunos"><h2>🚨 Tabela: Top Alunos com Risco</h2><table border="1" class="dataframe tabela-interativa" id="topAlunos">
+        <section id="tabela_top_alunos"><h2>🚨 Top Alunos com Risco</h2><table border="1" class="dataframe tabela-interativa" id="topAlunos">
   <thead>
     <tr style="text-align: right;">
       <th>aluno</th>
@@ -821,21 +796,7 @@
     </tr>
   </tbody>
 </table></section>
-    <section id="grafico_top_alunos"><h2>📊 Gráfico: Top Alunos</h2><iframe src="grafico_top_alunos.html"></iframe></section>
-    <section id="grafico_risco_cidade"><h2>⚠️ Risco por Cidade</h2><iframe src="grafico_risco_cidade.html"></iframe></section>
-    <section id="grafico_evasao_cidade"><h2>🏙️ Evasão por Cidade</h2><iframe src="grafico_evasao_cidade.html"></iframe></section>
-    <section id="grafico_evasao_turma"><h2>🏫 Quantidade por Turma</h2><iframe src="grafico_evasao_turma.html"></iframe></section>
-
-    <script>
-        $(document).ready(function () {
-            $('.tabela-interativa').DataTable({
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
-                }
-            });
-        });
-    </script>
-
+        <section id="grafico_top_assiduos"><h2>🏅 Top Alunos Mais Assíduos</h2><iframe src="grafico_top_assiduos.html"></iframe></section>
     </body>
     </html>
     
