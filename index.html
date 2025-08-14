@@ -3,21 +3,31 @@
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Relatório Semanal - PFC</title>
         <link rel="stylesheet" href="style.css">
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+        <!-- jQuery e DataTables JS -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
         <script src="script.js"></script>
     </head>
     <body>
         <header>
             <img src="Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
-            <span style="font-size:1.5em; font-weight:bold;">Relatório Semanal - Semana 33 (2025/08/12)</span>
+            <span style="font-size:1.5em; font-weight:bold;">Relatório Semanal - Semana 33 (2025/08/14)</span>
         </header>
         <nav>
             <a href="index.html">📊 Evasão</a>
             <a href="assiduidade/assiduidade.html">📅 Assiduidade</a>
+            <a href="analises/analises.html">📈 Análises</a>
         </nav>
         <section id="geral">
             <h2>📈 Evasão Geral</h2>
@@ -724,79 +734,6 @@
     </tr>
   </tbody>
 </table></section>
-        <section id="tabela_top_alunos"><h2>🚨 Top Alunos com Risco</h2><table border="1" class="dataframe tabela-interativa" id="topAlunos">
-  <thead>
-    <tr style="text-align: right;">
-      <th>aluno</th>
-      <th>turma</th>
-      <th>cidade</th>
-      <th>Prob. Desligamento (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>victor hugo barros da luz</td>
-      <td>CEMUS5 - Turma B</td>
-      <td>Salto-SP (hold)</td>
-      <td>65.0</td>
-    </tr>
-    <tr>
-      <td>davi lucas</td>
-      <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
-      <td>Coronel Macedo-SP</td>
-      <td>44.0</td>
-    </tr>
-    <tr>
-      <td>vitória moreira</td>
-      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
-      <td>Iperó-SP</td>
-      <td>43.0</td>
-    </tr>
-    <tr>
-      <td>carlos henrique venancio dos santos</td>
-      <td>CEMUS5 - Turma A</td>
-      <td>Salto-SP (hold)</td>
-      <td>41.1</td>
-    </tr>
-    <tr>
-      <td>nicolle simone de oliveira santos</td>
-      <td>EMEF Leonidas Antonio de Moreas Professor</td>
-      <td>São Roque-SP</td>
-      <td>38.0</td>
-    </tr>
-    <tr>
-      <td>jose lucas de oliveira campos</td>
-      <td>EMEF Leonidas Antonio de Moreas Professor</td>
-      <td>São Roque-SP</td>
-      <td>36.0</td>
-    </tr>
-    <tr>
-      <td>renan farias albuquerque</td>
-      <td>EMEF Prof. Tiberio Justo da Silva</td>
-      <td>São Roque-SP</td>
-      <td>32.0</td>
-    </tr>
-    <tr>
-      <td>eron carlos garcia de morais</td>
-      <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
-      <td>Coronel Macedo-SP</td>
-      <td>31.0</td>
-    </tr>
-    <tr>
-      <td>marcos vinicius de oliveira martins</td>
-      <td>E.M. Joaquim Salvador</td>
-      <td>Capela do Alto-SP</td>
-      <td>30.0</td>
-    </tr>
-    <tr>
-      <td>bruna manuelly de lima</td>
-      <td>Escola Municipal Mitsuo Matisura - 5º e 6° ano</td>
-      <td>Coronel Macedo-SP</td>
-      <td>28.0</td>
-    </tr>
-  </tbody>
-</table></section>
-        <section id="grafico_top_assiduos"><h2>🏅 Top Alunos Mais Assíduos</h2><iframe src="grafico_top_assiduos.html"></iframe></section>
     </body>
     </html>
     
