@@ -17,6 +17,15 @@
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 
+        <style>
+          .badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:12px; line-height:1; }
+          .b-green { background:#e8f5e9; color:#2e7d32; border:1px solid #c8e6c9; }
+          .b-red   { background:#ffebee; color:#c62828; border:1px solid #ffcdd2; }
+          .b-yellow{ background:#fff8e1; color:#ef6c00; border:1px solid #ffe0b2; }
+          .b-gray  { background:#eceff1; color:#455a64; border:1px solid #cfd8dc; }
+          .nowrap  { white-space:nowrap; }
+        </style>
+
         <script src="../script.js"></script>
     </head>
     <body>
@@ -56,6 +65,7 @@
       <th>status_cadastro</th>
       <th>ultima_marcacao_chamada</th>
       <th>motivo_inconsistencia</th>
+      <th>acoes_recomendadas</th>
     </tr>
   </thead>
   <tbody>
@@ -68,6 +78,7 @@
       <td></td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>vitória</td>
@@ -78,6 +89,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>ana julia peres francisco</td>
@@ -88,6 +100,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>marcio miguel abrami</td>
@@ -98,6 +111,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>column 20</td>
@@ -108,6 +122,7 @@
       <td></td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>column 23</td>
@@ -118,6 +133,7 @@
       <td></td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>júlia vitória simão</td>
@@ -128,6 +144,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>sophia hadassa de mendonça cruz</td>
@@ -138,6 +155,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>benjamin padua da silva costa</td>
@@ -148,6 +166,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>reivisson da silva bonifácio</td>
@@ -158,6 +177,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>rafaela santos de oliveira</td>
@@ -168,6 +188,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>emanuelle mikaelly do prado</td>
@@ -178,6 +199,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>nicolas adriano dos santos</td>
@@ -188,6 +210,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>miah da silva dos santos</td>
@@ -198,6 +221,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>erick carvalho gonçalves poleti</td>
@@ -208,6 +232,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>davi henrique dias dos santos</td>
@@ -218,6 +243,7 @@
       <td></td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>sara gabriela barreto alves dos santos</td>
@@ -228,6 +254,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>yasmin giovanna dos santos</td>
@@ -238,6 +265,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>maurício roberto ferreira rocha</td>
@@ -248,6 +276,7 @@
       <td>Desligado</td>
       <td>presente</td>
       <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
     <tr>
       <td>miguel quartaroli ribeiro</td>
@@ -258,6 +287,7 @@
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
   </tbody>
 </table>
@@ -375,6 +405,445 @@
   </tbody>
 </table>
         </section>
+
+        <section id="crosscheck">
+            <h2>🔁 Cross-check Cadastro × Chamadas</h2>
+
+            <h3>1) Alunos nas Chamadas, mas NÃO no Cadastro</h3>
+            <p>
+                <a href="alunos_nas_chamadas_sem_cadastro.csv" download>Baixar CSV</a>
+                &nbsp;|&nbsp; Total: 15
+            </p>
+            <table border="1" class="dataframe tabela-interativa" id="tabSemCadastro">
+  <thead>
+    <tr style="text-align: right;">
+      <th>aluno</th>
+      <th>turma</th>
+      <th>cidade</th>
+      <th>supervisor</th>
+      <th>matrícula</th>
+      <th>acoes_recomendadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>column 15</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Iperó-SP</td>
+      <td>Emilly Vitoria Alves Ribeiro</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 16</td>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>Iperó-SP</td>
+      <td>Emilly Vitoria Alves Ribeiro</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 17</td>
+      <td>EMEF Dr. Rabindranath Tagore dos S. Pires</td>
+      <td>São Roque-SP</td>
+      <td>Ana Clara Ferrari</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 19</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 20</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 21</td>
+      <td>E.M. Dra. Glaucia Aparecida Andrade Nogueira</td>
+      <td>Iperó-SP</td>
+      <td>Jamilli Veloso de Souza</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 22</td>
+      <td>E.M. Dra. Glaucia Aparecida Andrade Nogueira</td>
+      <td>Iperó-SP</td>
+      <td>Jamilli Veloso de Souza</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 23</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 24</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 25</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>column 26</td>
+      <td>E.M. Francisco Munhoz</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>davi henrique dias dos santos</td>
+      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>Mirassol-SP</td>
+      <td>Synara Sajonetti Maistrello</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>enzo gabriel dos santos</td>
+      <td>EMEF Prof. Joaquim Silveira Santos</td>
+      <td>São Roque-SP</td>
+      <td>Vittoria Christina Santos Rocha</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>joão pedro rodrigues fagundes</td>
+      <td>E.M. Joaquim Salvador</td>
+      <td>Capela do Alto-SP</td>
+      <td>Paulo Miranda</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
+      <td>moniky evellyn monteiro sousa</td>
+      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>Mirassol-SP</td>
+      <td>Synara Sajonetti Maistrello</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+  </tbody>
+</table>
+
+            <h3>2) Alunos no Cadastro, mas NÃO aparecem em Chamadas</h3>
+            <p>
+                <a href="alunos_no_cadastro_sem_chamada.csv" download>Baixar CSV</a>
+                &nbsp;|&nbsp; Total: 35
+            </p>
+            <table border="1" class="dataframe tabela-interativa" id="tabSemChamada">
+  <thead>
+    <tr style="text-align: right;">
+      <th>aluno</th>
+      <th>matrícula</th>
+      <th>status</th>
+      <th>acoes_recomendadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maryane de Oliveira Conrado Lima</td>
+      <td>.15.6.96</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Raphael da Silva Tavares</td>
+      <td>.15.6.100</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Karen Oliveira Cavalcante</td>
+      <td>.15.6.129</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Vinicios Alves da Silva</td>
+      <td>.15.6.136</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>ANA CLARA DE SOUZA</td>
+      <td>2022.4.1.188</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>MIRELA RAFAELA VITOR</td>
+      <td>2022.4.1.195</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>MARIA CLARA</td>
+      <td>2023.4.1.208</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>VÍTOR GABRIEL ALMEIDA BUENO</td>
+      <td>2023.4.1.211</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Caroline Vitoria</td>
+      <td>2023.4.1.213</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Rafaela A. P. Rodrigues</td>
+      <td>2023.4.1.214</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Jane Celina Simão</td>
+      <td>2023.4.1.215</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Ana Júlia Peres Francisco</td>
+      <td>2023.7.4.261</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Italo Camargo</td>
+      <td>2024.7.4.334</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>ARTHUR ALVES CARRIEL</td>
+      <td>2025.3.4.486</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>ENZO MIGUEL PRESTES SAMPAIO</td>
+      <td>2025.3.4.489</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>ESTEFANI DOS SANTOS SOUSA</td>
+      <td>2025.3.4.490</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>ISAIAS REIS RODRIGUES GONÇALVES</td>
+      <td>2025.3.4.492</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>JULIO CESAR DE SOUZA ROZENDO</td>
+      <td>2025.3.4.494</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>KELVYN SILVEIRA DE QUIRINO</td>
+      <td>2025.3.4.495</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>LORENA GONÇALVES DE ALMEIDA</td>
+      <td>2025.3.4.497</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>NATHALY KAUANE LIMA DOS SANTOS</td>
+      <td>2025.3.4.502</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>PIETRO ALVES DOS SANTOS BOTELHO</td>
+      <td>2025.3.4.503</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Sofia de Lima Sette</td>
+      <td>2025.3.4.530</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Samuel De Lima Sette</td>
+      <td>2025.3.4.531</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Evelyn Almeida Rodrigues</td>
+      <td>2025.3.4.532</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>João Vitor Garcia da Rosa</td>
+      <td>2025.4.1.580</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Julio Gotardo Pepesso</td>
+      <td>2025.5.6.583</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Laura Oliveira da Silva</td>
+      <td>2025.7.4.605</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Davi Lucas Gomes da cunha</td>
+      <td>2025.9.6.669</td>
+      <td>Desligado</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Nazaret Valentina Lopez Martinez</td>
+      <td>2025.3.4.670</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Sophia Vitória Menck Camargo</td>
+      <td>2025.3.4.674</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Moniky Evillyn Monteiro Souza</td>
+      <td>2025.9.6.676</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Enzo Gabriel do Santos</td>
+      <td>2025.15.6.678</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Gabriela da Rocha Pereira Barros</td>
+      <td>2025.6.4.681</td>
+      <td>Ativo</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+
+        <script>
+          function initDT(id) {
+            if (!document.getElementById(id)) return;
+            const table = $('#' + id).DataTable({
+              dom: 'Bfrtip',
+              buttons: ['copy', 'csv', 'excel', 'print'],
+              pageLength: 25,
+              order: []
+            });
+            // filtros por coluna
+            $('#' + id + ' thead th').each(function() {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%; box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+            table.columns().every(function() {
+              const that = this;
+              $('input', this.header()).on('keyup change clear', function() {
+                if (that.search() !== this.value) {
+                  that.search(this.value).draw();
+                }
+              });
+            });
+
+            // BADGES visuais em colunas chave
+            function badge(cell, type) {
+              const v = (cell.text()||'').toLowerCase().trim();
+              if (!v) return;
+              if (type==='status') {
+                if (v.includes('deslig')) cell.html('<span class="badge b-red">Desligado</span>');
+                else cell.html('<span class="badge b-green">Ativo</span>');
+              } else if (type==='ultima') {
+                if (v==='presente') cell.html('<span class="badge b-green nowrap">Presente (última)</span>');
+                else if (v==='falta') cell.html('<span class="badge b-yellow nowrap">Falta (última)</span>');
+                else if (v.includes('deslig')) cell.html('<span class="badge b-red nowrap">Desligado (última)</span>');
+                else cell.html('<span class="badge b-gray nowrap">'+cell.text()+'</span>');
+              } else if (type==='motivo') {
+                if (v.includes('cadastro_desligado') || v.includes('ativo_mas_ultima')) cell.html('<span class="badge b-yellow">'+cell.text()+'</span>');
+              }
+            }
+
+            // aplica nas TABELAS conhecidas
+            if (id==='tabIncons') {
+              const idx_status = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('status_cadastro');}).index();
+              const idx_ult    = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('ultima_marcacao_chamada');}).index();
+              const idx_motivo = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('motivo_inconsistencia');}).index();
+              table.on('draw', function() {
+                $('#'+id+' tbody tr').each(function() {
+                  const tds = $(this).find('td');
+                  if (idx_status>=0) badge($(tds[idx_status]), 'status');
+                  if (idx_ult>=0)    badge($(tds[idx_ult]), 'ultima');
+                  if (idx_motivo>=0) badge($(tds[idx_motivo]), 'motivo');
+                });
+              }).trigger('draw');
+            }
+          }
+
+          $(document).ready(function() {
+            initDT('tabIncons');
+            initDT('tabTipo');
+            initDT('tabCidade');
+            initDT('tabTurma');
+            initDT('tabSemCadastro');
+            initDT('tabSemChamada');
+          });
+        </script>
+
     </body>
     </html>
     

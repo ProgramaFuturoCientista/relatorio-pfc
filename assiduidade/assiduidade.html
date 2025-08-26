@@ -18,7 +18,7 @@
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 
-        <script src="script.js"></script>
+        <script src="../script.js"></script>
     </head>
     <body>
         <header>
@@ -31,6 +31,7 @@
             <a href="../analises/analises.html">📈 Análises</a>
             <a href="../auditoria/auditoria.html">🕵️ Auditoria</a>
         </nav>
+
         <section><h2>📈 Resumo Geral</h2><table border="1" class="dataframe tabela-interativa" id="resumoGeral">
   <thead>
     <tr style="text-align: right;">
@@ -598,6 +599,36 @@
     </tr>
   </tbody>
 </table><iframe src="grafico_top_assiduos.html"></iframe></section>
+
+        <script>
+          function initDT(id) {
+            if (!document.getElementById(id)) return;
+            const table = $('#' + id).DataTable({
+              dom: 'Bfrtip',
+              buttons: ['copy', 'csv', 'excel', 'print'],
+              pageLength: 25,
+              order: []
+            });
+            $('#' + id + ' thead th').each(function() {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%; box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+            table.columns().every(function() {
+              const that = this;
+              $('input', this.header()).on('keyup change clear', function() {
+                if (that.search() !== this.value) {
+                  that.search(this.value).draw();
+                }
+              });
+            });
+          }
+          $(document).ready(function() {
+            initDT('resumoGeral');
+            initDT('assidCidade');
+            initDT('assidTurma');
+            initDT('topAssiduos');
+          });
+        </script>
     </body>
     </html>
     
