@@ -130,30 +130,43 @@
 
         <script>
           function initDT(id) {
-            if (!document.getElementById(id)) return;
-            const table = $('#' + id).DataTable({
+            const $el = $('#' + id);
+            if (!$el.length) return;
+
+            if ($.fn.dataTable.isDataTable($el)) {
+              $el.DataTable().destroy();
+              $el.find('thead input').remove();
+            }
+
+            const $ths = $el.find('thead th');
+            $ths.each(function () {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+
+            const table = $el.DataTable({
               dom: 'Bfrtip',
-              buttons: ['copy', 'csv', 'excel', 'print'],
+              buttons: ['copy','csv','excel','print'],
               pageLength: 25,
               order: []
             });
-            $('#' + id + ' thead th').each(function() {
-              const title = $(this).text();
-              $(this).html(title + '<br><input type="text" style="width:100%; box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
-            });
-            table.columns().every(function() {
+
+            table.columns().every(function () {
               const that = this;
-              $('input', this.header()).on('keyup change clear', function() {
+              $('input', this.header()).on('keyup change clear', function () {
                 if (that.search() !== this.value) {
                   that.search(this.value).draw();
                 }
               });
             });
           }
-          $(document).ready(function() {
+
+          $(document).ready(function () {
             initDT('topRisco');
           });
         </script>
+
+
     </body>
     </html>
     

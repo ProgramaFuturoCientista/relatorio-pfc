@@ -26,6 +26,7 @@
           .nowrap  { white-space:nowrap; }
         </style>
 
+
         <script src="../script.js"></script>
     </head>
     <body>
@@ -681,28 +682,37 @@
 
         <script>
           function initDT(id) {
-            if (!document.getElementById(id)) return;
-            const table = $('#' + id).DataTable({
+            const $el = $('#' + id);
+            if (!$el.length) return;
+
+            if ($.fn.dataTable.isDataTable($el)) {
+              $el.DataTable().destroy();
+              $el.find('thead input').remove();
+            }
+
+            const $ths = $el.find('thead th');
+            $ths.each(function () {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+
+            const table = $el.DataTable({
               dom: 'Bfrtip',
-              buttons: ['copy', 'csv', 'excel', 'print'],
+              buttons: ['copy','csv','excel','print'],
               pageLength: 25,
               order: []
             });
-            // filtros por coluna
-            $('#' + id + ' thead th').each(function() {
-              const title = $(this).text();
-              $(this).html(title + '<br><input type="text" style="width:100%; box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
-            });
-            table.columns().every(function() {
+
+            table.columns().every(function () {
               const that = this;
-              $('input', this.header()).on('keyup change clear', function() {
+              $('input', this.header()).on('keyup change clear', function () {
                 if (that.search() !== this.value) {
                   that.search(this.value).draw();
                 }
               });
             });
 
-            // BADGES visuais em colunas chave
+            // BADGES visuais em colunas-chave
             function badge(cell, type) {
               const v = (cell.text()||'').toLowerCase().trim();
               if (!v) return;
@@ -719,11 +729,10 @@
               }
             }
 
-            // aplica nas TABELAS conhecidas
             if (id==='tabIncons') {
-              const idx_status = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('status_cadastro');}).index();
-              const idx_ult    = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('ultima_marcacao_chamada');}).index();
-              const idx_motivo = $('#'+id+' thead th').filter(function() {return $(this).text().toLowerCase().includes('motivo_inconsistencia');}).index();
+              const idx_status = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('status_cadastro');}).index();
+              const idx_ult    = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('ultima_marcacao_chamada');}).index();
+              const idx_motivo = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('motivo_inconsistencia');}).index();
               table.on('draw', function() {
                 $('#'+id+' tbody tr').each(function() {
                   const tds = $(this).find('td');
@@ -735,13 +744,8 @@
             }
           }
 
-          $(document).ready(function() {
-            initDT('tabIncons');
-            initDT('tabTipo');
-            initDT('tabCidade');
-            initDT('tabTurma');
-            initDT('tabSemCadastro');
-            initDT('tabSemChamada');
+          $(document).ready(function () {
+            ['tabIncons','tabTipo','tabCidade','tabTurma','tabSemCadastro','tabSemChamada'].forEach(initDT);
           });
         </script>
 
