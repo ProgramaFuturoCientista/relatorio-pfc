@@ -44,8 +44,8 @@
         <section id="resumo">
             <h2>📌 Resumo</h2>
             <div class="cards">
-                <div class="card"><h3>Registros OK</h3><p>744</p></div>
-                <div class="card"><h3>Inconsistências</h3><p>3</p></div>
+                <div class="card"><h3>Registros OK</h3><p>742</p></div>
+                <div class="card"><h3>Inconsistências</h3><p>5</p></div>
                 <div class="card">
                     <h3>Exportar CSV</h3>
                     <p><a href="inconsistencias.csv" download>Baixar inconsistências</a></p>
@@ -93,15 +93,37 @@
       <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
     </tr>
     <tr>
-      <td>nicolas adriano dos santos</td>
-      <td>2025.3.4.445</td>
-      <td>Capela do Alto-SP</td>
-      <td>E.M. Marcilio Leite- Turma B</td>
-      <td>Paulo Miranda</td>
+      <td>nicolas da silva almeida morais</td>
+      <td>2025.15.4.393</td>
+      <td>São Roque-SP</td>
+      <td>EM Carmen Lucia Blanco Britto</td>
+      <td>Gabriella Lhóren</td>
+      <td>Desligado</td>
+      <td>falta</td>
+      <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
+    </tr>
+    <tr>
+      <td>isabeli quinalia padovani</td>
+      <td>2025.5.6.106</td>
+      <td>Corumbataí-SP</td>
+      <td>EMEF Profa. Maria de Lourdes Pedroso Perin</td>
+      <td>Pedro Henrique Prado Alves</td>
       <td>Ativo</td>
       <td>desligado</td>
       <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
       <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
+    </tr>
+    <tr>
+      <td>jessica alice baroni</td>
+      <td>2024.5.6.89</td>
+      <td>Corumbataí-SP</td>
+      <td>EMEF Profa. Maria de Lourdes Pedroso Perin</td>
+      <td>Pedro Henrique Prado Alves</td>
+      <td>Desligado</td>
+      <td>presente</td>
+      <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>[Coordenação Executiva] [2.1] Conferir veracidade do desligamento. [2.2] Caso negativo, marcar o aluno como ATIVO no Cadastro de Alunos.</td>
     </tr>
   </tbody>
 </table>
@@ -119,12 +141,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
-      <td>2</td>
+      <td>cadastro_desligado_mas_ultima_chamada_nao</td>
+      <td>3</td>
     </tr>
     <tr>
-      <td>cadastro_desligado_mas_ultima_chamada_nao</td>
-      <td>1</td>
+      <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -139,7 +161,15 @@
   <tbody>
     <tr>
       <td>Capela do Alto-SP</td>
-      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Corumbataí-SP</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>São Roque-SP</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -153,6 +183,10 @@
   </thead>
   <tbody>
     <tr>
+      <td>EMEF Profa. Maria de Lourdes Pedroso Perin</td>
+      <td>2</td>
+    </tr>
+    <tr>
       <td>E.M. Franciso Mariano</td>
       <td>1</td>
     </tr>
@@ -161,7 +195,7 @@
       <td>1</td>
     </tr>
     <tr>
-      <td>E.M. Marcilio Leite- Turma B</td>
+      <td>EM Carmen Lucia Blanco Britto</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -250,7 +284,7 @@
             <h3>2) Alunos no Cadastro, mas NÃO aparecem em Chamadas</h3>
             <p>
                 <a href="alunos_no_cadastro_sem_chamada.csv" download>Baixar CSV</a>
-                &nbsp;|&nbsp; Total: 50
+                &nbsp;|&nbsp; Total: 54
             </p>
             <table border="1" class="dataframe tabela-interativa" id="tabSemChamada">
   <thead>
@@ -559,6 +593,30 @@
     <tr>
       <td>Thaís Vitória Antônio Soares</td>
       <td>2025.15.6.753</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Irisnaldo Felix Almeida Filho</td>
+      <td>2025.15.5.754</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Davi Luis Albano do Amaral</td>
+      <td>2025.15.5.755</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Gabriel Andreoli Novais Moreira</td>
+      <td>2025.15.5.756</td>
+      <td>NaN</td>
+      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
+    </tr>
+    <tr>
+      <td>Marcos Vinicius de Araújo</td>
+      <td>2025.15.5.757</td>
       <td>NaN</td>
       <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
     </tr>
