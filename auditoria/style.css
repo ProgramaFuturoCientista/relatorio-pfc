@@ -173,3 +173,67 @@ table.dataTable th {
         flex-direction: column;
     }
 }
+
+/* ===== Contra-medidas: célula larga e responsiva ===== */
+table#evasaoTurma {
+  table-layout: fixed; /* ajuda a responsividade das larguras por coluna */
+  width: 100%;
+}
+
+.cm-evasao-cell { 
+  /* Damos uma largura 'preferida', mas deixamos o layout ajustar em telas menores */
+  min-width: 420px;            /* bom para desktop */
+  width: clamp(260px, 40vw, 680px); /* responsivo: 260px a 680px, priorizando ~40% da viewport */
+  vertical-align: top;
+}
+
+.cm-evasao-textarea {
+  width: 100%;
+  min-height: 72px;
+  line-height: 1.35;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  resize: vertical;           /* o usuário pode aumentar conforme necessário */
+  box-sizing: border-box;
+}
+
+/* Em telas pequenas, assegure bom ajuste */
+@media (max-width: 900px) {
+  .cm-evasao-cell { min-width: 260px; width: 100%; }
+}
+
+/* ===== Botão Exportar ===== */
+.btn-exportar {
+  margin-left: auto;          /* “empurra” o botão para a direita */
+  margin-right: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #cfd8dc;
+  background: #f7f9fb;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-exportar:hover { background: #eef3f7; }
+
+/* ===== Estilos de impressão (PDF) ===== */
+@media print {
+  nav { display: none !important; }            /* esconde a barra de navegação */
+  #btnExportar, .btn-exportar { display: none !important; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Cards em grade, mas evitando quebrazinhas estranhas */
+  .cards { page-break-inside: avoid; }
+
+  /* Evitar cortes de tabelas no meio da página */
+  section { page-break-inside: avoid; margin-bottom: 12pt; }
+  table { page-break-inside: auto; }
+  tr, td, th { page-break-inside: avoid; page-break-after: auto; }
+
+  /* Textareas: garantir que imprimam todo o conteúdo visível */
+  .cm-evasao-textarea {
+    height: auto !important; 
+    overflow: visible !important; 
+    border: 1px solid #999;   /* borda discreta no PDF */
+  }
+}

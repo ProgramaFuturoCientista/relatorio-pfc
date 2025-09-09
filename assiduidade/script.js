@@ -199,3 +199,75 @@ $(document).ready(function () {
   // Ativa a camada de edição da coluna "Contra-medidas de Evasão"
   setupContraMedidas();
 });
+
+
+// === 1) Tornar a coluna "Contra-medidas de Evasão" larga e editável (textarea) ===
+(function () {
+  const $t = $('#evasaoTurma');
+  if (!$t.length) return;
+
+  // Descobre o índice da coluna pela legenda do TH
+  const idxContra = $t.find('thead th')
+    .toArray()
+    .findIndex(th => th.textContent.trim().toLowerCase().startsWith('contra-medidas'));
+
+  if (idxContra < 0) return;
+
+  // Função para trocar conteúdo por <textarea> mantendo o texto
+  const ensureTextarea = (td) => {
+    const $td = $(td);
+    $td.addClass('cm-evasao-cell');
+
+    // já tem textarea?
+    if ($td.find('textarea.cm-evasao-textarea').length) return;
+
+    const currentText = $td.text().trim();
+    // limpa o TD e injeta textarea
+    const $ta = $('<textarea class="cm-evasao-textarea" spellcheck="false"></textarea>');
+    $ta.val(currentText);
+    $td.empty().append($ta);
+
+    // auto-height na digitação
+    const autoGrow = (el) => {
+      el.style.height = 'auto';
+      el.style.height = (el.scrollHeight + 6) + 'px';
+    };
+    $ta.on('input', function () { autoGrow(this); });
+    // auto-ajuste inicial
+    autoGrow($ta.get(0));
+  };
+
+  // Aplica nas linhas existentes
+  $t.find(`tbody tr`).each(function () {
+    const td = $(this).children().get(idxContra);
+    if (td) ensureTextarea(td);
+  });
+
+  // Se DataTables re-renderizar, aplicar de novo
+  $t.on('draw.dt', function () {
+    $t.find(`tbody tr`).each(function () {
+      const td = $(this).children().get(idxContra);
+      if (td) ensureTextarea(td);
+    });
+  });
+})();
+
+// === 2) Botão Exportar -> PDF (Imprimir) ===
+(function () {
+  const btn = document.getElementById('btnExportar');
+  if (!btn) return;
+
+  // Expandir todas as textareas antes de imprimir
+  const expandAllTextareas = () => {
+    document.querySelectorAll('.cm-evasao-textarea').forEach(ta => {
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 6) + 'px';
+    });
+  };
+
+  window.addEventListener('beforeprint', expandAllTextareas);
+  btn.addEventListener('click', () => {
+    expandAllTextareas();
+    window.print(); // Usuário escolhe "Salvar como PDF"
+  });
+})();
