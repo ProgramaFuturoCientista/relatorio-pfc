@@ -26,13 +26,13 @@
           .nowrap  { white-space:nowrap; }
         </style>
 
-
         <script src="../script.js"></script>
     </head>
     <body>
         <header>
             <img src="../Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
             <span style="font-size:1.5em; font-weight:bold;">Auditoria</span>
+            <button id="btnExportar" class="btn-exportar" type="button" title="Salvar PDF do relatório">🖨️ Exportar</button>
         </header>
         <nav>
             <a href="../index.html">📊 Evasão</a>
@@ -215,7 +215,7 @@
       <td>derrick willian da silva moraes</td>
       <td>EMEF Prof. Tiberio Justo da Silva</td>
       <td>São Roque-SP</td>
-      <td>Gabriella Lhóren</td>
+      <td>Gabrielaa Lhóren</td>
       <td>N/A</td>
       <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
     </tr>
@@ -271,7 +271,7 @@
       <td>paulo dos reis silvério neto</td>
       <td>EM Carmen Lucia Blanco Britto</td>
       <td>São Roque-SP</td>
-      <td>Gabriella Lhóren</td>
+      <td>Gabrielaa Lhóren</td>
       <td>N/A</td>
       <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
     </tr>
@@ -592,76 +592,6 @@
   </tbody>
 </table>
         </section>
-
-        <script>
-          function initDT(id) {
-            const $el = $('#' + id);
-            if (!$el.length) return;
-
-            if ($.fn.dataTable.isDataTable($el)) {
-              $el.DataTable().destroy();
-              $el.find('thead input').remove();
-            }
-
-            const $ths = $el.find('thead th');
-            $ths.each(function () {
-              const title = $(this).text();
-              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
-            });
-
-            const table = $el.DataTable({
-              dom: 'Bfrtip',
-              buttons: ['copy','csv','excel','print'],
-              pageLength: 25,
-              order: []
-            });
-
-            table.columns().every(function () {
-              const that = this;
-              $('input', this.header()).on('keyup change clear', function () {
-                if (that.search() !== this.value) {
-                  that.search(this.value).draw();
-                }
-              });
-            });
-
-            // BADGES visuais em colunas-chave
-            function badge(cell, type) {
-              const v = (cell.text()||'').toLowerCase().trim();
-              if (!v) return;
-              if (type==='status') {
-                if (v.includes('deslig')) cell.html('<span class="badge b-red">Desligado</span>');
-                else cell.html('<span class="badge b-green">Ativo</span>');
-              } else if (type==='ultima') {
-                if (v==='presente') cell.html('<span class="badge b-green nowrap">Presente (última)</span>');
-                else if (v==='falta') cell.html('<span class="badge b-yellow nowrap">Falta (última)</span>');
-                else if (v.includes('deslig')) cell.html('<span class="badge b-red nowrap">Desligado (última)</span>');
-                else cell.html('<span class="badge b-gray nowrap">'+cell.text()+'</span>');
-              } else if (type==='motivo') {
-                if (v.includes('cadastro_desligado') || v.includes('ativo_mas_ultima')) cell.html('<span class="badge b-yellow">'+cell.text()+'</span>');
-              }
-            }
-
-            if (id==='tabIncons') {
-              const idx_status = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('status_cadastro');}).index();
-              const idx_ult    = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('ultima_marcacao_chamada');}).index();
-              const idx_motivo = $('#'+id+' thead th').filter(function(){return $(this).text().toLowerCase().includes('motivo_inconsistencia');}).index();
-              table.on('draw', function() {
-                $('#'+id+' tbody tr').each(function() {
-                  const tds = $(this).find('td');
-                  if (idx_status>=0) badge($(tds[idx_status]), 'status');
-                  if (idx_ult>=0)    badge($(tds[idx_ult]), 'ultima');
-                  if (idx_motivo>=0) badge($(tds[idx_motivo]), 'motivo');
-                });
-              }).trigger('draw');
-            }
-          }
-
-          $(document).ready(function () {
-            ['tabIncons','tabTipo','tabCidade','tabTurma','tabSemCadastro','tabSemChamada'].forEach(initDT);
-          });
-        </script>
-
     </body>
     </html>
     
