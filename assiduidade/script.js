@@ -252,12 +252,12 @@ $(document).ready(function () {
   });
 })();
 
+
 // === 2) Botão Exportar -> PDF (Imprimir) ===
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   const btn = document.getElementById('btnExportar');
   if (!btn) return;
 
-  // Expandir todas as textareas antes de imprimir
   const expandAllTextareas = () => {
     document.querySelectorAll('.cm-evasao-textarea').forEach(ta => {
       ta.style.height = 'auto';
@@ -268,6 +268,6 @@ $(document).ready(function () {
   window.addEventListener('beforeprint', expandAllTextareas);
   btn.addEventListener('click', () => {
     expandAllTextareas();
-    window.print(); // Usuário escolhe "Salvar como PDF"
+    window.print(); // Salvar como PDF
   });
-})();
+});

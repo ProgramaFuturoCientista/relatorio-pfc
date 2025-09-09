@@ -23,7 +23,6 @@
         <header>
             <img src="../Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
             <span style="font-size:1.5em; font-weight:bold;">Relatório de Análises</span>
-            <button id="btnExportar" class="btn-exportar" type="button" title="Salvar PDF do relatório">🖨️ Exportar</button>
         </header>
         <nav>
             <a href="../index.html">📊 Evasão</a>
@@ -84,6 +83,18 @@
       <td>4.387310</td>
     </tr>
     <tr>
+      <td>isabely santina costa matos</td>
+      <td>EMEF Leonidas Antonio de Moreas Professor</td>
+      <td>São Roque-SP</td>
+      <td>4.162662</td>
+    </tr>
+    <tr>
+      <td>yasmin rodrigues mello de oliveira</td>
+      <td>EMEF Barão de Piratininga - Turma B</td>
+      <td>São Roque-SP</td>
+      <td>4.162662</td>
+    </tr>
+    <tr>
       <td>larissa ferreira marins</td>
       <td>EMEF Prof. Joaquim Silveira Santos</td>
       <td>São Roque-SP</td>
@@ -107,18 +118,6 @@
       <td>São Roque-SP</td>
       <td>4.042982</td>
     </tr>
-    <tr>
-      <td>isabely santina costa matos</td>
-      <td>EMEF Leonidas Antonio de Moreas Professor</td>
-      <td>São Roque-SP</td>
-      <td>3.984704</td>
-    </tr>
-    <tr>
-      <td>yasmin rodrigues mello de oliveira</td>
-      <td>EMEF Barão de Piratininga - Turma B</td>
-      <td>São Roque-SP</td>
-      <td>3.984704</td>
-    </tr>
   </tbody>
 </table>
             <iframe src="grafico_top_risco.html"></iframe>
@@ -128,6 +127,46 @@
             <h2>📊 Distribuição de R² por Cidade</h2>
             <iframe src="grafico_desempenho_r2.html"></iframe>
         </section>
+
+        <script>
+          function initDT(id) {
+            const $el = $('#' + id);
+            if (!$el.length) return;
+
+            if ($.fn.dataTable.isDataTable($el)) {
+              $el.DataTable().destroy();
+              $el.find('thead input').remove();
+            }
+
+            const $ths = $el.find('thead th');
+            $ths.each(function () {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+
+            const table = $el.DataTable({
+              dom: 'Bfrtip',
+              buttons: ['copy','csv','excel','print'],
+              pageLength: 25,
+              order: []
+            });
+
+            table.columns().every(function () {
+              const that = this;
+              $('input', this.header()).on('keyup change clear', function () {
+                if (that.search() !== this.value) {
+                  that.search(this.value).draw();
+                }
+              });
+            });
+          }
+
+          $(document).ready(function () {
+            initDT('topRisco');
+          });
+        </script>
+
+
     </body>
     </html>
     

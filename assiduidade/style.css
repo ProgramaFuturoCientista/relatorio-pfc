@@ -237,3 +237,23 @@ table#evasaoTurma {
     border: 1px solid #999;   /* borda discreta no PDF */
   }
 }
+
+/* Ajuste coluna Contra-medidas de Evasão */
+#evasaoTurma td:last-child,
+#evasaoTurma th:last-child {
+    min-width: 320px;
+    max-width: 500px;
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+/* Textarea estilizado */
+.cm-evasao-textarea {
+    width: 95%;
+    min-height: 70px;
+    resize: vertical;
+    font-size: 0.9em;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
