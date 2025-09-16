@@ -17,12 +17,13 @@
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 
-        <script src="../script.js"></script>
+        <script src="../script.js" defer></script>
     </head>
     <body>
         <header>
             <img src="../Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
             <span style="font-size:1.5em; font-weight:bold;">Relatório de Análises</span>
+            <button id="btnExportar" class="btn-exportar" type="button" title="Salvar PDF do relatório">🖨️ Exportar</button>
         </header>
         <nav>
             <a href="../index.html">📊 Evasão</a>
@@ -62,31 +63,37 @@
       <td>davi lucas</td>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
-      <td>4.702290</td>
+      <td>4.732210</td>
     </tr>
     <tr>
       <td>yane celina simão</td>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
-      <td>4.650790</td>
+      <td>4.691335</td>
     </tr>
     <tr>
       <td>eron carlos garcia de morais</td>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
-      <td>4.618428</td>
+      <td>4.665649</td>
     </tr>
     <tr>
       <td>lara beatriz rodrigues gonçalves</td>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
-      <td>4.387310</td>
+      <td>4.482210</td>
     </tr>
     <tr>
-      <td>yasmin rodrigues mello de oliveira</td>
-      <td>EMEF Barão de Piratininga - Turma B</td>
+      <td>larissa ferreira marins</td>
+      <td>EMEF Prof. Joaquim Silveira Santos</td>
       <td>São Roque-SP</td>
-      <td>4.162662</td>
+      <td>4.254301</td>
+    </tr>
+    <tr>
+      <td>júlia pontes</td>
+      <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
+      <td>Coronel Macedo-SP</td>
+      <td>4.227604</td>
     </tr>
     <tr>
       <td>isabely santina costa matos</td>
@@ -95,28 +102,22 @@
       <td>4.162662</td>
     </tr>
     <tr>
-      <td>larissa ferreira marins</td>
-      <td>EMEF Prof. Joaquim Silveira Santos</td>
+      <td>yasmin rodrigues mello de oliveira</td>
+      <td>EMEF Barão de Piratininga - Turma B</td>
       <td>São Roque-SP</td>
-      <td>4.100162</td>
+      <td>4.162662</td>
     </tr>
     <tr>
-      <td>anni emanuelly santos de oliveira</td>
-      <td>Escola Municipal Mitsuo Matisura - 5º e 6° ano</td>
-      <td>Coronel Macedo-SP</td>
-      <td>4.099080</td>
-    </tr>
-    <tr>
-      <td>júlia pontes</td>
+      <td>gabryelly dos santos</td>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
-      <td>4.066526</td>
+      <td>4.122899</td>
     </tr>
     <tr>
-      <td>rosangela dos santos</td>
-      <td>EMEF Prof. Euclides de Oliveira</td>
+      <td>david camargo silva</td>
+      <td>EMEF Barão de Piratininga - Turma A</td>
       <td>São Roque-SP</td>
-      <td>4.042982</td>
+      <td>4.044454</td>
     </tr>
   </tbody>
 </table>
@@ -127,46 +128,6 @@
             <h2>📊 Distribuição de R² por Cidade</h2>
             <iframe src="grafico_desempenho_r2.html"></iframe>
         </section>
-
-        <script>
-          function initDT(id) {
-            const $el = $('#' + id);
-            if (!$el.length) return;
-
-            if ($.fn.dataTable.isDataTable($el)) {
-              $el.DataTable().destroy();
-              $el.find('thead input').remove();
-            }
-
-            const $ths = $el.find('thead th');
-            $ths.each(function () {
-              const title = $(this).text();
-              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
-            });
-
-            const table = $el.DataTable({
-              dom: 'Bfrtip',
-              buttons: ['copy','csv','excel','print'],
-              pageLength: 25,
-              order: []
-            });
-
-            table.columns().every(function () {
-              const that = this;
-              $('input', this.header()).on('keyup change clear', function () {
-                if (that.search() !== this.value) {
-                  that.search(this.value).draw();
-                }
-              });
-            });
-          }
-
-          $(document).ready(function () {
-            initDT('topRisco');
-          });
-        </script>
-
-
     </body>
     </html>
     
