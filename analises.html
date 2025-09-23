@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análises Avançadas PFC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="Logo PFC.png" alt="Logo PFC" class="logo">
+            <h1>Análises Avançadas PFC</h1>
+            <p class="subtitle">Métricas e Tendências - 23/09/2025</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-link">Evasão</a>
+        <a href="assiduidade.html" class="nav-link">Assiduidade</a>
+        <a href="analises.html" class="nav-link active">Análises</a>
+        <a href="auditoria.html" class="nav-link">Auditoria</a>
+    </nav>
+
+    <main class="main-content">
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total de Turmas</h3>
+                <div class="metric">36</div>
+            </div>
+            <div class="card">
+                <h3>Média Geral de Presença</h3>
+                <div class="metric">1.18</div>
+            </div>
+            <div class="card">
+                <h3>Risco Médio de Evasão</h3>
+                <div class="metric">0.77</div>
+            </div>
+            <div class="card">
+                <h3>Prob. Média de Desligamento</h3>
+                <div class="metric">8.6%</div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h2>Análises por Turma</h2>
+            <table border="1" class="dataframe data-table" id="analisesTurmas">
+  <thead>
+    <tr style="text-align: right;">
+      <th>turma</th>
+      <th>Total Alunos</th>
+      <th>Média Presença</th>
+      <th>Desvio Padrão Médio</th>
+      <th>Prob. Desligamento</th>
+      <th>Risco Evasão</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CEMUS1 - Turma A</td>
+      <td>16</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.119</td>
+      <td>0.391</td>
+    </tr>
+    <tr>
+      <td>CEMUS1 - Turma B</td>
+      <td>11</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.015</td>
+      <td>0.727</td>
+    </tr>
+    <tr>
+      <td>CEMUS5 - Turma A</td>
+      <td>16</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.132</td>
+      <td>0.367</td>
+    </tr>
+    <tr>
+      <td>CEMUS5 - Turma B</td>
+      <td>18</td>
+      <td>0.944</td>
+      <td>0.000</td>
+      <td>0.165</td>
+      <td>1.156</td>
+    </tr>
+    <tr>
+      <td>E. M. Francisco Adolfo de Varnhagen</td>
+      <td>10</td>
+      <td>1.244</td>
+      <td>0.601</td>
+      <td>0.011</td>
+      <td>0.684</td>
+    </tr>
+    <tr>
+      <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
+      <td>18</td>
+      <td>0.833</td>
+      <td>0.000</td>
+      <td>0.067</td>
+      <td>0.933</td>
+    </tr>
+    <tr>
+      <td>E. M. Roque Ayres de Oliveiras</td>
+      <td>15</td>
+      <td>1.082</td>
+      <td>0.283</td>
+      <td>0.000</td>
+      <td>0.515</td>
+    </tr>
+    <tr>
+      <td>E. M. Zilma Thibes Melo</td>
+      <td>22</td>
+      <td>1.250</td>
+      <td>0.686</td>
+      <td>0.017</td>
+      <td>0.863</td>
+    </tr>
+    <tr>
+      <td>E.M. Dra. Glaucia Aparecida Andrade Nogueira</td>
+      <td>20</td>
+      <td>1.179</td>
+      <td>0.397</td>
+      <td>0.050</td>
+      <td>0.590</td>
+    </tr>
+    <tr>
+      <td>E.M. Elisa Moreira dos Santos</td>
+      <td>19</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.006</td>
+      <td>0.418</td>
+    </tr>
+    <tr>
+      <td>E.M. Francisco Munhoz</td>
+      <td>20</td>
+      <td>1.335</td>
+      <td>0.354</td>
+      <td>0.284</td>
+      <td>0.775</td>
+    </tr>
+    <tr>
+      <td>E.M. Franciso Mariano</td>
+      <td>21</td>
+      <td>1.131</td>
+      <td>0.619</td>
+      <td>0.178</td>
+      <td>0.952</td>
+    </tr>
+    <tr>
+      <td>E.M. Henory de Campos Goes - Manhã</td>
+      <td>7</td>
+      <td>1.063</td>
+      <td>0.176</td>
+      <td>0.184</td>
+      <td>0.187</td>
+    </tr>
+    <tr>
+      <td>E.M. Joaquim Salvador</td>
+      <td>21</td>
+      <td>1.024</td>
+      <td>0.180</td>
+      <td>0.294</td>
+      <td>0.693</td>
+    </tr>
+    <tr>
+      <td>E.M. Marcilio Leite- Turma A</td>
+      <td>15</td>
+      <td>1.144</td>
+      <td>0.386</td>
+      <td>0.073</td>
+      <td>0.524</td>
+    </tr>
+    <tr>
+      <td>E.M. Marcilio Leite- Turma B</td>
+      <td>15</td>
+      <td>1.088</td>
+      <td>0.309</td>
+      <td>0.267</td>
+      <td>0.484</td>
+    </tr>
+    <tr>
+      <td>E.M. Ricardo Pucetti</td>
+      <td>20</td>
+      <td>1.527</td>
+      <td>1.006</td>
+      <td>0.002</td>
+      <td>0.357</td>
+    </tr>
+    <tr>
+      <td>EE Coronel Castanho de Almeida</td>
+      <td>16</td>
+      <td>1.881</td>
+      <td>0.877</td>
+      <td>0.144</td>
+      <td>0.792</td>
+    </tr>
+    <tr>
+      <td>EM Carmen Lucia Blanco Britto</td>
+      <td>22</td>
+      <td>0.818</td>
+      <td>0.000</td>
+      <td>0.010</td>
+      <td>0.693</td>
+    </tr>
+    <tr>
+      <td>EM Henory de Campos Goes - Tarde</td>
+      <td>15</td>
+      <td>1.549</td>
+      <td>0.911</td>
+      <td>0.003</td>
+      <td>0.209</td>
+    </tr>
+    <tr>
+      <td>EMEF Barão de Piratininga - Turma A</td>
+      <td>20</td>
+      <td>1.251</td>
+      <td>0.458</td>
+      <td>0.058</td>
+      <td>1.275</td>
+    </tr>
+    <tr>
+      <td>EMEF Barão de Piratininga - Turma B</td>
+      <td>23</td>
+      <td>1.480</td>
+      <td>0.695</td>
+      <td>0.117</td>
+      <td>1.282</td>
+    </tr>
+    <tr>
+      <td>EMEF Dr. Rabindranath Tagore dos S. Pires</td>
+      <td>15</td>
+      <td>0.867</td>
+      <td>0.000</td>
+      <td>0.102</td>
+      <td>1.068</td>
+    </tr>
+    <tr>
+      <td>EMEF Leonidas Antonio de Moreas Professor</td>
+      <td>21</td>
+      <td>1.457</td>
+      <td>0.692</td>
+      <td>0.155</td>
+      <td>1.158</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>23</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.063</td>
+      <td>0.437</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Euclides de Oliveira</td>
+      <td>25</td>
+      <td>0.960</td>
+      <td>0.000</td>
+      <td>0.035</td>
+      <td>1.172</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Joao Alcindo Vieira</td>
+      <td>24</td>
+      <td>1.520</td>
+      <td>0.723</td>
+      <td>0.061</td>
+      <td>0.805</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Joaquim Silveira Santos</td>
+      <td>19</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.093</td>
+      <td>1.259</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Tiberio Justo da Silva</td>
+      <td>24</td>
+      <td>0.958</td>
+      <td>0.000</td>
+      <td>0.099</td>
+      <td>1.483</td>
+    </tr>
+    <tr>
+      <td>EMEF Prof. Wilson Paschoal</td>
+      <td>18</td>
+      <td>1.000</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.215</td>
+    </tr>
+    <tr>
+      <td>EMEF Profa. Maria de Lourdes Pedroso Perin</td>
+      <td>29</td>
+      <td>0.862</td>
+      <td>0.000</td>
+      <td>0.081</td>
+      <td>0.571</td>
+    </tr>
+    <tr>
+      <td>EMEF Professor Antonio Cavaglieri</td>
+      <td>20</td>
+      <td>0.821</td>
+      <td>0.076</td>
+      <td>0.039</td>
+      <td>0.420</td>
+    </tr>
+    <tr>
+      <td>EMEF Sonia Maria Abreu Ghilardi</td>
+      <td>14</td>
+      <td>2.279</td>
+      <td>0.844</td>
+      <td>0.091</td>
+      <td>0.615</td>
+    </tr>
+    <tr>
+      <td>EMEF Tetsu Chinone</td>
+      <td>22</td>
+      <td>0.980</td>
+      <td>0.079</td>
+      <td>0.048</td>
+      <td>0.608</td>
+    </tr>
+    <tr>
+      <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
+      <td>26</td>
+      <td>1.531</td>
+      <td>0.791</td>
+      <td>0.020</td>
+      <td>1.815</td>
+    </tr>
+    <tr>
+      <td>Escola Municipal Mitsuo Matisura - 5º e 6° ano</td>
+      <td>21</td>
+      <td>1.591</td>
+      <td>1.056</td>
+      <td>0.011</td>
+      <td>1.282</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar DataTables quando o documento estiver pronto
+        $(document).ready(function() {
+            initDT('analisesTurmas');
+        });
+    </script>
+</body>
+</html>
+        

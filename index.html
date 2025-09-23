@@ -1,53 +1,77 @@
 
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Relatório Semanal - PFC</title>
-        <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Semanal PFC - Evasão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="Logo PFC.png" alt="Logo PFC" class="logo">
+            <h1>Relatório Semanal PFC</h1>
+            <p class="subtitle">Análise de Evasão - 23/09/2025</p>
+        </div>
+    </header>
 
-        <!-- DataTables CSS -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-link active">Evasão</a>
+        <a href="assiduidade.html" class="nav-link">Assiduidade</a>
+        <a href="analises.html" class="nav-link">Análises</a>
+        <a href="auditoria.html" class="nav-link">Auditoria</a>
+    </nav>
 
-        <!-- jQuery e DataTables JS -->
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <header>
-          <img src="Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
-          <span style="font-size:1.5em; font-weight:bold;">Relatório Semanal - Semana 39 (2025/09/22)</span>
-          <button id="btnExportar" class="btn-exportar" type="button" title="Salvar PDF do relatório">🖨️ Exportar</button>
-        </header>
-        <nav>
-            <a href="index.html">📊 Evasão</a>
-            <a href="assiduidade/assiduidade.html">📅 Assiduidade</a>
-            <a href="analises/analises.html">📈 Análises</a>
-            <a href="auditoria/auditoria.html">🕵️ Auditoria</a>
-        </nav>
-        <section id="geral">
-            <h2>📈 Evasão Geral</h2>
-            <div class="cards">
-                <div class="card"><h3>Total de Turmas</h3><p>41</p></div>
-                <div class="card"><h3>Total de Cidades</h3><p>10</p></div>
-                <div class="card"><h3>Total de Supervisores</h3><p>15</p></div>
-                <div class="card"><h3>Alunos Esperados</h3><p>780</p></div>
-                <div class="card"><h3>Vagas Não Preenchidas</h3><p>0</p></div>
-                <div class="card"><h3>Ativos</h3><p>801</p></div>
-                <div class="card"><h3>Desligados</h3><p>68</p></div>
-                <div class="card"><h3>Total Evasão</h3><p>0.0%</p></div>
+    <main class="main-content">
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total de Turmas</h3>
+                <div class="metric">41</div>
+            </div>
+            <div class="card">
+                <h3>Total de Cidades</h3>
+                <div class="metric">10</div>
+            </div>
+            <div class="card">
+                <h3>Total de Escolas</h3>
+                <div class="metric">36</div>
+            </div>
+            <div class="card">
+                <h3>Total de Supervisores</h3>
+                <div class="metric">15</div>
+            </div>
+            <div class="card">
+                <h3>Alunos Esperados</h3>
+                <div class="metric">680</div>
+            </div>
+            <div class="card">
+                <h3>Vagas Não Preenchidas</h3>
+                <div class="metric">55</div>
+            </div>
+            <div class="card">
+                <h3>Ativos</h3>
+                <div class="metric">625</div>
+            </div>
+            <div class="card">
+                <h3>Desligados</h3>
+                <div class="metric">56</div>
+            </div>
+            <div class="card">
+                <h3>Total Evasão</h3>
+                <div class="metric">8.1%</div>
             </div>
         </section>
-        <section id="tabela_evasao_turma"><h2>🏫 Evasão por Turma</h2><table border="1" class="dataframe tabela-interativa" id="evasaoTurma">
+
+        <section class="table-section">
+            <h2>Evasão por Turma</h2>
+            <table border="1" class="dataframe dataframe data-table" id="evasaoTurma">
   <thead>
     <tr style="text-align: right;">
-      <th>turma</th>
+      <th>Turma</th>
       <th>Cidade</th>
       <th>Supervisor</th>
       <th>Ativos</th>
@@ -56,508 +80,526 @@
       <th>Vagas Disponíveis</th>
       <th>% Evasão</th>
       <th>Prob. Desligamento (%)</th>
-      <th>Contra-medidas de Evasão</th>
+      <th>média de presença</th>
+      <th>Desvio Padrão de Presenças</th>
+      <th>Média de Faltas</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>CEMUS1 - Turma A</td>
-      <td>Salto-SP (hold)</td>
+      <td>Salto-SP</td>
       <td>Lívia Kormann</td>
-      <td>15</td>
-      <td>2.0</td>
+      <td>14</td>
+      <td>2</td>
       <td>20</td>
-      <td>5</td>
-      <td>25.0%</td>
-      <td>8.6%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>6</td>
+      <td>30.0</td>
+      <td>11.9</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.12</td>
     </tr>
     <tr>
       <td>CEMUS1 - Turma B</td>
-      <td>Salto-SP (hold)</td>
+      <td>Salto-SP</td>
       <td>Lívia Kormann</td>
-      <td>12</td>
-      <td>0.0</td>
+      <td>11</td>
+      <td>0</td>
       <td>20</td>
-      <td>8</td>
-      <td>40.0%</td>
-      <td>4.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>9</td>
+      <td>45.0</td>
+      <td>1.5</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.54</td>
     </tr>
     <tr>
       <td>CEMUS5 - Turma A</td>
-      <td>Salto-SP (hold)</td>
+      <td>Salto-SP</td>
       <td>Lívia Kormann</td>
-      <td>16</td>
-      <td>1.0</td>
+      <td>15</td>
+      <td>1</td>
       <td>20</td>
-      <td>4</td>
-      <td>20.0%</td>
-      <td>7.7%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>5</td>
+      <td>25.0</td>
+      <td>13.2</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.56</td>
     </tr>
     <tr>
       <td>CEMUS5 - Turma B</td>
-      <td>Salto-SP (hold)</td>
+      <td>Salto-SP</td>
       <td>Lívia Kormann</td>
-      <td>18</td>
-      <td>1.0</td>
+      <td>17</td>
+      <td>1</td>
       <td>20</td>
-      <td>2</td>
-      <td>10.0%</td>
-      <td>11.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>3</td>
+      <td>15.0</td>
+      <td>16.5</td>
+      <td>0.94</td>
+      <td>0.00</td>
+      <td>2.22</td>
     </tr>
     <tr>
       <td>E. M. Francisco Adolfo de Varnhagen</td>
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
-      <td>11</td>
-      <td>0.0</td>
+      <td>10</td>
+      <td>0</td>
       <td>20</td>
-      <td>9</td>
-      <td>45.0%</td>
-      <td>5.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>10</td>
+      <td>50.0</td>
+      <td>1.1</td>
+      <td>1.24</td>
+      <td>0.60</td>
+      <td>2.50</td>
     </tr>
     <tr>
       <td>E. M. Pedrina de Campos Pedrozo Rosa</td>
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>16</td>
-      <td>3.0</td>
+      <td>15</td>
+      <td>3</td>
       <td>20</td>
-      <td>4</td>
-      <td>20.0%</td>
-      <td>8.9%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>5</td>
+      <td>25.0</td>
+      <td>6.7</td>
+      <td>0.83</td>
+      <td>0.00</td>
+      <td>2.78</td>
     </tr>
     <tr>
       <td>E. M. Roque Ayres de Oliveiras</td>
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
-      <td>16</td>
-      <td>0.0</td>
+      <td>15</td>
+      <td>0</td>
       <td>20</td>
-      <td>4</td>
-      <td>20.0%</td>
-      <td>1.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>5</td>
+      <td>25.0</td>
+      <td>0.0</td>
+      <td>1.08</td>
+      <td>0.28</td>
+      <td>1.07</td>
     </tr>
     <tr>
       <td>E. M. Zilma Thibes Melo</td>
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>23</td>
-      <td>0.0</td>
+      <td>22</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.4%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>1.7</td>
+      <td>1.25</td>
+      <td>0.69</td>
+      <td>2.14</td>
     </tr>
     <tr>
       <td>E.M. Dra. Glaucia Aparecida Andrade Nogueira</td>
       <td>Iperó-SP</td>
       <td>Jamilli Veloso de Souza</td>
+      <td>19</td>
+      <td>1</td>
       <td>20</td>
-      <td>1.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>5.3%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>1.18</td>
+      <td>0.40</td>
+      <td>2.85</td>
     </tr>
     <tr>
       <td>E.M. Elisa Moreira dos Santos</td>
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>21</td>
-      <td>0.0</td>
-      <td>20</td>
+      <td>19</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.7%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>20</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>0.6</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.21</td>
     </tr>
     <tr>
       <td>E.M. Francisco Munhoz</td>
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
-      <td>16</td>
-      <td>13.0</td>
+      <td>14</td>
+      <td>6</td>
       <td>20</td>
-      <td>4</td>
-      <td>20.0%</td>
-      <td>20.1%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>6</td>
+      <td>30.0</td>
+      <td>28.4</td>
+      <td>1.34</td>
+      <td>0.35</td>
+      <td>2.60</td>
     </tr>
     <tr>
       <td>E.M. Franciso Mariano</td>
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
-      <td>19</td>
-      <td>6.0</td>
+      <td>16</td>
+      <td>5</td>
       <td>20</td>
-      <td>1</td>
-      <td>5.0%</td>
-      <td>17.4%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>4</td>
+      <td>20.0</td>
+      <td>17.8</td>
+      <td>1.13</td>
+      <td>0.62</td>
+      <td>1.67</td>
     </tr>
     <tr>
       <td>E.M. Henory de Campos Goes - Manhã</td>
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>7</td>
-      <td>1.0</td>
+      <td>6</td>
+      <td>1</td>
       <td>10</td>
-      <td>3</td>
-      <td>30.0%</td>
-      <td>10.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>4</td>
+      <td>40.0</td>
+      <td>18.4</td>
+      <td>1.06</td>
+      <td>0.18</td>
+      <td>0.43</td>
     </tr>
     <tr>
       <td>E.M. Joaquim Salvador</td>
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
-      <td>15</td>
-      <td>7.0</td>
+      <td>14</td>
+      <td>7</td>
       <td>20</td>
-      <td>5</td>
-      <td>25.0%</td>
-      <td>31.6%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
-    </tr>
-    <tr>
-      <td>E.M. Kame Miadaira</td>
-      <td>Juquiá-SP</td>
-      <td>Pedro Lucas</td>
-      <td>20</td>
-      <td>0.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>6</td>
+      <td>30.0</td>
+      <td>29.4</td>
+      <td>1.02</td>
+      <td>0.18</td>
+      <td>2.29</td>
     </tr>
     <tr>
       <td>E.M. Marcilio Leite- Turma A</td>
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
-      <td>15</td>
-      <td>2.0</td>
+      <td>14</td>
+      <td>1</td>
       <td>10</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>8.3%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>7.3</td>
+      <td>1.14</td>
+      <td>0.39</td>
+      <td>1.67</td>
     </tr>
     <tr>
       <td>E.M. Marcilio Leite- Turma B</td>
       <td>Capela do Alto-SP</td>
       <td>Paulo Miranda</td>
-      <td>11</td>
-      <td>5.0</td>
+      <td>10</td>
+      <td>5</td>
       <td>10</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>24.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
-    </tr>
-    <tr>
-      <td>E.M. Profª Lydia Cortez de Aquino</td>
-      <td>Juquiá-SP</td>
-      <td>Paloma Bueno</td>
-      <td>29</td>
       <td>0.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>26.7</td>
+      <td>1.09</td>
+      <td>0.31</td>
+      <td>2.40</td>
     </tr>
     <tr>
       <td>E.M. Ricardo Pucetti</td>
       <td>Capela do Alto-SP</td>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
-      <td>21</td>
-      <td>0.0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>3.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
-    </tr>
-    <tr>
-      <td>E.M.João Veiga Martins</td>
-      <td>Juquiá-SP</td>
-      <td>Pedro Lucas</td>
-      <td>23</td>
-      <td>0.0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>1.53</td>
+      <td>1.01</td>
+      <td>0.50</td>
     </tr>
     <tr>
       <td>EE Coronel Castanho de Almeida</td>
       <td>Guareí-SP</td>
       <td>Jose (Vinicius Lima Cardozo)</td>
-      <td>14</td>
-      <td>3.0</td>
+      <td>13</td>
+      <td>3</td>
       <td>20</td>
-      <td>6</td>
-      <td>30.0%</td>
-      <td>16.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>7</td>
+      <td>35.0</td>
+      <td>14.4</td>
+      <td>1.88</td>
+      <td>0.88</td>
+      <td>2.25</td>
     </tr>
     <tr>
       <td>EM Carmen Lucia Blanco Britto</td>
       <td>São Roque-SP</td>
       <td>Gabriella Lhóren</td>
-      <td>23</td>
-      <td>0.0</td>
+      <td>22</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>1.9%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.82</td>
+      <td>0.00</td>
+      <td>1.41</td>
     </tr>
     <tr>
       <td>EM Henory de Campos Goes - Tarde</td>
       <td>Iperó-SP</td>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>16</td>
-      <td>1.0</td>
+      <td>15</td>
+      <td>0</td>
       <td>10</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.5%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>0.3</td>
+      <td>1.55</td>
+      <td>0.91</td>
+      <td>0.73</td>
     </tr>
     <tr>
       <td>EMEF Barão de Piratininga - Turma A</td>
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
-      <td>19</td>
-      <td>2.0</td>
+      <td>18</td>
+      <td>2</td>
       <td>20</td>
-      <td>1</td>
-      <td>5.0%</td>
-      <td>6.6%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>2</td>
+      <td>10.0</td>
+      <td>5.8</td>
+      <td>1.25</td>
+      <td>0.46</td>
+      <td>3.40</td>
     </tr>
     <tr>
       <td>EMEF Barão de Piratininga - Turma B</td>
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
-      <td>21</td>
-      <td>3.0</td>
+      <td>20</td>
+      <td>3</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>14.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>11.7</td>
+      <td>1.48</td>
+      <td>0.70</td>
+      <td>3.09</td>
     </tr>
     <tr>
       <td>EMEF Dr. Rabindranath Tagore dos S. Pires</td>
       <td>São Roque-SP</td>
       <td>Gabriella Lhóren</td>
-      <td>25</td>
-      <td>2.0</td>
+      <td>13</td>
+      <td>2</td>
       <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>15.4%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>7</td>
+      <td>35.0</td>
+      <td>10.2</td>
+      <td>0.87</td>
+      <td>0.00</td>
+      <td>2.87</td>
     </tr>
     <tr>
       <td>EMEF Leonidas Antonio de Moreas Professor</td>
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
-      <td>19</td>
-      <td>3.0</td>
+      <td>18</td>
+      <td>3</td>
       <td>20</td>
-      <td>1</td>
-      <td>5.0%</td>
-      <td>13.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>2</td>
+      <td>10.0</td>
+      <td>15.5</td>
+      <td>1.46</td>
+      <td>0.69</td>
+      <td>2.95</td>
     </tr>
     <tr>
-      <td>EMEF Prof. Darcy Amáncio</td>
+      <td>EMEF Prof. Darcy Amáncio</td>
       <td>Mirassol-SP</td>
       <td>Synara Sajonetti Maistrello</td>
-      <td>24</td>
-      <td>0.0</td>
+      <td>23</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>4.6%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>6.3</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>1.96</td>
     </tr>
     <tr>
       <td>EMEF Prof. Euclides de Oliveira</td>
       <td>São Roque-SP</td>
       <td>Gabriella Lhóren</td>
-      <td>26</td>
-      <td>0.0</td>
+      <td>25</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>3.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>3.5</td>
+      <td>0.96</td>
+      <td>0.00</td>
+      <td>2.44</td>
     </tr>
     <tr>
       <td>EMEF Prof. Joao Alcindo Vieira</td>
       <td>Guareí-SP</td>
       <td>Jose (Vinicius Lima Cardozo)</td>
-      <td>24</td>
-      <td>2.0</td>
+      <td>22</td>
+      <td>2</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>6.8%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>6.1</td>
+      <td>1.52</td>
+      <td>0.72</td>
+      <td>2.54</td>
     </tr>
     <tr>
       <td>EMEF Prof. Joaquim Silveira Santos</td>
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
-      <td>18</td>
-      <td>3.0</td>
-      <td>20</td>
+      <td>17</td>
       <td>2</td>
-      <td>10.0%</td>
-      <td>11.1%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>20</td>
+      <td>3</td>
+      <td>15.0</td>
+      <td>9.3</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>4.74</td>
     </tr>
     <tr>
       <td>EMEF Prof. Tiberio Justo da Silva</td>
       <td>São Roque-SP</td>
       <td>Gabriella Lhóren</td>
-      <td>23</td>
-      <td>2.0</td>
+      <td>22</td>
+      <td>2</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>7.5%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>9.9</td>
+      <td>0.96</td>
+      <td>0.00</td>
+      <td>2.71</td>
     </tr>
     <tr>
       <td>EMEF Prof. Wilson Paschoal</td>
       <td>Mirassol-SP</td>
       <td>Synara Sajonetti Maistrello</td>
-      <td>19</td>
-      <td>0.0</td>
+      <td>18</td>
+      <td>0</td>
       <td>20</td>
-      <td>1</td>
-      <td>5.0%</td>
-      <td>1.1%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>2</td>
+      <td>10.0</td>
+      <td>0.1</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.89</td>
     </tr>
     <tr>
       <td>EMEF Profa. Maria de Lourdes Pedroso Perin</td>
       <td>Corumbataí-SP</td>
       <td>Pedro Henrique Prado Alves</td>
-      <td>29</td>
-      <td>1.0</td>
+      <td>28</td>
+      <td>1</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>5.7%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>8.1</td>
+      <td>0.86</td>
+      <td>0.00</td>
+      <td>1.38</td>
     </tr>
     <tr>
       <td>EMEF Professor Antonio Cavaglieri</td>
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
+      <td>19</td>
+      <td>1</td>
       <td>20</td>
-      <td>1.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>5.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>3.9</td>
+      <td>0.82</td>
+      <td>0.08</td>
+      <td>1.60</td>
     </tr>
     <tr>
       <td>EMEF Sonia Maria Abreu Ghilardi</td>
       <td>São Roque-SP</td>
       <td>Mirela Silva Gondim Garcia</td>
-      <td>16</td>
-      <td>2.0</td>
+      <td>12</td>
+      <td>2</td>
       <td>20</td>
-      <td>4</td>
-      <td>20.0%</td>
-      <td>14.9%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>8</td>
+      <td>40.0</td>
+      <td>9.1</td>
+      <td>2.28</td>
+      <td>0.84</td>
+      <td>2.36</td>
     </tr>
     <tr>
       <td>EMEF Tetsu Chinone</td>
       <td>São Roque-SP</td>
       <td>Vittoria Christina Santos Rocha</td>
-      <td>23</td>
-      <td>0.0</td>
+      <td>22</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>4.1%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
-    </tr>
-    <tr>
-      <td>EMEFEI Lucy Cordeiro de Campos - TURMA A</td>
-      <td>Bofete-SP</td>
-      <td>Tiago Izidoro</td>
-      <td>21</td>
       <td>0.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
-    </tr>
-    <tr>
-      <td>EMEFEI Lucy Cordeiro de Campos - TURMA B</td>
-      <td>Bofete-SP</td>
-      <td>Tiago Izidoro</td>
-      <td>30</td>
-      <td>0.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>4.8</td>
+      <td>0.98</td>
+      <td>0.08</td>
+      <td>1.86</td>
     </tr>
     <tr>
       <td>Escola Estadual Prof Antônio Tonon - 7º e 8° ano</td>
       <td>Coronel Macedo-SP</td>
       <td>Gustavo Eduardo Cardoso</td>
-      <td>27</td>
-      <td>0.0</td>
+      <td>26</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.4%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.53</td>
+      <td>0.79</td>
+      <td>6.46</td>
     </tr>
     <tr>
       <td>Escola Municipal Mitsuo Matisura - 5º e 6° ano</td>
       <td>Coronel Macedo-SP</td>
       <td>Gustavo Eduardo Cardoso</td>
-      <td>20</td>
-      <td>1.0</td>
+      <td>21</td>
+      <td>0</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>3.2%</td>
-      <td><textarea class="cm-evasao-textarea"></textarea></td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>1.59</td>
+      <td>1.06</td>
+      <td>4.52</td>
     </tr>
   </tbody>
-</table></section>
-        <section id="tabela_evasao_cidade"><h2>🏙️ Evasão por Cidade</h2><table border="1" class="dataframe tabela-interativa" id="evasaoCidade">
+</table>
+        </section>
+
+        <section class="table-section">
+            <h2>Evasão por Cidade</h2>
+            <table border="1" class="dataframe dataframe data-table" id="evasaoCidade">
   <thead>
     <tr style="text-align: right;">
-      <th>cidade</th>
+      <th>Cidade</th>
       <th>Ativos</th>
       <th>Desligados</th>
       <th>Vagas</th>
@@ -568,101 +610,87 @@
   </thead>
   <tbody>
     <tr>
-      <td>Bofete-SP</td>
-      <td>51</td>
-      <td>0.0</td>
-      <td>40</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
-    </tr>
-    <tr>
       <td>Capela do Alto-SP</td>
-      <td>97</td>
-      <td>33.0</td>
+      <td>88</td>
+      <td>24</td>
       <td>100</td>
-      <td>3</td>
-      <td>3.0%</td>
-      <td>17.8%</td>
+      <td>12</td>
+      <td>12.0</td>
+      <td>18.5</td>
     </tr>
     <tr>
       <td>Coronel Macedo-SP</td>
       <td>47</td>
-      <td>1.0</td>
+      <td>0</td>
       <td>40</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.7%</td>
+      <td>0.0</td>
+      <td>1.6</td>
     </tr>
     <tr>
       <td>Corumbataí-SP</td>
-      <td>29</td>
-      <td>1.0</td>
+      <td>28</td>
+      <td>1</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>5.7%</td>
+      <td>0.0</td>
+      <td>8.1</td>
     </tr>
     <tr>
       <td>Guareí-SP</td>
-      <td>38</td>
-      <td>5.0</td>
+      <td>35</td>
+      <td>5</td>
       <td>40</td>
-      <td>2</td>
-      <td>5.0%</td>
-      <td>10.7%</td>
+      <td>5</td>
+      <td>12.5</td>
+      <td>9.4</td>
     </tr>
     <tr>
       <td>Iperó-SP</td>
-      <td>130</td>
-      <td>6.0</td>
+      <td>121</td>
+      <td>5</td>
       <td>140</td>
-      <td>10</td>
-      <td>7.1%</td>
-      <td>4.4%</td>
-    </tr>
-    <tr>
-      <td>Juquiá-SP</td>
-      <td>72</td>
-      <td>0.0</td>
-      <td>60</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
+      <td>19</td>
+      <td>13.6</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>Mirassol-SP</td>
-      <td>43</td>
-      <td>0.0</td>
+      <td>41</td>
+      <td>0</td>
       <td>40</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>3.1%</td>
+      <td>0.0</td>
+      <td>3.5</td>
     </tr>
     <tr>
-      <td>Salto-SP (hold)</td>
-      <td>61</td>
-      <td>4.0</td>
+      <td>Salto-SP</td>
+      <td>57</td>
+      <td>4</td>
       <td>80</td>
-      <td>19</td>
-      <td>23.8%</td>
-      <td>8.4%</td>
+      <td>23</td>
+      <td>28.7</td>
+      <td>11.7</td>
     </tr>
     <tr>
       <td>São Roque-SP</td>
-      <td>233</td>
-      <td>18.0</td>
+      <td>208</td>
+      <td>17</td>
       <td>220</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>8.8%</td>
+      <td>12</td>
+      <td>5.5</td>
+      <td>7.6</td>
     </tr>
   </tbody>
-</table></section>
-        <section id="tabela_evasao_supervisor"><h2>🧑‍🏫 Evasão por Supervisor</h2><table border="1" class="dataframe tabela-interativa" id="evasaoSupervisor">
+</table>
+        </section>
+
+        <section class="table-section">
+            <h2>Evasão por Supervisor</h2>
+            <table border="1" class="dataframe dataframe data-table" id="evasaoSupervisor">
   <thead>
     <tr style="text-align: right;">
-      <th>supervisor</th>
+      <th>Supervisor</th>
       <th>Ativos</th>
       <th>Desligados</th>
       <th>Vagas</th>
@@ -674,141 +702,125 @@
   <tbody>
     <tr>
       <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>83</td>
-      <td>5.0</td>
+      <td>77</td>
+      <td>4</td>
       <td>80</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>4.6%</td>
+      <td>3</td>
+      <td>3.8</td>
+      <td>3.7</td>
     </tr>
     <tr>
       <td>Gabriella Lhóren</td>
-      <td>97</td>
-      <td>4.0</td>
+      <td>82</td>
+      <td>4</td>
       <td>80</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>7.2%</td>
+      <td>0.0</td>
+      <td>5.8</td>
     </tr>
     <tr>
       <td>Gustavo Eduardo Cardoso</td>
       <td>47</td>
-      <td>1.0</td>
+      <td>0</td>
       <td>40</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>2.7%</td>
+      <td>0.0</td>
+      <td>1.6</td>
     </tr>
     <tr>
       <td>Jamilli Veloso de Souza</td>
-      <td>47</td>
-      <td>1.0</td>
+      <td>44</td>
+      <td>1</td>
       <td>60</td>
-      <td>13</td>
-      <td>21.7%</td>
-      <td>3.9%</td>
+      <td>16</td>
+      <td>26.7</td>
+      <td>2.5</td>
     </tr>
     <tr>
       <td>Jose (Vinicius Lima Cardozo)</td>
-      <td>38</td>
-      <td>5.0</td>
+      <td>35</td>
+      <td>5</td>
       <td>40</td>
-      <td>2</td>
-      <td>5.0%</td>
-      <td>10.7%</td>
+      <td>5</td>
+      <td>12.5</td>
+      <td>9.4</td>
     </tr>
     <tr>
       <td>Julia Fernanda de Camargo Teles Miranda</td>
-      <td>55</td>
-      <td>8.0</td>
+      <td>50</td>
+      <td>6</td>
       <td>50</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>10.1%</td>
+      <td>0.0</td>
+      <td>8.7</td>
     </tr>
     <tr>
       <td>Lívia Kormann</td>
-      <td>61</td>
-      <td>4.0</td>
+      <td>57</td>
+      <td>4</td>
       <td>80</td>
-      <td>19</td>
-      <td>23.8%</td>
-      <td>8.4%</td>
+      <td>23</td>
+      <td>28.7</td>
+      <td>11.7</td>
     </tr>
     <tr>
       <td>Mirela Silva Gondim Garcia</td>
-      <td>75</td>
-      <td>10.0</td>
+      <td>68</td>
+      <td>10</td>
       <td>80</td>
-      <td>5</td>
-      <td>6.2%</td>
-      <td>12.4%</td>
-    </tr>
-    <tr>
-      <td>Paloma Bueno</td>
-      <td>29</td>
-      <td>0.0</td>
-      <td>20</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
+      <td>12</td>
+      <td>15.0</td>
+      <td>10.7</td>
     </tr>
     <tr>
       <td>Paulo Miranda</td>
-      <td>42</td>
-      <td>25.0</td>
+      <td>38</td>
+      <td>18</td>
       <td>50</td>
-      <td>8</td>
-      <td>16.0%</td>
-      <td>25.0%</td>
+      <td>12</td>
+      <td>24.0</td>
+      <td>28.3</td>
     </tr>
     <tr>
       <td>Pedro Henrique Prado Alves</td>
-      <td>29</td>
-      <td>1.0</td>
+      <td>28</td>
+      <td>1</td>
       <td>20</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>5.7%</td>
-    </tr>
-    <tr>
-      <td>Pedro Lucas</td>
-      <td>43</td>
       <td>0.0</td>
-      <td>40</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
+      <td>8.1</td>
     </tr>
     <tr>
       <td>Synara Sajonetti Maistrello</td>
-      <td>43</td>
-      <td>0.0</td>
+      <td>41</td>
+      <td>0</td>
       <td>40</td>
       <td>0</td>
-      <td>0.0%</td>
-      <td>3.1%</td>
-    </tr>
-    <tr>
-      <td>Tiago Izidoro</td>
-      <td>51</td>
       <td>0.0</td>
-      <td>40</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>0.0%</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>Vittoria Christina Santos Rocha</td>
-      <td>61</td>
-      <td>4.0</td>
+      <td>58</td>
+      <td>3</td>
       <td>60</td>
-      <td>0</td>
-      <td>0.0%</td>
-      <td>6.7%</td>
+      <td>2</td>
+      <td>3.3</td>
+      <td>5.9</td>
     </tr>
   </tbody>
-</table></section>
-    </body>
-    </html>
-    
+</table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar DataTables quando o documento estiver pronto
+        $(document).ready(function() {
+            initDT('evasaoTurma');
+            initDT('evasaoCidade');
+            initDT('evasaoSupervisor');
+        });
+    </script>
+</body>
+</html>
