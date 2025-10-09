@@ -44,8 +44,8 @@
         <section id="resumo">
             <h2>📌 Resumo</h2>
             <div class="cards">
-                <div class="card"><h3>Registros OK</h3><p>810</p></div>
-                <div class="card"><h3>Inconsistências</h3><p>2</p></div>
+                <div class="card"><h3>Registros OK</h3><p>926</p></div>
+                <div class="card"><h3>Inconsistências</h3><p>0</p></div>
                 <div class="card">
                     <h3>Exportar CSV</h3>
                     <p><a href="inconsistencias.csv" download>Baixar inconsistências</a></p>
@@ -66,32 +66,9 @@
       <th>status_cadastro</th>
       <th>ultima_marcacao_chamada</th>
       <th>motivo_inconsistencia</th>
-      <th>acoes_recomendadas</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>sophia alice de souza jacyntho</td>
-      <td>2025.7.4.541</td>
-      <td>Iperó-SP</td>
-      <td>E.M. Elisa Moreira dos Santos</td>
-      <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>Ativo</td>
-      <td>desligado</td>
-      <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
-      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
-    </tr>
-    <tr>
-      <td>sophia hadassa de mendonça cruz</td>
-      <td>2023.7.4.542</td>
-      <td>Iperó-SP</td>
-      <td>E.M. Henory de Campos Goes - Manhã</td>
-      <td>Emilly Vitoria Alves Ribeiro</td>
-      <td>Ativo</td>
-      <td>desligado</td>
-      <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
-      <td>[Coordenação Administrativa] desmarcar a opção show deste aluno no Appsheet. [Coordenação Executiva] [1.1] Conferir veracidade do desligamento. [1.2] Caso positivo, marcar o aluno como DESLIGADO no Cadastro de Alunos.</td>
-    </tr>
   </tbody>
 </table>
         </section>
@@ -107,10 +84,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cadastro_ativo_mas_ultima_chamada_desligado</td>
-      <td>2</td>
-    </tr>
   </tbody>
 </table>
             <h3>Por Cidade</h3>
@@ -122,10 +95,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Iperó-SP</td>
-      <td>2</td>
-    </tr>
   </tbody>
 </table>
             <h3>Por Turma</h3>
@@ -137,14 +106,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>E.M. Elisa Moreira dos Santos</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>E.M. Henory de Campos Goes - Manhã</td>
-      <td>1</td>
-    </tr>
   </tbody>
 </table>
         </section>
@@ -155,7 +116,7 @@
             <h3>1) Alunos nas Chamadas, mas NÃO no Cadastro</h3>
             <p>
                 <a href="alunos_nas_chamadas_sem_cadastro.csv" download>Baixar CSV</a>
-                &nbsp;|&nbsp; Total: 10
+                &nbsp;|&nbsp; Total: 11
             </p>
             <table border="1" class="dataframe tabela-interativa" id="tabSemCadastro">
   <thead>
@@ -210,6 +171,14 @@
       <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
     </tr>
     <tr>
+      <td>jade cristina ribeiro vassalo procópio</td>
+      <td>E.M. Profª Lydia Cortez de Aquino</td>
+      <td>Juquiá-SP</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td>[Coordenação Administrativa] Cadastrar o aluno no Cadastro de Alunos OU corrigir o nome se for divergência de grafia. [Coordenação Executiva] Associar o aluno à turma correta e validar status (ATIVO/DESLIGADO).</td>
+    </tr>
+    <tr>
       <td>julio c p da silva</td>
       <td>E.M. Dra. Glaucia Aparecida Andrade Nogueira</td>
       <td>Iperó-SP</td>
@@ -255,7 +224,7 @@
             <h3>2) Alunos no Cadastro, mas NÃO aparecem em Chamadas</h3>
             <p>
                 <a href="alunos_no_cadastro_sem_chamada.csv" download>Baixar CSV</a>
-                &nbsp;|&nbsp; Total: 167
+                &nbsp;|&nbsp; Total: 54
             </p>
             <table border="1" class="dataframe tabela-interativa" id="tabSemChamada">
   <thead>
@@ -532,434 +501,8 @@
       <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
     </tr>
     <tr>
-      <td>Alyson dos Santos Gonçalves</td>
-      <td>2025.7.4.795</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Amauri Victor Nogueira Filho</td>
-      <td>2025.7.4.796</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Julia Corrente Pereira dos Santos</td>
-      <td>2025.7.4.797</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Bernardo Henrique Silva Bento</td>
-      <td>2025.7.4.798</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Bruna Carla Mendes de Jesus</td>
-      <td>2025.7.4.799</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Camilly Vitoria Bispo do Valles</td>
-      <td>2025.7.4.800</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Diego da Silva Vassão Ribeiro</td>
-      <td>2025.7.4.801</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isabelly Jorge de Oliveira Miguel</td>
-      <td>2025.7.4.802</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isabelly Victória Bonassa Mendes Will</td>
-      <td>2025.7.4.803</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Jamile Vitoria da Silva Costa</td>
-      <td>2025.7.4.804</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Kayque Rhangel Vitor de França Venâncio Nery</td>
-      <td>2025.7.4.805</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Luis Carlos Pereira Neto</td>
-      <td>2025.7.4.806</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Eduarda de Souza Bernardo</td>
-      <td>2025.7.4.807</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Elena Silva Santos</td>
-      <td>2025.7.4.808</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Luiza Almeida Dias</td>
-      <td>2025.7.4.809</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Miguel Jorge da Conceição</td>
-      <td>2025.7.4.810</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Pollyana França Nóbrega</td>
-      <td>2025.7.4.811</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sarah de Oliveira Lima</td>
-      <td>2025.7.4.812</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sarah Ramos da Silva</td>
-      <td>2025.7.4.813</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sidinei Mota Ferreira</td>
-      <td>2025.7.4.814</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Zayom Miguel Pereira Lopes</td>
-      <td>2025.7.4.815</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Jhonatan Costa Muniz</td>
-      <td>2025.7.4.816</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Bernardo da Costa Colaço</td>
-      <td>2025.7.4.817</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Pedro Henrik Alves Ferreira</td>
-      <td>2025.7.4.818</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Anthony Barboza Teixeira</td>
-      <td>2025.7.4.819</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Daniella Do Prado Pascoal</td>
-      <td>2025.7.4.820</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Davi Lucas Cassiano Dos Santos</td>
-      <td>2025.7.4.821</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Enzo Samuel  S Nascimento</td>
-      <td>2025.7.4.822</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Guilherme H Dos Santos</td>
-      <td>2025.7.4.823</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Lorenzo Barreto De Oliveira</td>
-      <td>2025.7.4.824</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Valentina Da Silva Leandro</td>
-      <td>2025.7.4.825</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Valentina Lima Rosa</td>
-      <td>2025.7.4.826</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Arthur F O Do Nascimento</td>
-      <td>2025.7.4.827</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>David Siles Dalsoglio</td>
-      <td>2025.7.4.828</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Evilyn Vitória Silva Da Cruz</td>
-      <td>2025.7.4.829</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Gabriel Pupo De Freitas</td>
-      <td>2025.7.4.830</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isabela Pupo  Souza Santos</td>
-      <td>2025.7.4.831</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isaque Alcantara Coutinho</td>
-      <td>2025.7.4.832</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isaque Sanches C Pelegri</td>
-      <td>2025.7.4.833</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Laryza Oliveira Carriço</td>
-      <td>2025.7.4.834</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Laura Almeida Gomes Pupo</td>
-      <td>2025.7.4.835</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Clara De Souza Muiniz</td>
-      <td>2025.7.4.836</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Mariah Julia Lira De Araújo</td>
-      <td>2025.7.4.837</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Maria Isadora Cacheti dos Reis</td>
-      <td>2025.7.4.838</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Isabely Assunção Santana</td>
-      <td>2025.7.4.839</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Laura Gabrielle F. de Souza</td>
-      <td>2025.7.4.840</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Heloa Vitória A. da Silva Macedo</td>
-      <td>2025.7.4.841</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Julia Pinheiro Silva</td>
-      <td>2025.7.4.842</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Breno Pontes</td>
-      <td>2025.7.4.843</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Alvaro Vinícius Oliveira</td>
-      <td>2025.7.4.844</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Solara Ribeiro Fernandes</td>
-      <td>2025.7.4.845</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sophia Gonçalves</td>
-      <td>2025.7.4.846</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Lucca Lorenzo Martins</td>
-      <td>2025.7.4.847</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Enzo Gabriel Gonçalves</td>
-      <td>2025.7.4.848</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Gabriel Victor de Carvalho</td>
-      <td>2025.7.4.849</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Davi Wilson Marques</td>
-      <td>2025.7.4.850</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Breno Yuri Silva Ribeiro</td>
-      <td>2025.7.4.851</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Julia Valentina Pacífico</td>
-      <td>2025.7.4.852</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Beatriz Carneiro</td>
-      <td>2025.7.4.853</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Clara Mendes</td>
-      <td>2025.7.4.854</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Tereza dos Santos</td>
-      <td>2025.7.4.855</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Raissa Mateus da Silva</td>
-      <td>2025.7.4.856</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Davi Lucas Góis Cirino</td>
-      <td>2025.7.4.857</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
       <td>ade Cristina Ribeiro Vassalo Procópio</td>
       <td>2025.7.4.858</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Bruno Pontes da Silva</td>
-      <td>2025.7.4.859</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sophia Santos Mangueira</td>
-      <td>2025.7.4.860</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Beatriz Cristina Novais Pereira</td>
-      <td>2025.7.4.861</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Matheus Rosa Barbosa</td>
-      <td>2025.7.4.862</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Kaio Wesley de Souza da Silva</td>
-      <td>2025.7.4.863</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Mariana Golzenleucther Salustiano</td>
-      <td>2025.7.4.864</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Alice Campos Pereira  Yamashita</td>
-      <td>2025.7.4.865</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Andriele Barbosa de Oliveira</td>
-      <td>2025.7.4.866</td>
       <td>Ativo</td>
       <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
     </tr>
@@ -990,258 +533,6 @@
     <tr>
       <td>Emanuelly Cristina Venâncio</td>
       <td>2026.7.4.890</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Allana Santos Oliveira</td>
-      <td>2025.7.4.891</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Ana Vitoria Batista De Souza</td>
-      <td>2025.7.4.892</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Arthur Benicio Monsores De Azevedo</td>
-      <td>2025.7.4.893</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Asafe Gabriel Lopes Oliveira</td>
-      <td>2025.7.4.894</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Aylla Mota De Andrade</td>
-      <td>2025.7.4.895</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Bianca Da Silva Castro Ribeiro</td>
-      <td>2025.7.4.896</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Derick Viana Dos Santos</td>
-      <td>2025.7.4.897</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Guilherme Cauê Da Lima Xavier</td>
-      <td>2025.7.4.898</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Henrique Franklin Franca</td>
-      <td>2025.7.4.899</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Hilary Fernandes Barbosa</td>
-      <td>2025.7.4.900</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Izabela Cristina Furquim</td>
-      <td>2025.7.4.901</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Jamilly Vitoria Do Carmo Sena</td>
-      <td>2025.7.4.902</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>João Vítor Vieira De Lara</td>
-      <td>2025.7.4.903</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Manuela Pereira Pedroso</td>
-      <td>2025.7.4.904</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Marcio Do Amaral Silva Junior</td>
-      <td>2025.7.4.905</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Miguel Franco Ferreira</td>
-      <td>2025.7.4.906</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Monique Franco Cardoso</td>
-      <td>2025.7.4.907</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Raissa Soares Da Silva Nunes</td>
-      <td>2025.7.4.908</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sarah Ribeiro Da Silva</td>
-      <td>2025.7.4.909</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sophia Emanuelly Das Neves Silva</td>
-      <td>2025.7.4.910</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Sophia Yasmim Oliveira Santos</td>
-      <td>2025.7.4.911</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Luiz Henrique Donato Martins</td>
-      <td>2025.7.4.912</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Asafe Santos Da Cruz</td>
-      <td>2025.7.4.913</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Cristiane Caetano Pereira</td>
-      <td>2025.7.4.914</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Dafne Vitória Moreira Bento Dos Santos</td>
-      <td>2025.7.4.915</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>Alice Pontes Godoy</td>
-      <td>2025.7.4.916</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>AYLA MILENA CAMPOS SILVEIRA</td>
-      <td>2025.7.4.917</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>SARA MENDES ZANETTI</td>
-      <td>2025.7.4.918</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>DAVI PONTES DE LIMA</td>
-      <td>2025.7.4.919</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>GABRIEL ALVES GONÇALVES</td>
-      <td>2025.7.4.920</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>ISADORA GUIMARAES MARTINS</td>
-      <td>2025.7.4.921</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>ESTEVÃO DAS NEVES ALVES</td>
-      <td>2025.7.4.922</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>GIOVANNA FLORINDO MACIEL</td>
-      <td>2025.7.4.923</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>PAULO GUSTAVO DE SOUSA FERREIRA</td>
-      <td>2025.7.4.924</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>PEDRO FERNANDO FREITAS SILVA</td>
-      <td>2025.7.4.925</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>MANUELLA SANTOS MARIANO</td>
-      <td>2025.7.4.926</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>JAMILY CRISTINA COELHO DOSSANTOS</td>
-      <td>2025.7.4.927</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>PEDRO AUGUSTO DINIZ LEOPOLDINO</td>
-      <td>2025.7.4.928</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>HELOISA RODRIGUES SATTI</td>
-      <td>2025.7.4.929</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>BERNARDO DE OLIVEIRA LANGER</td>
-      <td>2025.7.4.930</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>PEDRO LEVI MOREIRA LOPES</td>
-      <td>2025.7.4.931</td>
-      <td>Ativo</td>
-      <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
-    </tr>
-    <tr>
-      <td>HUSSEIN HEJAIJE MOLINA</td>
-      <td>2025.7.4.932</td>
       <td>Ativo</td>
       <td>[Coordenação Executiva] Verificar se o aluno está alocado em alguma turma e se compareceu a encontros. Se ATIVO no cadastro, incluir na lista de chamada ou ajustar o status se for caso de desligamento/transferência.</td>
     </tr>
