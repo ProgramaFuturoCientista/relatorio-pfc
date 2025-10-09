@@ -27,7 +27,7 @@ header span {
 }
 
 nav {
-  background-color: #006B3F; /* verde projeto */
+  background-color: #335B93; /* azul projeto */
   padding: 10px;
   text-align: center;
 }
@@ -90,7 +90,7 @@ nav a:hover {
 }
 
 button, .dt-button {
-  background-color: #006B3F;
+  background-color: #335B93; /* azul projeto */
   color: white !important;
   border: none;
   border-radius: 6px;
