@@ -1,425 +1,273 @@
-/* Sistema de Relatórios PFC - JavaScript */
-/* Versão: 2.7.0 */
+/* ============================================================
+ * PFC — Relatórios (site estático)
+ * script.js — DataTables + Edição de Contra-medidas + Badges Auditoria
+ * ============================================================
+ * Requisitos:
+ * - jQuery 3.7+
+ * - DataTables 1.13+ (core + buttons)
+ * ------------------------------------------------------------
+ */
 
-// Inicializar DataTables
+/* ---------- Utilitário: inicializar DataTables com filtros por coluna ---------- */
 function initDT(id) {
-    // Verificar se a tabela já foi inicializada
-    if ($.fn.DataTable.isDataTable('#' + id)) {
-        $('#' + id).DataTable().destroy();
-    }
-    
-    // Configurações específicas para cada tabela
-    var config = {
-        "language": {
-            "url": "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"
-        },
-        "pageLength": 6,  // Reduzido para 6 linhas por página
-        "lengthMenu": [6, 10, 15, 25],  // Opções menores
-        "order": [[0, "asc"]],
-        "columnDefs": [
-            { "orderable": false, "targets": -1 }
-        ],
-        "dom": 'Bfrtip',
-        "buttons": [
-            'copy', 'csv', 'excel', 'print'
-        ],
-        "responsive": false,
-        "scrollX": false
-    };
-    
-    // Configurações específicas para tabelas de evasão (similar à assiduidade)
-    if (id === 'evasaoTurma' || id === 'evasaoCidade' || id === 'evasaoSupervisor') {
-        config.columnDefs = [
-            { "orderable": false, "targets": -1 }
-        ];
-        // Reativar scroll horizontal para tabelas de evasão
-        config.scrollX = true;
-        config.responsive = true;
-    }
-    
-    $('#' + id).DataTable(config);
-    
-    // Aplicar cores condicionais após inicializar a tabela
-    setTimeout(function() {
-        aplicarCoresCondicionais(id);
-    }, 100);
-    
-    // Reaplicar cores quando a página mudar
-    $('#' + id).on('draw.dt', function() {
-        aplicarCoresCondicionais(id);
+  const $el = $('#' + id);
+  if (!$el.length) return;
+
+  // Evita reinit + limpa filtros antigos
+  if ($.fn.dataTable.isDataTable($el)) {
+    $el.DataTable().destroy();
+    $el.find('thead input').remove();
+  }
+
+  // Cria inputs de filtro ANTES de inicializar
+  const $ths = $el.find('thead th');
+  $ths.each(function () {
+    const title = $(this).text();
+    $(this).html(
+      title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />'
+    );
+  });
+
+  // Inicializa DataTable
+  const table = $el.DataTable({
+    dom: 'Bfrtip',
+    buttons: ['copy', 'csv', 'excel', 'print'],
+    pageLength: 25,
+    order: []
+  });
+
+  // Liga filtros por coluna
+  table.columns().every(function () {
+    const that = this;
+    $('input', this.header()).on('keyup change clear', function () {
+      if (that.search() !== this.value) {
+        that.search(this.value).draw();
+      }
     });
+  });
+
+  // ---- Enhancements específicos por tabela ----
+  if (id === 'tabIncons') enhanceAuditoriaBadges(table, id);
 }
 
-// Função para aplicar cores condicionais nas tabelas
-function aplicarCoresCondicionais(tableId) {
-    var selector = tableId ? '#' + tableId + ' tbody tr' : '.data-table tbody tr';
-    
-    $(selector).each(function() {
-        var $row = $(this);
-        
-        // Aplicar cores baseado no tipo de tabela
-        if (tableId === 'evasaoTurma') {
-            // Tabela de turma tem 11 colunas
-            aplicarCoresTurma($row);
-        } else if (tableId === 'evasaoCidade' || tableId === 'evasaoSupervisor') {
-            // Tabelas de cidade e supervisor têm 7 colunas
-            aplicarCoresCidadeSupervisor($row);
-        }
-    });
-}
-
-// Função específica para tabela de turma (12 colunas agora)
-function aplicarCoresTurma($row) {
-    // Vagas Disponíveis (coluna 7 - índice 6)
-    var vagasTexto = $row.find('td:eq(6)').text().trim();
-    var vagas = parseFloat(vagasTexto);
-    
-    if (!isNaN(vagas)) {
-        var $cell = $row.find('td:eq(6)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico badge-piscante');
-        
-        if (vagas >= 3 && vagas <= 4) {
-            $cell.addClass('badge-amarelo');
-        } else if (vagas > 4 && vagas <= 6) {
-            $cell.addClass('badge-ruim');
-        } else if (vagas > 6) {
-            $cell.addClass('badge-piscante');
-        }
-    }
-    
-    // Média de Faltas (coluna 12 - índice 11)
-    var faltasTexto = $row.find('td:eq(11)').text().trim();
-    var faltas = parseFloat(faltasTexto);
-    
-    if (!isNaN(faltas)) {
-        var $cell = $row.find('td:eq(11)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico badge-piscante');
-        
-        if (faltas >= 3 && faltas <= 4) {
-            $cell.addClass('badge-amarelo');
-        } else if (faltas > 4 && faltas <= 6) {
-            $cell.addClass('badge-ruim');
-        } else if (faltas > 6) {
-            $cell.addClass('badge-piscante');
-        }
-    }
-    
-    // Desvio Padrão (coluna 11 - índice 10)
-    var desvioTexto = $row.find('td:eq(10)').text().trim();
-    var desvio = parseFloat(desvioTexto);
-    
-    if (!isNaN(desvio)) {
-        var $cell = $row.find('td:eq(10)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico');
-        
-        if (desvio <= 0.1) {
-            $cell.addClass('badge-excelente');
-        } else if (desvio <= 0.2) {
-            $cell.addClass('badge-bom');
-        } else if (desvio <= 0.3) {
-            $cell.addClass('badge-regular');
-        } else if (desvio <= 0.5) {
-            $cell.addClass('badge-ruim');
-        } else {
-            $cell.addClass('badge-critico');
-        }
-    }
-    
-    // % Evasão (coluna 8 - índice 7)
-    var evasaoTexto = $row.find('td:eq(7)').text().trim().replace('%', '');
-    var evasao = parseFloat(evasaoTexto);
-    
-    if (!isNaN(evasao)) {
-        var $cell = $row.find('td:eq(7)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico');
-        
-        if (evasao == 0) {
-            $cell.addClass('badge-excelente');
-        } else if (evasao <= 10) {
-            $cell.addClass('badge-bom');
-        } else if (evasao <= 25) {
-            $cell.addClass('badge-regular');
-        } else if (evasao <= 50) {
-            $cell.addClass('badge-ruim');
-        } else {
-            $cell.addClass('badge-critico');
-        }
-    }
-    
-    // Prob. Desligamento (coluna 9 - índice 8)
-    var probTexto = $row.find('td:eq(8)').text().trim().replace('%', '');
-    var prob = parseFloat(probTexto);
-    
-    if (!isNaN(prob)) {
-        var $cell = $row.find('td:eq(8)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico');
-        
-        if (prob <= 5) {
-            $cell.addClass('badge-excelente');
-        } else if (prob <= 15) {
-            $cell.addClass('badge-bom');
-        } else if (prob <= 30) {
-            $cell.addClass('badge-regular');
-        } else if (prob <= 50) {
-            $cell.addClass('badge-ruim');
-        } else {
-            $cell.addClass('badge-critico');
-        }
-    }
-}
-
-// Função específica para tabelas de cidade e supervisor (7 colunas)
-function aplicarCoresCidadeSupervisor($row) {
-    // % Evasão (coluna 6 - índice 5)
-    var evasaoTexto = $row.find('td:eq(5)').text().trim().replace('%', '');
-    var evasao = parseFloat(evasaoTexto);
-    
-    if (!isNaN(evasao)) {
-        var $cell = $row.find('td:eq(5)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico');
-        
-        if (evasao == 0) {
-            $cell.addClass('badge-excelente');
-        } else if (evasao <= 10) {
-            $cell.addClass('badge-bom');
-        } else if (evasao <= 25) {
-            $cell.addClass('badge-regular');
-        } else if (evasao <= 50) {
-            $cell.addClass('badge-ruim');
-        } else {
-            $cell.addClass('badge-critico');
-        }
-    }
-    
-    // Prob. Desligamento (coluna 7 - índice 6)
-    var probTexto = $row.find('td:eq(6)').text().trim().replace('%', '');
-    var prob = parseFloat(probTexto);
-    
-    if (!isNaN(prob)) {
-        var $cell = $row.find('td:eq(6)');
-        $cell.removeClass('badge-excelente badge-bom badge-regular badge-ruim badge-critico');
-        
-        if (prob <= 5) {
-            $cell.addClass('badge-excelente');
-        } else if (prob <= 15) {
-            $cell.addClass('badge-bom');
-        } else if (prob <= 30) {
-            $cell.addClass('badge-regular');
-        } else if (prob <= 50) {
-            $cell.addClass('badge-ruim');
-        } else {
-            $cell.addClass('badge-critico');
-        }
-    }
-}
-
-// Melhorar badges na auditoria
+/* ---------- Auditoria: badges visuais para status/última/motivo ---------- */
 function enhanceAuditoriaBadges(table, tableId) {
-    $(document).ready(function() {
-        $('#' + tableId + ' tbody tr').each(function() {
-            var $row = $(this);
-            
-            // Status
-            var statusCell = $row.find('td:eq(2)');
-            var status = statusCell.text().trim();
-            if (status === 'Ativo') {
-                statusCell.html('<span class="badge badge-ativo">Ativo</span>');
-            } else if (status === 'Desligado') {
-                statusCell.html('<span class="badge badge-desligado">Desligado</span>');
-            }
-            
-            // Última marca
-            var ultimaMarcaCell = $row.find('td:eq(3)');
-            var ultimaMarca = ultimaMarcaCell.text().trim();
-            if (ultimaMarca === 'Presente') {
-                ultimaMarcaCell.html('<span class="badge badge-ok">Presente</span>');
-            } else if (ultimaMarca === 'Falta') {
-                ultimaMarcaCell.html('<span class="badge badge-inconsistente">Falta</span>');
-            }
-            
-            // Motivo da inconsistência
-            var motivoCell = $row.find('td:eq(4)');
-            var motivo = motivoCell.text().trim();
-            if (motivo && motivo !== '-') {
-                motivoCell.html('<span class="badge badge-inconsistente">' + motivo + '</span>');
-            }
-        });
+  function badge($cell, type) {
+    const vRaw = $cell.text() || '';
+    const v = vRaw.toLowerCase().trim();
+    if (!v) return;
+
+    if (type === 'status') {
+      if (v.includes('deslig')) $cell.html('<span class="badge b-red">Desligado</span>');
+      else $cell.html('<span class="badge b-green">Ativo</span>');
+    } else if (type === 'ultima') {
+      if (v === 'presente') $cell.html('<span class="badge b-green nowrap">Presente (última)</span>');
+      else if (v === 'falta') $cell.html('<span class="badge b-yellow nowrap">Falta (última)</span>');
+      else if (v.includes('deslig')) $cell.html('<span class="badge b-red nowrap">Desligado (última)</span>');
+      else $cell.html('<span class="badge b-gray nowrap">' + vRaw + '</span>');
+    } else if (type === 'motivo') {
+      if (v.includes('cadastro_desligado') || v.includes('ativo_mas_ultima')) {
+        $cell.html('<span class="badge b-yellow">' + vRaw + '</span>');
+      }
+    }
+  }
+
+  // Descobre índices das colunas pelo cabeçalho
+  const idx_status = $('#' + tableId + ' thead th')
+    .filter(function () { return $(this).text().toLowerCase().includes('status_cadastro'); })
+    .index();
+  const idx_ult = $('#' + tableId + ' thead th')
+    .filter(function () { return $(this).text().toLowerCase().includes('ultima_marcacao_chamada'); })
+    .index();
+  const idx_motivo = $('#' + tableId + ' thead th')
+    .filter(function () { return $(this).text().toLowerCase().includes('motivo_inconsistencia'); })
+    .index();
+
+  table.on('draw', function () {
+    $('#' + tableId + ' tbody tr').each(function () {
+      const $tds = $(this).find('td');
+      if (idx_status >= 0) badge($($tds[idx_status]), 'status');
+      if (idx_ult >= 0) badge($($tds[idx_ult]), 'ultima');
+      if (idx_motivo >= 0) badge($($tds[idx_motivo]), 'motivo');
     });
+  }).trigger('draw');
 }
 
-// Configurar contra-medidas
-function setupContraMedidas() {
-    $(document).ready(function() {
-        // Tornar coluna de contra-medidas editável
-        $('#evasaoTurma tbody tr').each(function() {
-            var $row = $(this);
-            var contraMedidasCell = $row.find('td:eq(5)');
-            var contraMedidas = contraMedidasCell.text().trim();
-            
-            var textarea = $('<textarea class="contra-medidas" placeholder="Digite as contra-medidas...">' + contraMedidas + '</textarea>');
-            contraMedidasCell.html(textarea);
-        });
-        
-        // Auto-resize textareas
-        $('.contra-medidas').on('input', function() {
-            autoGrow(this);
-        });
-        
-        // Salvar contra-medidas no localStorage
-        $('.contra-medidas').on('blur', function() {
-            var contraMedidas = {};
-            $('#evasaoTurma tbody tr').each(function(index) {
-                var turma = $(this).find('td:eq(0)').text().trim();
-                var contraMedida = $(this).find('.contra-medidas').val();
-                contraMedidas[turma] = contraMedida;
-            });
-            localStorage.setItem('contraMedidasPFC', JSON.stringify(contraMedidas));
-        });
-        
-        // Carregar contra-medidas salvas
-        var savedContraMedidas = localStorage.getItem('contraMedidasPFC');
-        if (savedContraMedidas) {
-            var contraMedidas = JSON.parse(savedContraMedidas);
-            $('#evasaoTurma tbody tr').each(function() {
-                var turma = $(this).find('td:eq(0)').text().trim();
-                if (contraMedidas[turma]) {
-                    $(this).find('.contra-medidas').val(contraMedidas[turma]);
-                }
-            });
-        }
-        
-        // Botão para baixar contra-medidas
-        var downloadBtn = $('<button class="dt-button" style="margin-left: 10px;">Baixar Contra-medidas</button>');
-        $('.dt-buttons').append(downloadBtn);
-        
-        downloadBtn.on('click', function() {
-            var contraMedidas = {};
-            $('#evasaoTurma tbody tr').each(function() {
-                var turma = $(this).find('td:eq(0)').text().trim();
-                var contraMedida = $(this).find('.contra-medidas').val();
-                contraMedidas[turma] = contraMedida;
-            });
-            
-            var dataStr = JSON.stringify(contraMedidas, null, 2);
-            var dataBlob = new Blob([dataStr], {type: 'application/json'});
-            var url = URL.createObjectURL(dataBlob);
-            var link = document.createElement('a');
-            link.href = url;
-            link.download = 'contra-medidas-pfc.json';
-            link.click();
-            URL.revokeObjectURL(url);
-        });
-        
-        // Botão para copiar contra-medidas
-        var copyBtn = $('<button class="dt-button" style="margin-left: 10px;">Copiar Contra-medidas</button>');
-        $('.dt-buttons').append(copyBtn);
-        
-        copyBtn.on('click', function() {
-            var contraMedidas = {};
-            $('#evasaoTurma tbody tr').each(function() {
-                var turma = $(this).find('td:eq(0)').text().trim();
-                var contraMedida = $(this).find('.contra-medidas').val();
-                contraMedidas[turma] = contraMedida;
-            });
-            
-            var dataStr = JSON.stringify(contraMedidas, null, 2);
-            navigator.clipboard.writeText(dataStr).then(function() {
-                alert('Contra-medidas copiadas para a área de transferência!');
-            });
-        });
+/* ---------- Passo 2: tornar "Contra-medidas de Evasão" editável em evasaoTurma ---------- */
+async function setupContraMedidas() {
+  const tableId = 'evasaoTurma';
+  const $t = $('#' + tableId);
+  if (!$t.length) return; // só executa na página com a tabela de evasão por turma
+
+  // Descobre índices das colunas pelo cabeçalho
+  const ths = Array.from($t.find('thead th')).map(th => th.textContent.trim().toLowerCase());
+  const turmaIdx = ths.indexOf('turma');
+  const contraIdx = ths.indexOf('contra-medidas de evasão');
+
+  if (turmaIdx === -1 || contraIdx === -1) return; // segurança, coluna não disponível
+
+  // Carrega JSON versionado (se existir)
+  let contras = {};
+  try {
+    const r = await fetch('contramedidas.json', { cache: 'no-store' });
+    if (r.ok) contras = await r.json();
+  } catch (e) {
+    // ok se não existir; ficará vazio e será criado no download
+  }
+
+  // Autosave por pasta/relatório
+  const STORAGE_KEY = 'pfc_contramedidas_' + location.pathname;
+  let drafts = {};
+  try {
+    drafts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch (e) {
+    drafts = {};
+  }
+
+  // Converte as células da coluna em <textarea>, com pré-preenchimento
+  $t.find('tbody tr').each(function () {
+    const $cells = $(this).find('td');
+    const turma = ($cells.eq(turmaIdx).text() || '').trim();
+    const key = turma; // chave = nome exato da turma
+
+    const valor = (drafts[key] != null ? drafts[key] : (contras[key] != null ? contras[key] : ''));
+
+    const $cell = $cells.eq(contraIdx).empty();
+    const $ta = $('<textarea rows="3" style="width:100%;resize:vertical;" />').val(valor);
+
+    // autosave por linha
+    $ta.on('input', () => {
+      drafts[key] = $ta.val();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(drafts));
     });
+
+    $cell.append($ta);
+  });
+
+  // Toolbar de exportação (download/cópia)
+  const $toolbar = $(`
+    <div id="toolbarContramedidas" style="margin:10px 0; display:flex; gap:8px; flex-wrap:wrap;">
+      <button id="btnExportJSON">Baixar JSON das Contra-medidas</button>
+      <button id="btnCopyJSON">Copiar JSON p/ Área de Transferência</button>
+      <small style="opacity:.7">Os rascunhos ficam salvos neste navegador até você commitar o JSON.</small>
+    </div>
+  `);
+
+  // Insere a barra logo após o título da seção
+  const $titulo = $('#tabela_evasao_turma h2');
+  if ($titulo.length) $titulo.after($toolbar); else $t.before($toolbar);
+
+  function buildJSON() {
+    // Mescla: rascunhos sobrescrevem o JSON versionado
+    return JSON.stringify({ ...contras, ...drafts }, null, 2);
+  }
+
+  $('#btnExportJSON').on('click', () => {
+    const blob = new Blob([buildJSON()], { type: 'application/json;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'contramedidas.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+
+  $('#btnCopyJSON').on('click', async () => {
+    try {
+      await navigator.clipboard.writeText(buildJSON());
+      alert('JSON copiado!');
+    } catch (e) {
+      alert('Não foi possível copiar automaticamente. Use o botão de download.');
+    }
+  });
 }
 
-// Auto-resize textarea
-function autoGrow(el) {
-    el.style.height = 'auto';
-    el.style.height = (el.scrollHeight) + 'px';
-}
+/* ---------- Bootstrap: roda quando o DOM está pronto ---------- */
+$(document).ready(function () {
+  // Inicializa DataTables onde existir
+  [
+    // index.html
+    'evasaoTurma', 'evasaoCidade', 'evasaoSupervisor', 'topAlunos',
+    // assiduidade
+    'resumoGeral', 'assidCidade', 'assidTurma', 'topAssiduos',
+    // análises
+    'topRisco',
+    // auditoria
+    'tabIncons', 'tabTipo', 'tabCidade', 'tabTurma', 'tabSemCadastro', 'tabSemChamada'
+  ].forEach(initDT);
 
-// Inicializar todas as funcionalidades
-$(document).ready(function() {
-    // Inicializar DataTables
-    initDT('evasaoTurma');
-    initDT('evasaoCidade');
-    initDT('evasaoSupervisor');
-    
-    // Configurar contra-medidas
-    setupContraMedidas();
-    
-    // Botão de exportar
-    $('.export-btn').on('click', function() {
-        window.print();
-    });
-    
-    // Melhorar aparência das tabelas
-    $('.data-table').addClass('table-striped table-hover');
-    
-    // Adicionar tooltips
-    $('[title]').tooltip();
-    
-    // Animar cards
-    $('.card').each(function(index) {
-        $(this).css('animation-delay', (index * 0.1) + 's');
-    });
+  // Ativa a camada de edição da coluna "Contra-medidas de Evasão"
+  setupContraMedidas();
 });
 
-// Função para exportar dados
-function exportarDados(tabelaId, formato) {
-    var table = $('#' + tabelaId).DataTable();
-    
-    switch(formato) {
-        case 'excel':
-            table.button('.buttons-excel').trigger();
-            break;
-        case 'csv':
-            table.button('.buttons-csv').trigger();
-            break;
-        case 'copy':
-            table.button('.buttons-copy').trigger();
-            break;
-        case 'print':
-            table.button('.buttons-print').trigger();
-            break;
-    }
-}
 
-// Função para filtrar dados
-function filtrarDados(tabelaId, coluna, valor) {
-    var table = $('#' + tabelaId).DataTable();
-    table.column(coluna).search(valor).draw();
-}
+// === 1) Tornar a coluna "Contra-medidas de Evasão" larga e editável (textarea) ===
+(function () {
+  const $t = $('#evasaoTurma');
+  if (!$t.length) return;
 
-// Função para limpar filtros
-function limparFiltros(tabelaId) {
-    var table = $('#' + tabelaId).DataTable();
-    table.search('').columns().search('').draw();
-}
+  // Descobre o índice da coluna pela legenda do TH
+  const idxContra = $t.find('thead th')
+    .toArray()
+    .findIndex(th => th.textContent.trim().toLowerCase().startsWith('contra-medidas'));
 
-// Função para atualizar página
-function atualizarPagina() {
-    location.reload();
-}
+  if (idxContra < 0) return;
 
-// Função para mostrar/ocultar seções
-function toggleSecao(secaoId) {
-    $('#' + secaoId).slideToggle();
-}
+  // Função para trocar conteúdo por <textarea> mantendo o texto
+  const ensureTextarea = (td) => {
+    const $td = $(td);
+    $td.addClass('cm-evasao-cell');
 
-// Função para destacar linhas
-function destacarLinhas(tabelaId, condicao) {
-    var table = $('#' + tabelaId).DataTable();
-    table.rows().every(function() {
-        var data = this.data();
-        if (condicao(data)) {
-            $(this.node()).addClass('highlighted');
-        } else {
-            $(this.node()).removeClass('highlighted');
-        }
+    // já tem textarea?
+    if ($td.find('textarea.cm-evasao-textarea').length) return;
+
+    const currentText = $td.text().trim();
+    // limpa o TD e injeta textarea
+    const $ta = $('<textarea class="cm-evasao-textarea" spellcheck="false"></textarea>');
+    $ta.val(currentText);
+    $td.empty().append($ta);
+
+    // auto-height na digitação
+    const autoGrow = (el) => {
+      el.style.height = 'auto';
+      el.style.height = (el.scrollHeight + 6) + 'px';
+    };
+    $ta.on('input', function () { autoGrow(this); });
+    // auto-ajuste inicial
+    autoGrow($ta.get(0));
+  };
+
+  // Aplica nas linhas existentes
+  $t.find(`tbody tr`).each(function () {
+    const td = $(this).children().get(idxContra);
+    if (td) ensureTextarea(td);
+  });
+
+  // Se DataTables re-renderizar, aplicar de novo
+  $t.on('draw.dt', function () {
+    $t.find(`tbody tr`).each(function () {
+      const td = $(this).children().get(idxContra);
+      if (td) ensureTextarea(td);
     });
-}
+  });
+})();
 
-// CSS para linhas destacadas
-$('<style>')
-    .prop('type', 'text/css')
-    .html('.highlighted { background-color: #fff3cd !important; }')
-    .appendTo('head');
+
+// === 2) Botão Exportar -> PDF (Imprimir) ===
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('btnExportar');
+  if (!btn) return;
+
+  const expandAllTextareas = () => {
+    document.querySelectorAll('.cm-evasao-textarea').forEach(ta => {
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 6) + 'px';
+    });
+  };
+
+  window.addEventListener('beforeprint', expandAllTextareas);
+  btn.addEventListener('click', () => {
+    expandAllTextareas();
+    window.print(); // Salvar como PDF
+  });
+});
