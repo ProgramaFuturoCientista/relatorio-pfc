@@ -17,13 +17,12 @@
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 
-        <script src="../script.js" defer></script>
+        <script src="../script.js"></script>
     </head>
     <body>
         <header>
             <img src="../Logo PFC.png" alt="Logo PFC" style="height:60px; vertical-align:middle; margin-right:15px;">
             <span style="font-size:1.5em; font-weight:bold;">Relatório de Análises</span>
-            <button id="btnExportar" class="btn-exportar" type="button" title="Salvar PDF do relatório">🖨️ Exportar</button>
         </header>
         <nav>
             <a href="../index.html">📊 Evasão</a>
@@ -128,6 +127,46 @@
             <h2>📊 Distribuição de R² por Cidade</h2>
             <iframe src="grafico_desempenho_r2.html"></iframe>
         </section>
+
+        <script>
+          function initDT(id) {
+            const $el = $('#' + id);
+            if (!$el.length) return;
+
+            if ($.fn.dataTable.isDataTable($el)) {
+              $el.DataTable().destroy();
+              $el.find('thead input').remove();
+            }
+
+            const $ths = $el.find('thead th');
+            $ths.each(function () {
+              const title = $(this).text();
+              $(this).html(title + '<br><input type="text" style="width:100%;box-sizing:border-box;" placeholder="filtrar ' + title + '" />');
+            });
+
+            const table = $el.DataTable({
+              dom: 'Bfrtip',
+              buttons: ['copy','csv','excel','print'],
+              pageLength: 25,
+              order: []
+            });
+
+            table.columns().every(function () {
+              const that = this;
+              $('input', this.header()).on('keyup change clear', function () {
+                if (that.search() !== this.value) {
+                  that.search(this.value).draw();
+                }
+              });
+            });
+          }
+
+          $(document).ready(function () {
+            initDT('topRisco');
+          });
+        </script>
+
+
     </body>
     </html>
     
