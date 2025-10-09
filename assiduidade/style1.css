@@ -52,11 +52,19 @@ nav a:hover {
   padding: 15px;
   text-align: center;
   color: #335B93;
+  flex: 1 0 17rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
 }
 
 .card h3 {
   color: #F28C20;
   font-weight: 700;
+  margin: 0;
 }
 
 .tabela-interativa {
@@ -125,5 +133,18 @@ button:hover, .dt-button:hover {
 .pfc-header h1 {
   font-size: 1.8em;
   font-weight: 700;
+  margin: 0;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding-inline: 1rem;
+}
+
+.card p {
   margin: 0;
 }
