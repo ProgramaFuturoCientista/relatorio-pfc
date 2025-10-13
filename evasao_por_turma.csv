@@ -1,38 +1,38 @@
 ﻿Turma,Cidade,Supervisor,Ativos,Desligados,Vagas,Vagas Disponíveis,% Evasão,Prob. Desligamento (%),média de presença,Desvio Padrão de Presenças,Média de Faltas
-CEMUS1 - Turma A,Salto-SP,Lívia Kormann,14,2,20,6,30.0,13.2,1.0,0.0,1.12
-CEMUS1 - Turma B,Salto-SP,Lívia Kormann,11,0,20,9,45.0,3.7,1.0,0.0,1.54
-CEMUS5 - Turma A,Salto-SP,Lívia Kormann,15,1,20,5,25.0,5.8,1.0,0.0,0.56
-CEMUS5 - Turma B,Salto-SP,Lívia Kormann,17,1,20,3,15.0,14.6,0.94,0.0,2.22
-E. M. Francisco Adolfo de Varnhagen,Iperó-SP,Jamilli Veloso de Souza,10,0,20,10,50.0,1.2,1.39,0.8,2.6
-E. M. Pedrina de Campos Pedrozo Rosa,Iperó-SP,Emilly Vitoria Alves Ribeiro,15,3,20,5,25.0,9.1,0.83,0.0,2.78
-E. M. Roque Ayres de Oliveiras,Iperó-SP,Jamilli Veloso de Souza,15,0,20,5,25.0,0.1,1.19,0.6,1.33
-E. M. Zilma Thibes Melo,Iperó-SP,Emilly Vitoria Alves Ribeiro,22,0,20,0,0.0,1.2,1.25,0.69,2.14
-E.M. Dra. Glaucia Aparecida Andrade Nogueira,Iperó-SP,Jamilli Veloso de Souza,19,1,20,1,5.0,5.2,1.25,0.52,3.1
-E.M. Elisa Moreira dos Santos,Iperó-SP,Emilly Vitoria Alves Ribeiro,18,1,20,2,10.0,0.9,1.08,0.3,1.26
-E.M. Francisco Munhoz,Capela do Alto-SP,Paulo Miranda,15,5,20,5,25.0,21.3,1.29,0.36,2.6
-E.M. Franciso Mariano,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,20,1,20,0,0.0,9.2,2.61,0.26,3.71
-E.M. Henory de Campos Goes - Manhã,Iperó-SP,Emilly Vitoria Alves Ribeiro,7,0,10,3,30.0,7.0,1.14,0.28,0.71
-E.M. Joaquim Salvador,Capela do Alto-SP,Paulo Miranda,15,6,20,5,25.0,26.5,1.02,0.18,2.48
-E.M. Marcilio Leite- Turma A,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,15,1,10,0,0.0,6.6,2.75,0.32,3.0
-E.M. Marcilio Leite- Turma B,Capela do Alto-SP,Paulo Miranda,10,5,10,0,0.0,27.9,1.11,0.36,2.47
-E.M. Ricardo Pucetti,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,20,0,20,0,0.0,0.4,3.31,0.53,1.45
-EE Coronel Castanho de Almeida,Guareí-SP,Jose (Vinicius Lima Cardozo),13,3,20,7,35.0,7.2,1.88,0.88,2.25
-EM Carmen Lucia Blanco Britto,São Roque-SP,Gabriella Lhóren,22,0,20,0,0.0,0.6,0.85,0.09,2.23
-EM Henory de Campos Goes - Tarde,Iperó-SP,Emilly Vitoria Alves Ribeiro,15,0,10,0,0.0,0.4,1.6,0.86,0.73
-EMEF Barão de Piratininga - Turma A,São Roque-SP,Mirela Silva Gondim Garcia,18,2,20,2,10.0,8.6,1.25,0.46,3.4
-EMEF Barão de Piratininga - Turma B,São Roque-SP,Mirela Silva Gondim Garcia,20,3,20,0,0.0,12.8,1.52,0.7,3.52
-EMEF Dr. Rabindranath Tagore dos S. Pires,São Roque-SP,Gabriella Lhóren,24,2,20,0,0.0,7.5,0.5,0.0,2.0
-EMEF Leonidas Antonio de Moreas Professor,São Roque-SP,Mirela Silva Gondim Garcia,17,4,20,3,15.0,12.7,1.55,0.76,3.14
-EMEF Prof. Darcy Amáncio,Mirassol-SP,Synara Sajonetti Maistrello,21,2,20,0,0.0,6.8,1.67,0.98,1.87
-EMEF Prof. Euclides de Oliveira,São Roque-SP,Gabriella Lhóren,25,0,20,0,0.0,1.1,0.96,0.0,2.96
-EMEF Prof. Joao Alcindo Vieira,Guareí-SP,Jose (Vinicius Lima Cardozo),21,3,20,0,0.0,9.3,1.55,0.74,2.75
-EMEF Prof. Joaquim Silveira Santos,São Roque-SP,Vittoria Christina Santos Rocha,18,1,20,2,10.0,6.5,1.0,0.0,4.74
-EMEF Prof. Tiberio Justo da Silva,São Roque-SP,Gabriella Lhóren,24,1,20,0,0.0,8.4,1.04,0.16,2.88
-EMEF Prof. Wilson Paschoal,Mirassol-SP,Synara Sajonetti Maistrello,18,0,20,2,10.0,0.0,1.43,0.92,0.94
-EMEF Profa. Maria de Lourdes Pedroso Perin,Corumbataí-SP,Pedro Henrique Prado Alves,24,1,20,0,0.0,4.7,1.24,0.55,1.32
-EMEF Professor Antonio Cavaglieri,São Roque-SP,Vittoria Christina Santos Rocha,19,1,20,1,5.0,7.8,1.04,0.1,1.6
-EMEF Sonia Maria Abreu Ghilardi,São Roque-SP,Mirela Silva Gondim Garcia,14,2,20,6,30.0,11.4,2.43,0.93,2.25
-EMEF Tetsu Chinone,São Roque-SP,Vittoria Christina Santos Rocha,22,0,20,0,0.0,5.1,0.98,0.08,1.86
-EMEFEI Lucy Cordeiro de Campos - TURMA A,Bofete-SP,Andressa Da Costa,20,0,20,0,0.0,0.0,0.0,0.0,0.65
-Escola Estadual Prof Antônio Tonon - 7º e 8° ano,Coronel Macedo-SP,Gustavo Eduardo Cardoso,26,0,20,0,0.0,1.6,1.53,0.79,6.46
-Escola Municipal Mitsuo Matisura - 5º e 6° ano,Coronel Macedo-SP,Gustavo Eduardo Cardoso,21,0,20,0,0.0,0.9,1.59,1.06,4.52
+CEMUS1 - Turma A,Salto-SP,Lívia Kormann,14,2,20,6,30.0,13.7,1.0,0.0,1.12
+CEMUS1 - Turma B,Salto-SP,Lívia Kormann,11,0,20,9,45.0,4.4,1.0,0.0,1.54
+CEMUS5 - Turma A,Salto-SP,Lívia Kormann,15,1,20,5,25.0,6.3,1.0,0.0,0.56
+CEMUS5 - Turma B,Salto-SP,Lívia Kormann,17,1,20,3,15.0,16.4,0.94,0.0,2.22
+E. M. Francisco Adolfo de Varnhagen,Iperó-SP,Jamilli Veloso de Souza,10,0,20,10,50.0,1.3,1.59,0.94,2.9
+E. M. Pedrina de Campos Pedrozo Rosa,Iperó-SP,Emilly Vitoria Alves Ribeiro,17,3,20,3,15.0,12.9,1.3,0.34,2.65
+E. M. Roque Ayres de Oliveiras,Iperó-SP,Jamilli Veloso de Souza,15,0,20,5,25.0,0.2,1.26,0.69,1.53
+E. M. Zilma Thibes Melo,Iperó-SP,Emilly Vitoria Alves Ribeiro,22,0,20,0,0.0,1.4,1.33,0.76,2.14
+E.M. Dra. Glaucia Aparecida Andrade Nogueira,Iperó-SP,Jamilli Veloso de Souza,19,1,20,1,5.0,6.3,1.31,0.57,3.4
+E.M. Elisa Moreira dos Santos,Iperó-SP,Emilly Vitoria Alves Ribeiro,19,1,20,1,5.0,5.3,1.26,0.54,1.4
+E.M. Francisco Munhoz,Capela do Alto-SP,Paulo Miranda,13,7,20,7,35.0,34.2,1.28,0.37,2.8
+E.M. Franciso Mariano,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,16,4,20,4,20.0,14.7,2.66,0.28,4.15
+E.M. Henory de Campos Goes - Manhã,Iperó-SP,Emilly Vitoria Alves Ribeiro,7,3,10,3,30.0,23.5,1.47,0.26,0.6
+E.M. Joaquim Salvador,Capela do Alto-SP,Paulo Miranda,13,8,20,7,35.0,30.1,1.03,0.19,2.67
+E.M. Marcilio Leite- Turma A,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,15,1,10,0,0.0,5.8,2.76,0.32,3.62
+E.M. Marcilio Leite- Turma B,Capela do Alto-SP,Paulo Miranda,10,5,10,0,0.0,28.5,1.11,0.36,2.47
+E.M. Ricardo Pucetti,Capela do Alto-SP,Julia Fernanda de Camargo Teles Miranda,20,0,20,0,0.0,1.1,3.29,0.54,1.65
+EE Coronel Castanho de Almeida,Guareí-SP,Jose (Vinicius Lima Cardozo),13,3,20,7,35.0,16.8,1.9,0.85,2.62
+EM Carmen Lucia Blanco Britto,São Roque-SP,Gabriella Lhóren,23,0,20,0,0.0,0.8,0.97,0.2,2.78
+EM Henory de Campos Goes - Tarde,Iperó-SP,Emilly Vitoria Alves Ribeiro,15,0,10,0,0.0,1.4,1.7,0.92,1.13
+EMEF Barão de Piratininga - Turma A,São Roque-SP,Mirela Silva Gondim Garcia,16,4,20,4,20.0,12.6,1.32,0.53,4.15
+EMEF Barão de Piratininga - Turma B,São Roque-SP,Mirela Silva Gondim Garcia,20,3,20,0,0.0,12.2,1.52,0.7,3.52
+EMEF Dr. Rabindranath Tagore dos S. Pires,São Roque-SP,Gabriella Lhóren,24,2,20,0,0.0,10.8,0.9,0.18,2.35
+EMEF Leonidas Antonio de Moreas Professor,São Roque-SP,Mirela Silva Gondim Garcia,17,4,20,3,15.0,18.4,1.59,0.73,3.57
+EMEF Prof. Darcy Amáncio,Mirassol-SP,Synara Sajonetti Maistrello,20,3,20,0,0.0,11.3,1.72,0.95,2.09
+EMEF Prof. Euclides de Oliveira,São Roque-SP,Gabriella Lhóren,25,0,20,0,0.0,0.7,1.3,0.53,3.84
+EMEF Prof. Joao Alcindo Vieira,Guareí-SP,Jose (Vinicius Lima Cardozo),21,4,20,0,0.0,11.2,1.69,0.74,2.96
+EMEF Prof. Joaquim Silveira Santos,São Roque-SP,Vittoria Christina Santos Rocha,19,1,20,1,5.0,7.4,1.01,0.15,4.95
+EMEF Prof. Tiberio Justo da Silva,São Roque-SP,Gabriella Lhóren,24,1,20,0,0.0,6.0,1.32,0.5,3.96
+EMEF Prof. Wilson Paschoal,Mirassol-SP,Synara Sajonetti Maistrello,18,0,20,2,10.0,0.1,1.48,0.93,0.94
+EMEF Profa. Maria de Lourdes Pedroso Perin,Corumbataí-SP,Pedro Henrique Prado Alves,20,5,20,0,0.0,13.8,1.24,0.55,1.32
+EMEF Professor Antonio Cavaglieri,São Roque-SP,Vittoria Christina Santos Rocha,19,1,20,1,5.0,9.5,1.16,0.35,2.2
+EMEF Sonia Maria Abreu Ghilardi,São Roque-SP,Mirela Silva Gondim Garcia,14,2,20,6,30.0,12.5,2.43,0.93,2.25
+EMEF Tetsu Chinone,São Roque-SP,Vittoria Christina Santos Rocha,22,0,20,0,0.0,10.9,1.07,0.2,2.54
+EMEFEI Lucy Cordeiro de Campos - TURMA A,Bofete-SP,Andressa Da Costa,20,0,20,0,0.0,5.4,0.0,0.0,0.65
+Escola Estadual Prof Antônio Tonon - 7º e 8° ano,Coronel Macedo-SP,Gustavo Eduardo Cardoso,26,0,20,0,0.0,1.2,1.66,0.86,7.42
+Escola Municipal Mitsuo Matisura - 5º e 6° ano,Coronel Macedo-SP,Gustavo Eduardo Cardoso,21,0,20,0,0.0,0.3,1.89,1.1,5.24

@@ -1,259 +1,564 @@
-/* ======= Estilo Geral ======= */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('background.png');
-    background-repeat: repeat;
+/* Sistema de Relatórios PFC - Estilos */
+/* Versão: 2.7.0 */
+
+/* Reset e configurações básicas */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
     color: #333;
+    background-color: #f5f5f5;
 }
 
+/* Header */
 header {
-    background-color: #1e88e5;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
-    padding: 20px;
-    align-items: center;
+    padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-header img {
-    height: 120px;
-    margin-right: 30px;
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-header span {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: right;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav {
-    background-color: #1565c0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-    gap: 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    background-color: #00b4d8;
-    padding: 10px 16px;
-    margin: 5px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-nav a:hover {
-    background-color: #0077b6;
-    transform: scale(1.1);
-}
-
-section {
-    background: white;
-    margin: 20px;
-    padding: 20px;
+.logo {
+    height: 80px;
+    margin-bottom: 1rem;
     border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Navegação */
+.nav-bar {
+    background-color: #34495e;
+    padding: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.nav-bar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-bar a:hover {
+    background-color: #2c3e50;
+}
+
+.nav-bar a.active {
+    background-color: #3498db;
+}
+
+/* Conteúdo principal */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Cards de resumo */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .card {
     background: white;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    flex: 1 1 220px;
-    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    background-color: #0077b6;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .card h3 {
-    color: #003366;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.card p {
-    font-size: 24px;
+.metric {
+    font-size: 2.5rem;
     font-weight: bold;
+    color: #3498db;
+    margin-bottom: 0.5rem;
 }
 
-.card:hover h3 {
-    color: #badcff;
+/* Seções de tabela */
+.table-section {
+    background: white;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
-.card:hover p {
-    font-size: 24px;
-    font-weight: bold;
+.table-section h2 {
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
+    padding: 1.5rem 2rem;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
-iframe {
-    border: none;
+/* Tabelas */
+.data-table {
     width: 100%;
-    height: 500px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
 }
 
-/* ======= DataTables Ajustes ======= */
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    background-color: #1e88e5;
-    color: white !important;
-    border: none;
+.data-table th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* DataTables customização */
+.dataTables_wrapper {
+    padding: 2rem;
+}
+
+/* Permitir scroll horizontal quando necessário */
+.data-table {
+    width: 100% !important;
+    min-width: 100% !important;
+}
+
+.data-table th,
+.data-table td {
+    white-space: nowrap !important;
+    padding: 0.75rem 0.5rem !important;
+}
+
+.dataTables_length,
+.dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 4px 10px;
-    margin: 2px;
-    cursor: pointer;
-    font-weight: bold;
+    margin: 0 0.5rem;
 }
 
 .dataTables_info {
-    margin: 10px;
+    margin-top: 1rem;
+    color: #7f8c8d;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    background-color: #1565c0 !important;
-    color: white !important;
+.dataTables_paginate {
+    margin-top: 1rem;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background-color: #1565c0 !important;
-    color: white !important;
+.dataTables_paginate .paginate_button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Sempre mostrar setas de ordenação */
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:after {
-    opacity: 1 !important;
-    right: 8px;
+.dataTables_paginate .paginate_button:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
 }
 
-/* Aparência das tabelas */
-table.dataTable {
-    border-collapse: collapse;
+.dataTables_paginate .paginate_button.current {
+    background-color: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* Botões de exportação */
+.dt-buttons {
+    margin-bottom: 1rem;
+}
+
+.dt-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dt-button:hover {
+    background-color: #229954;
+}
+
+/* Contra-medidas */
+.contra-medidas {
+    min-width: 200px;
     width: 100%;
+    vertical-align: top;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
-table.dataTable th, table.dataTable td {
-    padding: 8px 12px;
-    text-align: left;
+/* Botão Exportar */
+.export-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 2rem auto;
+    display: block;
 }
 
-table.dataTable th {
-    background-color: #e3f2fd;
+.export-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .cards {
-        flex-direction: column;
+    .main-content {
+        padding: 0 1rem;
     }
-
-    nav {
-        flex-direction: column;
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-bar a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .dataTables_wrapper {
+        padding: 1rem;
+    }
+    
+    .data-table {
+        font-size: 0.8rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 0.5rem;
     }
 }
 
-/* ===== Contra-medidas: célula larga e responsiva ===== */
-table#evasaoTurma {
-  table-layout: fixed; /* ajuda a responsividade das larguras por coluna */
-  width: 100%;
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        height: 60px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .metric {
+        font-size: 2rem;
+    }
 }
 
-.cm-evasao-cell { 
-  /* Damos uma largura 'preferida', mas deixamos o layout ajustar em telas menores */
-  min-width: 420px;            /* bom para desktop */
-  width: clamp(260px, 40vw, 680px); /* responsivo: 260px a 680px, priorizando ~40% da viewport */
-  vertical-align: top;
-}
-
-.cm-evasao-textarea {
-  width: 100%;
-  min-height: 72px;
-  line-height: 1.35;
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid #d0d7de;
-  resize: vertical;           /* o usuário pode aumentar conforme necessário */
-  box-sizing: border-box;
-}
-
-/* Em telas pequenas, assegure bom ajuste */
-@media (max-width: 900px) {
-  .cm-evasao-cell { min-width: 260px; width: 100%; }
-}
-
-/* ===== Botão Exportar ===== */
-.btn-exportar {
-  margin-left: auto;          /* “empurra” o botão para a direita */
-  margin-right: 0;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid #cfd8dc;
-  background: #f7f9fb;
-  cursor: pointer;
-  font-weight: 600;
-}
-.btn-exportar:hover { background: #eef3f7; }
-
-/* ===== Estilos de impressão (PDF) ===== */
+/* Print styles */
 @media print {
-  nav { display: none !important; }            /* esconde a barra de navegação */
-  #btnExportar, .btn-exportar { display: none !important; }
-  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-  /* Cards em grade, mas evitando quebrazinhas estranhas */
-  .cards { page-break-inside: avoid; }
-
-  /* Evitar cortes de tabelas no meio da página */
-  section { page-break-inside: avoid; margin-bottom: 12pt; }
-  table { page-break-inside: auto; }
-  tr, td, th { page-break-inside: avoid; page-break-after: auto; }
-
-  /* Textareas: garantir que imprimam todo o conteúdo visível */
-  .cm-evasao-textarea {
-    height: auto !important; 
-    overflow: visible !important; 
-    border: 1px solid #999;   /* borda discreta no PDF */
-  }
+    .nav-bar,
+    .export-btn,
+    .dt-buttons {
+        display: none;
+    }
+    
+    .main-content {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .table-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .contra-medidas {
+        min-width: 150px;
+        width: 200px;
+    }
 }
 
-/* Ajuste coluna Contra-medidas de Evasão */
-#evasaoTurma td:last-child,
-#evasaoTurma th:last-child {
-    min-width: 320px;
-    max-width: 500px;
-    white-space: normal !important;
-    word-wrap: break-word;
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Textarea estilizado */
-.cm-evasao-textarea {
-    width: 95%;
-    min-height: 70px;
-    resize: vertical;
-    font-size: 0.9em;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.card,
+.table-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Badges de status */
+.badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-ativo {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge-desligado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.badge-inconsistente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.badge-ok {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Melhorias para tabelas - layout otimizado e responsivo */
+.data-table {
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.4rem 0.2rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    border: 1px solid #e0e0e0 !important;
+    word-wrap: break-word !important;
+    overflow: hidden !important;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, #34495e, #2c3e50) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.2px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f8f9fa !important;
+}
+
+.data-table tr:hover {
+    background-color: #e3f2fd !important;
+    transform: scale(1.01) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Larguras automáticas para permitir scroll horizontal quando necessário */
+
+/* Centralizar números nas tabelas de evasão */
+#evasaoTurma td:nth-child(4),
+#evasaoTurma td:nth-child(5),
+#evasaoTurma td:nth-child(6),
+#evasaoTurma td:nth-child(7),
+#evasaoTurma td:nth-child(8),
+#evasaoTurma td:nth-child(9),
+#evasaoTurma td:nth-child(10),
+#evasaoTurma td:nth-child(11),
+#evasaoTurma td:nth-child(12) {
+    text-align: center !important;
+}
+
+#evasaoCidade td:nth-child(2),
+#evasaoCidade td:nth-child(3),
+#evasaoCidade td:nth-child(4),
+#evasaoCidade td:nth-child(5),
+#evasaoCidade td:nth-child(6),
+#evasaoCidade td:nth-child(7),
+#evasaoSupervisor td:nth-child(2),
+#evasaoSupervisor td:nth-child(3),
+#evasaoSupervisor td:nth-child(4),
+#evasaoSupervisor td:nth-child(5),
+#evasaoSupervisor td:nth-child(6),
+#evasaoSupervisor td:nth-child(7) {
+    text-align: center !important;
+}
+
+/* Larguras automáticas para todas as tabelas */
+
+/* Cores condicionais para indicadores */
+.badge-excelente {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+}
+
+.badge-bom {
+    background-color: #d1ecf1 !important;
+    color: #0c5460 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+}
+
+.badge-regular {
+    background-color: #fff3cd !important;
+    color: #856404 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+}
+
+.badge-ruim {
+    background-color: #dc3545 !important;
+    color: white !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+}
+
+.badge-critico {
+    background-color: #721c24 !important;
+    color: white !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+    animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.badge-amarelo {
+    background-color: #ffc107 !important;
+    color: black !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+}
+
+.badge-piscante {
+    background-color: #dc3545 !important;
+    color: white !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
+    animation: piscar 1s infinite !important;
+}
+
+@keyframes piscar {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* Remover scroll horizontal */
+.dataTables_wrapper {
+    overflow-x: visible !important;
+}
+
+.dataTables_scrollHeadInner {
+    width: 100% !important;
+}
+
+.dataTables_scrollBody {
+    overflow-x: visible !important;
 }
