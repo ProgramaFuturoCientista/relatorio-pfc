@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório do Cursinho - PFC</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    
+    <style>
+        .avaliacao-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .avaliacao-box h2 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .avaliacao-box p {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #1e88e5;
+        }
+        .stat-card h4 {
+            color: #1e88e5;
+            margin: 0 0 10px 0;
+        }
+        .stat-card p {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../Logo PFC.png" alt="Logo PFC" class="logo">
+            <h1>Relatório do Cursinho Preparatório</h1>
+            <p class="subtitle">Análise de Desempenho - 13/10/2025</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <a href="../index.html" class="nav-link">Evasão</a>
+        <a href="../assiduidade.html" class="nav-link">Assiduidade</a>
+        <a href="../analises.html" class="nav-link">Análises</a>
+        <a href="../auditoria.html" class="nav-link">Auditoria</a>
+        <a href="cursinho.html" class="nav-link active">🎓 Cursinho</a>
+    </nav>
+    
+    <main class="main-content">
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total de Alunos</h3>
+                <div class="metric">33</div>
+            </div>
+            <div class="card">
+                <h3>Alunos Ativos</h3>
+                <div class="metric">27</div>
+            </div>
+            <div class="card">
+                <h3>Desligados</h3>
+                <div class="metric">6</div>
+            </div>
+            <div class="card">
+                <h3>Taxa de Retenção</h3>
+                <div class="metric">81.82%</div>
+            </div>
+            <div class="card">
+                <h3>Média de Entregas</h3>
+                <div class="metric">4.48</div>
+            </div>
+            <div class="card">
+                <h3>Taxa Média de Entregas</h3>
+                <div class="metric">29.12%</div>
+            </div>
+            <div class="card">
+                <h3>Atividades Extras</h3>
+                <div class="metric">4</div>
+            </div>
+        </section>
+    
+        <section class="table-section">
+            <div class="avaliacao-box">
+                <h2>🟠 REGULAR</h2>
+                <p>O cursinho está apresentando desempenho regular. Atenção necessária.</p>
+                <p style="font-size: 1.1em; margin-top: 20px;">
+                    Taxa de Retenção: <strong>81.82%</strong> | 
+                    Média de Entregas: <strong>4.48</strong>
+                </p>
+            </div>
+        </section>
+        
+        <section class="table-section">
+            <h2>📈 Estatísticas de Entregas</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Média</h4>
+                    <p>4.48</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Mediana</h4>
+                    <p>1.00</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Máximo</h4>
+                    <p>22</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Mínimo</h4>
+                    <p>0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Desvio Padrão</h4>
+                    <p>5.69</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="table-section">
+            <h2>📊 Distribuição de Status</h2>
+            <iframe src="grafico_status.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>📈 Distribuição de Entregas</h2>
+            <iframe src="grafico_entregas.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>📊 Distribuição por Faixa de Entregas</h2>
+            <iframe src="grafico_faixas.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>🏙️ Análise por Cidade</h2>
+            <iframe src="grafico_cidade.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>📊 Média de Entregas por Cidade</h2>
+            <iframe src="grafico_media_cidade.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>🎯 Distribuição por Categoria de Qualidade</h2>
+            <iframe src="grafico_categoria.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>📝 Status das Inscrições</h2>
+            <iframe src="grafico_inscricoes.html"></iframe>
+        </section>
+        
+        <section class="table-section">
+            <h2>🏆 Top 10 Alunos com Melhor Desempenho</h2>
+            <iframe src="grafico_top_alunos.html"></iframe>
+            <table border="1" class="dataframe data-table" id="topAlunos">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Aluno</th>
+      <th>Cidade</th>
+      <th>Cursos</th>
+      <th>Entregas</th>
+      <th>Razão de Entregas</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mariana de Souza Rocha</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>22</td>
+      <td>1.0000</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Pietro Bez Gonçalves de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>14</td>
+      <td>0.6364</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Mathias Isao Kuromoto</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>11</td>
+      <td>1.0000</td>
+      <td>AM</td>
+    </tr>
+    <tr>
+      <td>Christian de Souza Ribeiro</td>
+      <td>SALTO</td>
+      <td>IFSP</td>
+      <td>11</td>
+      <td>1.0000</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Isabeli Soares do Amaral</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>10</td>
+      <td>0.4545</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>Maria Mirelly Barbosa Moreira</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>10</td>
+      <td>0.9091</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Alicia da Paz Pereira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>10</td>
+      <td>0.9091</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Davi Luis Faustino de Albuquerque</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>8</td>
+      <td>0.3636</td>
+      <td>AO</td>
+    </tr>
+    <tr>
+      <td>Júlia Delfino de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>7</td>
+      <td>0.3182</td>
+      <td>AI</td>
+    </tr>
+    <tr>
+      <td>Renan Farias Albuquerque</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>4</td>
+      <td>0.3636</td>
+      <td>AI</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>⚠️ Alunos em Risco (Menos de 5 Entregas)</h2>
+            <table border="1" class="dataframe data-table" id="alunosRisco">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Aluno</th>
+      <th>Cidade</th>
+      <th>Cursos</th>
+      <th>Entregas</th>
+      <th>Razão de Entregas</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jeaniffer Elisa Ramos Ribeiro</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Ana Flávia Machado Oliveira</td>
+      <td>TATUÍ</td>
+      <td>ETEC</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Vinícius de Oliveira Martins</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Lavinia Marques Morales Fortunato</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>João Pedro Ferreira de Souza</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Yago Lucas Rodrigues da Silva Cruz</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Maria Eduarda Costa de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Ana Beatriz dos Santos Sales</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Yasmim Luiza Bello</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Nicolas Dias de Almeida</td>
+      <td>SALTO</td>
+      <td>ETEC/IFSP</td>
+      <td>1</td>
+      <td>0.0455</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Vinicius Oliveira Alves</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Rafael Mendes</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>1</td>
+      <td>0.0455</td>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <td>Bruna Heloísa do Carmo de Maria</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Emanuelly Diniz de Sousa</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Kauan da Silva Groto</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>3</td>
+      <td>0.2727</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Jhonata Kaiky Cunha da Silva</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>3</td>
+      <td>0.1364</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Felipe de Camargo Sica</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>3</td>
+      <td>0.1364</td>
+      <td>AP</td>
+    </tr>
+    <tr>
+      <td>Renan Farias Albuquerque</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>4</td>
+      <td>0.3636</td>
+      <td>AI</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>🏙️ Análise Detalhada por Cidade</h2>
+            <table border="1" class="dataframe data-table" id="analiseCidade">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Alunos</th>
+      <th>Média Entregas</th>
+      <th>Taxa Média Entregas</th>
+      <th>Total Ativ. Extras</th>
+      <th>Ativos</th>
+      <th>Desligados</th>
+    </tr>
+    <tr>
+      <th>Cidade</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SALTO</th>
+      <td>3</td>
+      <td>4.00</td>
+      <td>0.35</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>SÃO ROQUE</th>
+      <td>29</td>
+      <td>4.03</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>24</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>TATUÍ</th>
+      <td>1</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>📚 Análise por Curso</h2>
+            <table border="1" class="dataframe data-table" id="analiseCurso">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Alunos</th>
+      <th>Média Entregas</th>
+      <th>Taxa Média Entregas</th>
+    </tr>
+    <tr>
+      <th>Cursos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ETEC</th>
+      <td>4</td>
+      <td>5.50</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>ETEC/IFSP</th>
+      <td>19</td>
+      <td>4.05</td>
+      <td>0.18</td>
+    </tr>
+    <tr>
+      <th>IFSP</th>
+      <td>10</td>
+      <td>3.00</td>
+      <td>0.27</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>🎯 Análise por Categoria de Qualidade</h2>
+            <table border="1" class="dataframe data-table" id="analiseCategoria">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Alunos</th>
+      <th>Média Entregas</th>
+      <th>Taxa Média Entregas</th>
+    </tr>
+    <tr>
+      <th>Categoria</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AI</th>
+      <td>2</td>
+      <td>5.50</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <th>AM</th>
+      <td>1</td>
+      <td>11.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>AO</th>
+      <td>6</td>
+      <td>12.50</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>AP</th>
+      <td>8</td>
+      <td>1.62</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <th>AR</th>
+      <td>1</td>
+      <td>10.00</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <th>AS</th>
+      <td>9</td>
+      <td>0.11</td>
+      <td>0.01</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        
+        <section class="table-section">
+            <h2>📋 Listagem Completa de Alunos Ativos</h2>
+            <table border="1" class="dataframe data-table" id="todosAlunos">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Aluno</th>
+      <th>Cidade</th>
+      <th>Cursos</th>
+      <th>Entregas</th>
+      <th>Razão de Entregas</th>
+      <th>Categoria</th>
+      <th>Inscrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nicolas Dias de Almeida</td>
+      <td>SALTO</td>
+      <td>ETEC/IFSP</td>
+      <td>1</td>
+      <td>0.0455</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Júlia Delfino de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>7</td>
+      <td>0.3182</td>
+      <td>AI</td>
+      <td>SIM, PARA IFSP E ETEC</td>
+    </tr>
+    <tr>
+      <td>Isabeli Soares do Amaral</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>10</td>
+      <td>0.4545</td>
+      <td>AR</td>
+      <td>SIM, PARA IFSP E ETEC</td>
+    </tr>
+    <tr>
+      <td>Jeaniffer Elisa Ramos Ribeiro</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Maria Mirelly Barbosa Moreira</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>10</td>
+      <td>0.9091</td>
+      <td>AO</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Mariana de Souza Rocha</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>22</td>
+      <td>1.0000</td>
+      <td>AO</td>
+      <td>PARCIALMENTE</td>
+    </tr>
+    <tr>
+      <td>Mathias Isao Kuromoto</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>11</td>
+      <td>1.0000</td>
+      <td>AM</td>
+      <td>SIM, PARA ETEC</td>
+    </tr>
+    <tr>
+      <td>Ana Flávia Machado Oliveira</td>
+      <td>TATUÍ</td>
+      <td>ETEC</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>SIM, PARA ETEC</td>
+    </tr>
+    <tr>
+      <td>Pietro Bez Gonçalves de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>14</td>
+      <td>0.6364</td>
+      <td>AO</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Vinícius de Oliveira Martins</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>PARCIALMENTE</td>
+    </tr>
+    <tr>
+      <td>Alicia da Paz Pereira</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>10</td>
+      <td>0.9091</td>
+      <td>AO</td>
+      <td>NÃO SE INSCREVEU</td>
+    </tr>
+    <tr>
+      <td>Emanuelly Diniz de Sousa</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Vinicius Oliveira Alves</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Jhonata Kaiky Cunha da Silva</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>3</td>
+      <td>0.1364</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Renan Farias Albuquerque</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>4</td>
+      <td>0.3636</td>
+      <td>AI</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Davi Luis Faustino de Albuquerque</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>8</td>
+      <td>0.3636</td>
+      <td>AO</td>
+      <td>SIM, PARA IFSP E ETEC</td>
+    </tr>
+    <tr>
+      <td>Christian de Souza Ribeiro</td>
+      <td>SALTO</td>
+      <td>IFSP</td>
+      <td>11</td>
+      <td>1.0000</td>
+      <td>AO</td>
+      <td>SIM, PARA IFSP</td>
+    </tr>
+    <tr>
+      <td>Ana Beatriz dos Santos Sales</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Maria Eduarda Costa de Oliveira</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>Kauan da Silva Groto</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>3</td>
+      <td>0.2727</td>
+      <td>AP</td>
+      <td>SIM, PARA IFSP</td>
+    </tr>
+    <tr>
+      <td>Yago Lucas Rodrigues da Silva Cruz</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>PARCIALMENTE</td>
+    </tr>
+    <tr>
+      <td>João Pedro Ferreira de Souza</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>SIM, PARA IFSP</td>
+    </tr>
+    <tr>
+      <td>Felipe de Camargo Sica</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>3</td>
+      <td>0.1364</td>
+      <td>AP</td>
+      <td>SIM, PARA IFSP E ETEC</td>
+    </tr>
+    <tr>
+      <td>Rafael Mendes</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>1</td>
+      <td>0.0455</td>
+      <td>AS</td>
+      <td>PARCIALMENTE</td>
+    </tr>
+    <tr>
+      <td>Lavinia Marques Morales Fortunato</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>SIM, PARA IFSP E ETEC</td>
+    </tr>
+    <tr>
+      <td>Yasmim Luiza Bello</td>
+      <td>SÃO ROQUE</td>
+      <td>ETEC/IFSP</td>
+      <td>0</td>
+      <td>0.0000</td>
+      <td>AS</td>
+      <td>NÃO SE INSCREVEU</td>
+    </tr>
+    <tr>
+      <td>Bruna Heloísa do Carmo de Maria</td>
+      <td>SÃO ROQUE</td>
+      <td>IFSP</td>
+      <td>1</td>
+      <td>0.0909</td>
+      <td>AP</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+    </main>
+    
+    <script src="../script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicializar todas as tabelas com DataTables
+            initDT('topAlunos');
+            initDT('alunosRisco');
+            initDT('analiseCidade');
+            initDT('analiseCurso');
+            initDT('analiseCategoria');
+            initDT('todosAlunos');
+        });
+    </script>
+</body>
+</html>
+        

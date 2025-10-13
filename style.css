@@ -562,3 +562,11 @@ h1 {
 .dataTables_scrollBody {
     overflow-x: visible !important;
 }
+
+/* Iframes para gráficos */
+iframe {
+    border: none;
+    width: 100%;
+    height: 650px;
+    min-height: 600px;
+}
